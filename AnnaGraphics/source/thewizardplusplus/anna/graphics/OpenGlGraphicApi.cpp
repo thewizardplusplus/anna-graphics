@@ -3,8 +3,7 @@
 #include "../../utils/Console.h"
 #include "Mesh.h"
 #include <GL/gl.h>
-#include <GL/glu.h>
-#include <fstream>
+#include <cmath>
 
 using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
@@ -25,69 +24,29 @@ OpenGlGraphicApi::OpenGlGraphicApi(void) :
 	createDefaultTexture();
 }
 
-Texture* OpenGlGraphicApi::createTexture(const TextureData& texture_data) {
+Texture* OpenGlGraphicApi::createTexture(const TextureData& texture_data, const
+	std::string& name)
+{
 	unsigned int opengl_texture = 0;
 	glGenTextures(1, &opengl_texture);
 	glBindTexture(GL_TEXTURE_2D, opengl_texture);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-		GL_LINEAR_MIPMAP_LINEAR);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-	glTexImage2D(GL_TEXTURE_2D, 0, texture_data.isTransparent() ? 4 : 3,
-		texture_data.getSize().x, texture_data.getSize().y, 0, texture_data.
-		isTransparent() ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, texture_data.
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexImage2D(GL_TEXTURE_2D, 0, !texture_data.isTransparent() ? 3 : 4,
+		texture_data.getSize().x, texture_data.getSize().y, 0, !texture_data.
+		isTransparent() ? GL_RGB : GL_RGBA, GL_UNSIGNED_BYTE, texture_data.
 		getData());
 
-	last_id_texture_from_data++;
-	std::ostringstream out;
-	out << TEXTURE_FROM_DATA_BASE_NAME << last_id_texture_from_data;
+	std::string texture_name = name;
+	if (texture_name.empty()) {
+		last_id_texture_from_data++;
+		std::ostringstream out;
+		out << TEXTURE_FROM_DATA_BASE_NAME << last_id_texture_from_data;
 
-	Texture* texture = new Texture(out.str());
+		texture_name = out.str();
+	}
+
+	Texture* texture = new Texture(texture_name);
 	textures[texture] = opengl_texture;
-
-	return texture;
-}
-
-Texture* OpenGlGraphicApi::createTexture(const std::string& file_name,
-	TextureLoader* loader)
-{
-	TextureMap::const_iterator i = textures.begin();
-	for (; i != textures.end(); ++i) {
-		Texture* texture = i->first;
-		if (texture->name == file_name) {
-			return texture;
-		}
-	}
-
-	std::ifstream file;
-	file.open(file_name.c_str());
-	if (!file.is_open()) {
-		Console::error() << "Error: unable to open texture file \"" + file_name
-			+ "\".";
-		return NULL;
-	}
-
-	TextureLoader* texture_loader = loader;
-	if (texture_loader == NULL) {
-		//texture_loader = new PNGTextureLoader();
-	}
-	TextureData texture_data = texture_loader->load(file);
-	if (!texture_data.isValid()) {
-		Console::error() << "Error: unable to load texture file \"" + file_name
-			+ "\".";
-		return NULL;
-	}
-
-	Texture* texture = createTexture(texture_data);
-	texture->name = file_name;
-
-	texture_loader->free(texture_data);
-	if (loader == NULL) {
-		delete texture_loader;
-		texture_loader = NULL;
-	}
-	file.close();
 
 	return texture;
 }
@@ -160,17 +119,17 @@ void OpenGlGraphicApi::createDefaultTexture(void) {
 	size_t square_size = DEFAULT_TEXTURE_SIZE / DEFAULT_TEXTURE_PIECES;
 	bool first_dark = false;
 	for (size_t i = 0; i < DEFAULT_TEXTURE_SIZE; i++) {
-		if (DEFAULT_TEXTURE_SIZE % square_size) {
+		if (!(i % square_size)) {
 			first_dark = !first_dark;
 		}
 
 		bool dark = first_dark;
 		for (size_t j = 0; j < DEFAULT_TEXTURE_SIZE; j++) {
-			if (DEFAULT_TEXTURE_SIZE % square_size) {
+			if (!(j % square_size)) {
 				dark = !dark;
 			}
 
-			int index = 3 * (i * DEFAULT_TEXTURE_SIZE + j);
+			size_t index = 3 * (i * DEFAULT_TEXTURE_SIZE + j);
 			if (dark) {
 				data[index] = DEFAULT_TEXTURE_LIGHT_COLOR.x;
 				data[index + 1] = DEFAULT_TEXTURE_LIGHT_COLOR.y;
@@ -198,8 +157,14 @@ void OpenGlGraphicApi::setCamera(Camera* camera) {
 		glOrtho(0.0, window->getSize().x, window->getSize().y, 0.0, camera->
 			near_plane, camera->far_plane);
 	} else {
-		gluPerspective(Camera::FOV, static_cast<double>(window->getSize().x) /
-			window->getSize().y, camera->near_plane, camera->far_plane);
+		float f = 1.0f / std::tan(Camera::FOV / 2.0f);
+		float projection_matrix[] = { f / (static_cast<double>(window->getSize()
+			.x) / window->getSize().y), 0.0f, 0.0f, 0.0f, 0.0f, f, 0.0f, 0.0f,
+			0.0f, 0.0f, (camera->near_plane + camera->far_plane) / (camera->
+			near_plane - camera->far_plane), -1.0f,
+			0.0f, 0.0f, (2.0f * camera->near_plane * camera->far_plane) /
+			(camera->near_plane - camera->far_plane), 0.0f };
+		glMultMatrixf(projection_matrix);
 	}
 
 	glMatrixMode(GL_MODELVIEW);

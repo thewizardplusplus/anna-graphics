@@ -30,15 +30,22 @@ public:
 	void setFogMode(bool fog_mode);
 	FogParameters getFogParameters(void) const;
 	void setFogParameters(const FogParameters& fog_parameters);
-	virtual Texture* createTexture(const TextureData& texture_data) = 0;
-	virtual Texture* createTexture(const std::string& file_name, TextureLoader*
-		loader = NULL) = 0;
+	bool isTextureLoader(const std::string& format) const;
+	void addTextureLoader(TextureLoader* loader);
+	void removeTextureLoader(TextureLoader* loader);
+	void removeTextureLoader(const TextureLoader::StringList& formats);
+	void removeTextureLoader(const std::string& format);
+	virtual Texture* createTexture(const TextureData& texture_data, const
+		std::string& name = std::string()) = 0;
+	virtual Texture* createTexture(const std::string& filename, const std::
+		string& format = std::string());
 	virtual void setTexture(Texture* texture) = 0;
 	virtual void clear(void) = 0;
 	virtual void drawWorld(World* world) = 0;
 
 protected:
-	typedef std::map<Texture*, unsigned int> TextureMap;
+	typedef std::map<Texture*, unsigned int>      TextureMap;
+	typedef std::map<std::string, TextureLoader*> TextureLoaderMap;
 
 	Window*                window;
 	bool                   ambient_lighting;
@@ -46,11 +53,16 @@ protected:
 	bool                   fog_mode;
 	FogParameters          fog_parameters;
 	TextureMap             textures;
+	TextureLoaderMap       loaders;
 
 	virtual void processSettingAmbientColor(const maths::Vector3D<float>&
 		ambient_color) = 0;
 	virtual void processSettingFogParameters(const FogParameters&
 		fog_parameters) = 0;
+	std::string toUpper(const std::string& string) const;
+
+private:
+	static const char FILE_EXTENSION_SEPARATOR = '.';
 };
 
 template<typename GraphicApiType>

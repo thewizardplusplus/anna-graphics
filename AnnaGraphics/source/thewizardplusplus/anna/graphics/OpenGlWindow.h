@@ -50,9 +50,9 @@ private:
 	#endif
 	void initialize(void);
 	void resize(size_t width, size_t height);
-	KeyCode::Types convertKeyCode(int key_code);
+	KeyCode::Types convertKeyCode(unsigned long key_code);
 	#ifdef OS_LINUX
-	ButtonCode::Types convertButtonCode(int button_code);
+	ButtonCode::Types convertButtonCode(unsigned int button_code);
 	#endif
 };
 

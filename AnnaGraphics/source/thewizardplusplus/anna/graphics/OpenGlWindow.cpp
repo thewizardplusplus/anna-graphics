@@ -267,8 +267,8 @@ void OpenGlWindow::update(void) {
 		XNextEvent(display, &event);
 		switch (event.type) {
 			case ConfigureNotify:
-				if (event.xconfigure.width != size.x || event.xconfigure.height
-					!= size.y)
+				if (event.xconfigure.width != static_cast<int>(size.x) || event.
+					xconfigure.height != static_cast<int>(size.y))
 				{
 					resize(event.xconfigure.width, event.xconfigure.height);
 				}
@@ -403,8 +403,6 @@ void OpenGlWindow::initialize(void) {
 	glEnable(GL_TEXTURE_2D);
 	glAlphaFunc(GL_NOTEQUAL, 0.0f);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
-	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
 	glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 	glHint(GL_FOG_HINT, GL_NICEST);
@@ -422,7 +420,9 @@ void OpenGlWindow::resize(size_t width, size_t height) {
 	glViewport(0, 0, width, height);
 }
 
-KeyCode::Types OpenGlWindow::convertKeyCode(int key_code) {
+thewizardplusplus::anna::graphics::KeyCode::Types OpenGlWindow::convertKeyCode(
+	unsigned long key_code)
+{
 	#ifdef OS_LINUX
 	switch (key_code) {
 		case XK_Escape:
@@ -914,7 +914,7 @@ KeyCode::Types OpenGlWindow::convertKeyCode(int key_code) {
 }
 
 #ifdef OS_LINUX
-ButtonCode::Types OpenGlWindow::convertButtonCode(int button_code) {
+ButtonCode::Types OpenGlWindow::convertButtonCode(unsigned int button_code) {
 	switch (button_code) {
 		case Button1:
 			return ButtonCode::BUTTON_LEFT;

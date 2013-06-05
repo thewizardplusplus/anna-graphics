@@ -1,4 +1,5 @@
 #include "OpenGlGraphicApi.h"
+#include "PngTextureLoader.h"
 #include "CubeMesh.h"
 #include "PlaneMesh.h"
 
@@ -24,6 +25,8 @@ void generateWorld(World* world, GraphicApi* graphic_api) {
 			Mesh* mesh = new PlaneMesh();
 			mesh->setRotation(Vector3D<float>(90.0f, Maths::randomNumber(
 				360.0f), 0.0f));
+			mesh->getMaterial().texture = graphic_api->createTexture("data/"
+				"wall0.png");
 			object->addMesh(mesh);
 
 			world->addObject(object);
@@ -59,6 +62,7 @@ void createGui(World* gui, GraphicApi* graphic_api) {
 
 int main(void) {
 	GraphicApi* graphic_api = GraphicApi::create<OpenGlGraphicApi>();
+	graphic_api->addTextureLoader(new PngTextureLoader());
 
 	World world;
 	Camera camera;
@@ -75,7 +79,8 @@ int main(void) {
 		Vector2D<size_t> center = window->getSize() / 2;
 		Vector2D<size_t> new_position = window->getPointerPosition();
 		window->setPointerPosition(center);
-		Vector2D<size_t> delta = new_position - center;
+		Vector2D<int> delta = new_position.convertedTo<int>() - center.
+			convertedTo<int>();
 		camera.rotation += Vector3D<float>(0.0f, 0.0f, PLAYER_ROTATE_SPEED *
 			delta.x);
 		camera.rotation += Vector3D<float>(PLAYER_ROTATE_SPEED * delta.y, 0.0f,

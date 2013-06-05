@@ -39,6 +39,8 @@ public:
 	inline void normalize(void);
 	inline Vector2D interpolatedTo(const Vector2D& target, float shift) const;
 	inline Vector2D interpolateTo(const Vector2D& target, float shift);
+	template<typename OtherType>
+	Vector2D<OtherType> convertedTo(void) const;
 	inline std::string toString(void) const;
 };
 
@@ -219,6 +221,13 @@ Vector2D<Type> Vector2D<Type>::interpolateTo(const Vector2D<Type>& target,
 	y = Maths::interpolate(y, target.y, shift);
 
 	return *this;
+}
+
+template<typename Type>
+template<typename OtherType>
+Vector2D<OtherType> Vector2D<Type>::convertedTo(void) const {
+	return Vector2D<OtherType>(static_cast<OtherType>(x), static_cast<
+		OtherType>(y));
 }
 
 template<typename Type>

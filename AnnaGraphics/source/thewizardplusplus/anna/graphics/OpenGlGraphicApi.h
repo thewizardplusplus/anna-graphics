@@ -10,9 +10,8 @@ namespace graphics {
 class OpenGlGraphicApi : public GraphicApi {
 public:
 	OpenGlGraphicApi(void);
-	virtual Texture* createTexture(const TextureData& texture_data);
-	virtual Texture* createTexture(const std::string& file_name, TextureLoader*
-		loader = NULL);
+	virtual Texture* createTexture(const TextureData& texture_data, const std::
+		string& name = std::string());
 	virtual void setTexture(Texture* texture);
 	virtual void clear(void);
 	virtual void drawWorld(World* world);

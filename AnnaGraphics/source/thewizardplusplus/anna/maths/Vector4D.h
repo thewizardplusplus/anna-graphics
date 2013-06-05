@@ -41,6 +41,8 @@ public:
 	inline void normalize(void);
 	inline Vector4D interpolatedTo(const Vector4D& target, float shift) const;
 	inline Vector4D interpolateTo(const Vector4D& target, float shift);
+	template<typename OtherType>
+	Vector4D<OtherType> convertedTo(void) const;
 	inline std::string toString(void) const;
 };
 
@@ -256,6 +258,13 @@ Vector4D<Type> Vector4D<Type>::interpolateTo(const Vector4D<Type>& target,
 	w = Maths::interpolate(w, target.w, shift);
 
 	return *this;
+}
+
+template<typename Type>
+template<typename OtherType>
+Vector4D<OtherType> Vector4D<Type>::convertedTo(void) const {
+	return Vector4D<OtherType>(static_cast<OtherType>(x), static_cast<
+		OtherType>(y), static_cast<OtherType>(z), static_cast<OtherType>(w));
 }
 
 template<typename Type>

@@ -35,7 +35,8 @@ HEADERS += \
 	source/thewizardplusplus/utils/os.h \
 	source/thewizardplusplus/utils/Converter.h \
 	source/thewizardplusplus/utils/ConsoleMessageType.h \
-	source/thewizardplusplus/utils/Console.h
+	source/thewizardplusplus/utils/Console.h \
+	source/thewizardplusplus/anna/graphics/PngTextureLoader.h
 SOURCES += \
 	source/thewizardplusplus/anna/graphics/World.cpp \
 	source/thewizardplusplus/anna/graphics/Window.cpp \
@@ -60,14 +61,15 @@ SOURCES += \
 	source/thewizardplusplus/anna/graphics/AnimateObject.cpp \
 	source/thewizardplusplus/anna/graphics/AnimateKey.cpp \
 	source/thewizardplusplus/anna/maths/Maths.cpp \
-	source/thewizardplusplus/utils/Console.cpp
+	source/thewizardplusplus/utils/Console.cpp \
+	source/thewizardplusplus/anna/graphics/PngTextureLoader.cpp
 OTHER_FILES += \
-    docs/to_do.txt
+	docs/to_do.txt
 QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O3
 unix {
-	LIBS += -lGL -lGLU
+	LIBS += -lGL
 }
 win32 {
-	LIBS += -lgdi32 -lopengl32 -lglu32
+	LIBS += -lgdi32 -lopengl32
 	QMAKE_CXXFLAGS += -U__STRICT_ANSI__
 }
