@@ -1,4 +1,6 @@
 TARGET = AnnaGraphics
+CONFIG += warn_on
+CONFIG -= qt
 HEADERS += \
 	source/thewizardplusplus/utils/os.h \
 	source/thewizardplusplus/utils/ConsoleMessageType.h \
