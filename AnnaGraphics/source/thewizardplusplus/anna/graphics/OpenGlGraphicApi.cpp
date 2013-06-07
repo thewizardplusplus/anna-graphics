@@ -1,5 +1,6 @@
 #include "OpenGlGraphicApi.h"
 #include "OpenGlWindow.h"
+#include "BmpTextureLoader.h"
 #include "../../utils/Console.h"
 #include "Mesh.h"
 #include <GL/gl.h>
@@ -22,6 +23,7 @@ OpenGlGraphicApi::OpenGlGraphicApi(void) :
 {
 	window = Window::create<OpenGlWindow>();
 	createDefaultTexture();
+	addTextureLoader(new BmpTextureLoader());
 }
 
 Texture* OpenGlGraphicApi::createTexture(const TextureData& texture_data, const
@@ -30,7 +32,9 @@ Texture* OpenGlGraphicApi::createTexture(const TextureData& texture_data, const
 	unsigned int opengl_texture = 0;
 	glGenTextures(1, &opengl_texture);
 	glBindTexture(GL_TEXTURE_2D, opengl_texture);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+		GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, 33169 /* GL_GENERATE_MIPMAP */, true);
 	glTexImage2D(GL_TEXTURE_2D, 0, !texture_data.isTransparent() ? 3 : 4,
 		texture_data.getSize().x, texture_data.getSize().y, 0, !texture_data.
 		isTransparent() ? GL_RGB : GL_RGBA, GL_UNSIGNED_BYTE, texture_data.
@@ -65,24 +69,6 @@ void OpenGlGraphicApi::clear(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void OpenGlGraphicApi::drawWorld(World* world) {
-	if (world == NULL) {
-		return;
-	}
-
-	setCamera(world->getCamera());
-	for (size_t i = 0; i < world->getNumberOfOpaqueMeshes(); i++) {
-		drawMesh(world->getOpaqueMesh(i));
-	}
-
-	glEnable(GL_BLEND);
-	world->sortTransparentMeshes();
-	for (size_t i = 0; i < world->getNumberOfTransparentMeshes(); i++) {
-		drawMesh(world->getTransparentMesh(i));
-	}
-	glDisable(GL_BLEND);
-}
-
 void OpenGlGraphicApi::processSettingAmbientColor(const maths::Vector3D<float>&
 	ambient_color)
 {
@@ -114,36 +100,12 @@ void OpenGlGraphicApi::processSettingFogParameters(const FogParameters&
 	glFogf(GL_FOG_END, fog_parameters.end_depth);
 }
 
-void OpenGlGraphicApi::createDefaultTexture(void) {
-	unsigned char data[DEFAULT_TEXTURE_SIZE * DEFAULT_TEXTURE_SIZE * 3];
-	size_t square_size = DEFAULT_TEXTURE_SIZE / DEFAULT_TEXTURE_PIECES;
-	bool first_dark = false;
-	for (size_t i = 0; i < DEFAULT_TEXTURE_SIZE; i++) {
-		if (!(i % square_size)) {
-			first_dark = !first_dark;
-		}
-
-		bool dark = first_dark;
-		for (size_t j = 0; j < DEFAULT_TEXTURE_SIZE; j++) {
-			if (!(j % square_size)) {
-				dark = !dark;
-			}
-
-			size_t index = 3 * (i * DEFAULT_TEXTURE_SIZE + j);
-			if (dark) {
-				data[index] = DEFAULT_TEXTURE_LIGHT_COLOR.x;
-				data[index + 1] = DEFAULT_TEXTURE_LIGHT_COLOR.y;
-				data[index + 2] = DEFAULT_TEXTURE_LIGHT_COLOR.z;
-			} else {
-				data[index] = DEFAULT_TEXTURE_DARK_COLOR.x;
-				data[index + 1] = DEFAULT_TEXTURE_DARK_COLOR.y;
-				data[index + 2] = DEFAULT_TEXTURE_DARK_COLOR.z;
-			}
-		}
+void OpenGlGraphicApi::setBlendingMode(bool blending_mode) {
+	if (blending_mode) {
+		glEnable(GL_BLEND);
+	} else {
+		glDisable(GL_BLEND);
 	}
-
-	default_texture = createTexture(TextureData(&data, Vector2D<size_t>(
-		DEFAULT_TEXTURE_SIZE, DEFAULT_TEXTURE_SIZE)));
 }
 
 void OpenGlGraphicApi::setCamera(Camera* camera) {
@@ -153,26 +115,27 @@ void OpenGlGraphicApi::setCamera(Camera* camera) {
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	if (camera->type == CameraType::ORTHOGONAL) {
+	if (camera->getType() == CameraType::ORTHOGONAL) {
 		glOrtho(0.0, window->getSize().x, window->getSize().y, 0.0, camera->
-			near_plane, camera->far_plane);
+			getNearPlane(), camera->getFarPlane());
 	} else {
 		float f = 1.0f / std::tan(Camera::FOV / 2.0f);
 		float projection_matrix[] = { f / (static_cast<double>(window->getSize()
 			.x) / window->getSize().y), 0.0f, 0.0f, 0.0f, 0.0f, f, 0.0f, 0.0f,
-			0.0f, 0.0f, (camera->near_plane + camera->far_plane) / (camera->
-			near_plane - camera->far_plane), -1.0f,
-			0.0f, 0.0f, (2.0f * camera->near_plane * camera->far_plane) /
-			(camera->near_plane - camera->far_plane), 0.0f };
+			0.0f, 0.0f, (camera->getNearPlane() + camera->getFarPlane()) /
+			(camera->getNearPlane() - camera->getFarPlane()), -1.0f, 0.0f, 0.0f,
+			(2.0f * camera->getNearPlane() * camera->getFarPlane()) / (camera->
+			getNearPlane() - camera->getFarPlane()), 0.0f };
 		glMultMatrixf(projection_matrix);
 	}
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	glRotatef(camera->rotation.x, 1.0f, 0.0f, 0.0f);
-	glRotatef(camera->rotation.y, 0.0f, 0.0f, 1.0f);
-	glRotatef(camera->rotation.z, 0.0f, 1.0f, 0.0f);
-	glTranslatef(-camera->position.x, -camera->position.z, -camera->position.y);
+	glRotatef(camera->getRotation().x, 1.0f, 0.0f, 0.0f);
+	glRotatef(camera->getRotation().y, 0.0f, 0.0f, 1.0f);
+	glRotatef(camera->getRotation().z, 0.0f, 1.0f, 0.0f);
+	glTranslatef(-camera->getPosition().x, -camera->getPosition().z, -camera->
+		getPosition().y);
 }
 
 void OpenGlGraphicApi::drawMesh(Mesh* mesh) {
@@ -254,4 +217,36 @@ void OpenGlGraphicApi::drawMesh(Mesh* mesh) {
 	glRotatef(-object->getRotation().x, 1.0f, 0.0f, 0.0f);
 	glTranslatef(-object->getPosition().x, -object->getPosition().z, object->
 		getPosition().y);
+}
+
+void OpenGlGraphicApi::createDefaultTexture(void) {
+	unsigned char data[DEFAULT_TEXTURE_SIZE * DEFAULT_TEXTURE_SIZE * 3];
+	size_t square_size = DEFAULT_TEXTURE_SIZE / DEFAULT_TEXTURE_PIECES;
+	bool first_dark = false;
+	for (size_t i = 0; i < DEFAULT_TEXTURE_SIZE; i++) {
+		if (!(i % square_size)) {
+			first_dark = !first_dark;
+		}
+
+		bool dark = first_dark;
+		for (size_t j = 0; j < DEFAULT_TEXTURE_SIZE; j++) {
+			if (!(j % square_size)) {
+				dark = !dark;
+			}
+
+			size_t index = 3 * (i * DEFAULT_TEXTURE_SIZE + j);
+			if (dark) {
+				data[index] = DEFAULT_TEXTURE_LIGHT_COLOR.x;
+				data[index + 1] = DEFAULT_TEXTURE_LIGHT_COLOR.y;
+				data[index + 2] = DEFAULT_TEXTURE_LIGHT_COLOR.z;
+			} else {
+				data[index] = DEFAULT_TEXTURE_DARK_COLOR.x;
+				data[index + 1] = DEFAULT_TEXTURE_DARK_COLOR.y;
+				data[index + 2] = DEFAULT_TEXTURE_DARK_COLOR.z;
+			}
+		}
+	}
+
+	default_texture = createTexture(TextureData(&data, Vector2D<size_t>(
+		DEFAULT_TEXTURE_SIZE, DEFAULT_TEXTURE_SIZE)));
 }

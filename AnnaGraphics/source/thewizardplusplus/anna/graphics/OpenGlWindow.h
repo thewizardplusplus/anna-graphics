@@ -5,6 +5,12 @@
 #include "Window.h"
 #ifdef OS_WINDOWS
 #include <windows.h>
+/* Удаляю препроцессорную константу ERROR (которая определена в хедере wingdi.h,
+ * который, в свою очередь, подключается в хедере windows.h), так как она мешает
+ * определению и использованию перечисления thewizardplusplus::utils::
+ * ConsoleMessageType ниже.
+ */
+#undef ERROR
 #endif
 #include <GL/gl.h>
 #ifdef OS_LINUX

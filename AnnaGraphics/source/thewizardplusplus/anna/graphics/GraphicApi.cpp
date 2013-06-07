@@ -64,6 +64,24 @@ bool GraphicApi::isTextureLoader(const std::string& format) const {
 	return loaders.count(toUpper(format));
 }
 
+GraphicApi::StringList GraphicApi::getSupportedTextureFormats(void) const {
+	StringList formats;
+	TextureLoaderMap::const_iterator i = loaders.begin();
+	for (; i != loaders.end(); ++i) {
+		formats.push_back(i->first);
+	}
+
+	return formats;
+}
+
+TextureLoader* GraphicApi::getTextureLoader(const std::string& format) {
+	if (loaders.count(format) == 1) {
+		return loaders[format];
+	} else {
+		return NULL;
+	}
+}
+
 void GraphicApi::addTextureLoader(TextureLoader* loader) {
 	if (loader == NULL) {
 		return;
@@ -82,10 +100,6 @@ void GraphicApi::removeTextureLoader(TextureLoader* loader) {
 	}
 
 	TextureLoader::StringList formats = loader->getSupportedFormats();
-	removeTextureLoader(formats);
-}
-
-void GraphicApi::removeTextureLoader(const TextureLoader::StringList& formats) {
 	TextureLoader::StringList::const_iterator i = formats.begin();
 	for (; i != formats.end(); ++i) {
 		removeTextureLoader(*i);
@@ -138,6 +152,24 @@ Texture* GraphicApi::createTexture(const std::string& filename, const std::
 	texture_loader->free(texture_data);
 
 	return texture;
+}
+
+void GraphicApi::drawWorld(World* world) {
+	if (world == NULL) {
+		return;
+	}
+
+	setCamera(world->getCamera());
+	for (size_t i = 0; i < world->getNumberOfOpaqueMeshes(); i++) {
+		drawMesh(world->getOpaqueMesh(i));
+	}
+
+	setBlendingMode(true);
+	world->sortTransparentMeshes();
+	for (size_t i = 0; i < world->getNumberOfTransparentMeshes(); i++) {
+		drawMesh(world->getTransparentMesh(i));
+	}
+	setBlendingMode(false);
 }
 
 std::string GraphicApi::toUpper(const std::string& string) const {

@@ -29,7 +29,7 @@ public:
 	void pause(bool pause);
 	void stop(size_t frame);
 	void stop(void);
-	void update(float delta_time);
+	void update(float delta_time_in_ms);
 
 private:
 	AnimateTrack*       track;

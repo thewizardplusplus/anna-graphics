@@ -97,9 +97,9 @@ void World::sortTransparentMeshes(void) {
 	}
 }
 
-void World::update(float delta_time) {
+void World::update(float delta_time_in_ms) {
 	AnimateObjectVector::const_iterator i = animate_objects.begin();
 	for (; i != animate_objects.end(); ++i) {
-		(*i)->update(delta_time);
+		(*i)->update(delta_time_in_ms);
 	}
 }

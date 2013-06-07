@@ -8,7 +8,7 @@ class ConsoleMessageType {
 public:
 	enum Types {
 		INFORMATION,
-		FAULT
+		ERROR
 	};
 };
 

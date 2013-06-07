@@ -12,9 +12,9 @@ bool DistanceToMeshComparator::operator()(Mesh* mesh1, Mesh* mesh2) const {
 		return false;
 	}
 
-	float distance1 = std::abs((camera->position - mesh1->getPosition()).
+	float distance1 = std::abs((camera->getPosition() - mesh1->getPosition()).
 		squaredLength());
-	float distance2 = std::abs((camera->position - mesh2->getPosition()).
+	float distance2 = std::abs((camera->getPosition() - mesh2->getPosition()).
 		squaredLength());
 	if (distance1 < distance2) {
 		return true;

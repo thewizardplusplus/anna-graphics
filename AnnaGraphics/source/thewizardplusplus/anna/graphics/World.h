@@ -25,7 +25,7 @@ public:
 	size_t getNumberOfTransparentMeshes(void) const;
 	Mesh* getTransparentMesh(size_t number) const;
 	void sortTransparentMeshes(void);
-	void update(float delta_time);
+	void update(float delta_time_in_ms);
 
 private:
 	typedef std::vector<Object*>        ObjectVector;

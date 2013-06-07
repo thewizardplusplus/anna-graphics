@@ -15,6 +15,8 @@ namespace graphics {
 
 class GraphicApi {
 public:
+	typedef std::list<std::string> StringList;
+
 	template<typename GraphicApiType>
 	static GraphicApiType* create(void);
 
@@ -31,9 +33,10 @@ public:
 	FogParameters getFogParameters(void) const;
 	void setFogParameters(const FogParameters& fog_parameters);
 	bool isTextureLoader(const std::string& format) const;
+	StringList getSupportedTextureFormats(void) const;
+	TextureLoader* getTextureLoader(const std::string& format);
 	void addTextureLoader(TextureLoader* loader);
 	void removeTextureLoader(TextureLoader* loader);
-	void removeTextureLoader(const TextureLoader::StringList& formats);
 	void removeTextureLoader(const std::string& format);
 	virtual Texture* createTexture(const TextureData& texture_data, const
 		std::string& name = std::string()) = 0;
@@ -41,7 +44,7 @@ public:
 		string& format = std::string());
 	virtual void setTexture(Texture* texture) = 0;
 	virtual void clear(void) = 0;
-	virtual void drawWorld(World* world) = 0;
+	void drawWorld(World* world);
 
 protected:
 	typedef std::map<Texture*, unsigned int>      TextureMap;
@@ -59,6 +62,9 @@ protected:
 		ambient_color) = 0;
 	virtual void processSettingFogParameters(const FogParameters&
 		fog_parameters) = 0;
+	virtual void setBlendingMode(bool blending_mode) = 0;
+	virtual void setCamera(Camera* camera) = 0;
+	virtual void drawMesh(Mesh* mesh) = 0;
 	std::string toUpper(const std::string& string) const;
 
 private:

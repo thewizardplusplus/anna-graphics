@@ -15,7 +15,7 @@ public:
 	virtual ~TextureLoader(void);
 	virtual StringList getSupportedFormats(void) const = 0;
 	virtual TextureData load(const std::string& filename) = 0;
-	virtual void free(const TextureData& data) = 0;
+	virtual void free(TextureData& data) = 0;
 };
 
 }

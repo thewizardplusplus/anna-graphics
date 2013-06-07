@@ -8,7 +8,7 @@ Console Console::information(void) {
 }
 
 Console Console::error(void) {
-	return Console(ConsoleMessageType::FAULT);
+	return Console(ConsoleMessageType::ERROR);
 }
 
 Console::Console(ConsoleMessageType::Types message_type) :
@@ -16,14 +16,13 @@ Console::Console(ConsoleMessageType::Types message_type) :
 {}
 
 Console::~Console(void) {
-	if (message_type == ConsoleMessageType::INFORMATION) {
-		std::cout << message_text << std::endl;
-	} else if (message_type == ConsoleMessageType::FAULT) {
-		std::cerr << message_text << std::endl;
+	switch (message_type) {
+		case ConsoleMessageType::ERROR:
+			std::cerr << message_text << std::endl;
+			break;
+		case ConsoleMessageType::INFORMATION:
+		default:
+			std::cout << message_text << std::endl;
+			break;
 	}
-}
-
-Console& Console::operator<<(const std::string& message_text) {
-	this->message_text += message_text;
-	return *this;
 }

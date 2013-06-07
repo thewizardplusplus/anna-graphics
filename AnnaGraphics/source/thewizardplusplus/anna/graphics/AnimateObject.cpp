@@ -99,12 +99,12 @@ void AnimateObject::stop(void) {
 	stop(start_frame);
 }
 
-void AnimateObject::update(float delta_time) {
+void AnimateObject::update(float delta_time_in_ms) {
 	if (track == NULL || state != AnimateState::PLAYING) {
 		return;
 	}
 
-	current_time += delta_time;
+	current_time += delta_time_in_ms;
 	float finish_time = 1000.0f * end_frame / fps;
 	if (current_time > finish_time) {
 		if (!loop) {

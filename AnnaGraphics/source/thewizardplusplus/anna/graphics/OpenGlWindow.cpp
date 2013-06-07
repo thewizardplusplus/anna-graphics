@@ -405,6 +405,7 @@ void OpenGlWindow::initialize(void) {
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+	glHint(33170 /* GL_GENERATE_MIPMAP_HINT */, GL_NICEST);
 	glHint(GL_FOG_HINT, GL_NICEST);
 	resize(size.x, size.y);
 	glFlush();

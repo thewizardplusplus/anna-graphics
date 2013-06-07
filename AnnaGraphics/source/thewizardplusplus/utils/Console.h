@@ -3,6 +3,7 @@
 
 #include "ConsoleMessageType.h"
 #include <string>
+#include <sstream>
 
 namespace thewizardplusplus {
 namespace utils {
@@ -14,12 +15,22 @@ public:
 
 	Console(ConsoleMessageType::Types message_type);
 	~Console(void);
-	Console& operator<<(const std::string& message_text);
+	template<typename ValueType>
+	Console& operator<<(ValueType value);
 
 private:
 	ConsoleMessageType::Types message_type;
 	std::string               message_text;
 };
+
+template<typename ValueType>
+Console& Console::operator<<(ValueType value) {
+	std::ostringstream out;
+	out << value;
+	this->message_text += out.str();
+
+	return *this;
+}
 
 }
 }

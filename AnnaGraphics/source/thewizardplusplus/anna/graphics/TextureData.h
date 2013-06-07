@@ -16,6 +16,7 @@ public:
 	const void* getData(void) const;
 	maths::Vector2D<size_t> getSize(void) const;
 	bool isTransparent(void) const;
+	void reset(void);
 
 private:
 	bool                    valid;

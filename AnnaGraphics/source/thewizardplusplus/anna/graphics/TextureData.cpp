@@ -33,3 +33,7 @@ Vector2D<size_t> TextureData::getSize(void) const {
 bool TextureData::isTransparent(void) const {
 	return transparent;
 }
+
+void TextureData::reset(void) {
+	*this = TextureData();
+}
