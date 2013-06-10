@@ -71,7 +71,8 @@ SOURCES += \
 	source/thewizardplusplus/utils/ByteOrderTester.cpp \
 	source/thewizardplusplus/utils/Timer.cpp
 OTHER_FILES += \
-	docs/to_do.txt
+	docs/to_do.txt \
+	docs/exporters/io_export_ao.py
 QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O3
 unix {
 	LIBS += -lGL
