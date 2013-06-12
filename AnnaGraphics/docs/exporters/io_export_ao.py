@@ -60,7 +60,11 @@ bl_info = {
 
 import bpy
 import time
+import platform
 from bpy_extras.io_utils import ExportHelper
+
+class InvalidObjectDataError(Exception):
+	pass
 
 # export operator
 class AnnaObjectExport(bpy.types.Operator, ExportHelper):
@@ -75,15 +79,15 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 		return context.active_object.type in { "MESH" }
 
 	def execute(self, context):
-		print("Start exported the active object to Anna Object (*.ao)...")
+		print("\nStart exported the active object to Anna Object (*.ao)...")
 		start_time = time.time()
 		filepath = bpy.path.ensure_ext(self.filepath, self.filename_ext)
 		exported = self._export(context, filepath)
 		if exported:
-			print("Finished export in {0} seconds to \"{1}\".".format( time. \
+			print("Finished export in {0} seconds to \"{1}\".\n".format(time. \
 				time() - start_time, filepath))
 		else:
-			print("Export failed.")
+			print("Export failed.\n")
 
 		return { "FINISHED" }
 
@@ -109,17 +113,122 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 			print("\tNo active object.")
 			return False
 
-		data = self._getObjectData(object)
-		if not data:
-			return False
+		data = ""
+		try:
+			data = self._getObjectData(object)
+		except InvalidObjectDataError as exception:
+			print(exception)
 
 		file = open(filepath, "w")
 		file.write(data)
 		file.close()
+
 		return True
 
-	def _getObjectData(self, object, data = ""):
-		data = "Test."
+	def _getObjectData(self, object, is_first_level = True):
+		data = self._getMeshData(object)
+
+		#current_frame = 0
+		#scene = bpy.context.scene
+		#if is_first_level:
+			#current_frame = scene.frame_current
+			#scene.frame_set(scene.frame_start)
+
+		counter = 1
+		for child in object.children:
+			child_data, child_counter = self._getObjectData(child, False)
+			data += child_data
+			counter += child_counter
+
+		if not is_first_level:
+			return data, counter
+		else:
+			begin_of_data = "object:\n"
+			begin_of_data += "\tmeshes:\n"
+			begin_of_data += "\t\tnumber: " + str(counter) + "\n"
+			data = begin_of_data + data
+
+			#scene.frame_set(current_frame)
+
+			return data
+
+	def _getMeshData(self, object):
+		name = object.name
+		if object.rotation_euler.order != "XYZ":
+			raise InvalidObjectDataError("\tError: invalid rotation order of " \
+				+ "the object \"" + name + "\" (must be \"XYZ\").")
+		material = object.active_material
+		if not material:
+			raise InvalidObjectDataError("\tError: the object \"" + name + \
+				"\" hasn't material.")
+		use_transparency = material.use_transparency
+		transparency_method = material.transparency_method
+		if use_transparency and (transparency_method != "MASK" and \
+			transparency_method != "Z_TRANSPARENCY"):
+			raise InvalidObjectDataError("\tError: the object \"" + name + \
+				"\" has invalid transparency type (must by \"Mask\" or \"Z " + \
+				"Transparency\").")
+		mesh = object.data
+		if not mesh.uv_textures:
+			raise InvalidObjectDataError("\tError: the object \"" + name + \
+				"\" hasn't uv-data.")
+
+		data = "\t\tmesh:\n"
+		data += "\t\t\tposition: " + str(object.location.x) + " " + str(object \
+			.location.y) + " " + str(object.location.z) + "\n"
+		data += "\t\t\trotation: " + str(object.rotation_euler.x) + " " + str( \
+			object.rotation_euler.y) + " " + str(object.rotation_euler.z) + "\n"
+		data += "\t\t\tscale: " + str(object.scale.x) + " " + str(object.scale \
+			.y) + " " + str(object.scale.z) + "\n"
+
+		texture_slots = material.texture_slots
+		image_textures = [texture_slots[key].texture for key in texture_slots. \
+			keys() if texture_slots[key].texture.type == "IMAGE"]
+		#image_files = [bpy.path.basename(texture.image.filepath) for texture \
+		image_files = [texture.image.filepath for texture in image_textures if \
+			getattr(texture.image, "source", "") == "FILE"]
+		if not image_files:
+			raise InvalidObjectDataError("\tError: the object \"" + name + \
+				"\" hasn't image texture.")
+		texture = image_files[0].replace("//", "./" if platform.system() == \
+			"Linux" else ".\\")
+
+		data += "\t\t\tmaterial:\n"
+		data += "\t\t\t\ttexture: " + texture + "\n"
+		data += "\t\t\t\ttransparency_type: " + ("NONE" if not \
+			use_transparency else "ALPHA_TEST" if transparency_method == \
+			"MASK" else "BLENDING") + "\n"
+		data += "\t\t\t\tallow_ambient_light: " + str(material.ambient == 1.0) \
+			.lower() + "\n"
+		data += "\t\t\t\tallow_fog: " + str(material.use_mist).lower() + "\n"
+
+		vertices = []
+		for polygon in mesh.polygons:
+			positions = []
+			for position in [mesh.vertices[index] for index in polygon. \
+				vertices]:
+				positions.append(position.co)
+
+			uvs = []
+			for uv in [mesh.uv_layers.active.data[index] for index in polygon. \
+				loop_indices]:
+				uvs.append(uv.uv)
+
+			zipped = list(zip(positions, uvs))
+			if len(zipped) == 4:
+				zipped = [zipped[0], zipped[1], zipped[2], zipped[2], zipped[ \
+					3], zipped[0]]
+			vertices.extend(zipped)
+
+		data += "\t\t\tvertices:\n"
+		data += "\t\t\t\tnumber: " + str(len(vertices)) + "\n"
+		for vertex in vertices:
+			data += "\t\t\t\tvertex:\n"
+			data += "\t\t\t\t\tposition: " + str(vertex[0].x) + " " + str( \
+				vertex[0].y) + " " + str(vertex[0].z) + "\n"
+			data += "\t\t\t\t\tuv: " + str(vertex[1].x) + " " + str(vertex[1]. \
+				y) + "\n"
+
 		return data
 
 # registration
