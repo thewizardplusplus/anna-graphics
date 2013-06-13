@@ -3,6 +3,7 @@
 #include "../maths/Vector4D.h"
 #include "../../utils/ByteOrderTester.h"
 #include <fstream>
+#include <cstdlib>
 
 using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
@@ -38,8 +39,14 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 		size_t data_offset = readDoubleWord(file);
 
 		file.seekg(4, std::ios_base::cur);
-		size_t width = readLong(file);
-		size_t height = readLong(file);
+		/* По описанию структуры BITMAPINFOHEADER и её расширений поля
+		 * biWidth и biHeight имеют знаковый тип LONG, причём объясняется
+		 * назначение этого лишь для поля biHeight.
+		 * В данном загрузчике не используется информация, передаваемая знаками
+		 * размеров, поэтому учитывается лишь их абсолютное значение.
+		 */
+		size_t width = std::abs(readLong(file));
+		size_t height = std::abs(readLong(file));
 
 		file.seekg(2, std::ios_base::cur);
 		size_t bits = readWord(file);
@@ -56,8 +63,14 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 			return TextureData();
 		}
 
-		size_t data_size = readDoubleWord(file);
-		if (data_size == 0) {
+		/* По описанию структуры BITMAPINFOHEADER и её расширений поле
+		 * biSizeImage имеет беззнаковый тип DWORD, но на практике была
+		 * встречена текстура с отрицательным значением данного поля. В
+		 * следствие этого алгоритм чтения и проверки этого значения отличается
+		 * от ожидаемого.
+		 */
+		long data_size = readLong(file);
+		if (data_size <= 0) {
 			data_size = (width * (!transparent ? 3 : 4) + width % 4 ) * height;
 		}
 
@@ -76,6 +89,11 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 	} catch (const std::ifstream::failure& exception) {
 		Console::error() << "Error: unable to read texture file \"" << filename
 			<< "\".";
+		return TextureData();
+	} catch(const std::bad_alloc& exception) {
+		Console::error() << "Error: in process of loading texture file \"" <<
+			filename << "\" was requested too much memory; perhaps some "
+			"parameters of image have been read wrong.";
 		return TextureData();
 	}
 }

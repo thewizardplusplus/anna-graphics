@@ -72,15 +72,31 @@ int main(void) {
 	Timer timer;
 
 	GraphicApi* graphic_api = GraphicApi::create<OpenGlGraphicApi>();
+	Window* window = graphic_api->getWindow();
 
 	World world;
 	Camera camera;
+	camera.setType(CameraType::ORTHOGONAL);
 	world.setCamera(&camera);
-	generateWorld(&world, graphic_api);
+	//generateWorld(&world, graphic_api);
 
-	Window* window = graphic_api->getWindow();
+	Object* disk = new Object();
+	size_t half_window_height = window->getSize().y / 2;
+	disk->setPosition(Vector3D<float>(window->getSize().x / 2, 1.0f,
+		half_window_height));
+	size_t quarter_window_height = half_window_height / 2;
+	disk->setScale(Vector3D<float>(quarter_window_height, 1.0f,
+		quarter_window_height));
+	Mesh* disk_mesh = new PlaneMesh();
+	disk_mesh->setRotation(Vector3D<float>(90.0f, 0.0f, 0.0f));
+	disk_mesh->getMaterial().texture = graphic_api->createTexture("data/disk."
+		"bmp");
+	disk_mesh->getMaterial().transparent_type = TransparentType::BLENDING;
+	disk->addMesh(disk_mesh);
+	world.addObject(disk);
+
 	while (!window->isPressedKey(KeyCode::KEY_ESCAPE)) {
-		Vector2D<size_t> center = window->getSize() / 2;
+		/*Vector2D<size_t> center = window->getSize() / 2;
 		Vector2D<size_t> new_position = window->getPointerPosition();
 		window->setPointerPosition(center);
 		Vector2D<int> delta = (new_position.convertedTo<int>() - center.
@@ -119,18 +135,21 @@ int main(void) {
 			animate_object->pause(false);
 		} else {
 			animate_object->pause(true);
-		}
+		}*/
 
 		size_t elapsed_time = timer.getElapsedTimeInUs();
 		timer.start();
 
-		world.update(elapsed_time / 1000.0f);
+		//world.update(elapsed_time / 1000.0f);
+		float speed = 5;
+		float delta = speed * 360 * elapsed_time / 1000000.0f;
+		disk->setRotation(disk->getRotation() + Vector3D<float>(0.0f, delta, 0.0f));
 
 		graphic_api->clear();
 		graphic_api->drawWorld(&world);
 		window->update();
 
-		Console::information() << 1000000.0f / elapsed_time << " fps.";
+		//Console::information() << 1000000.0f / elapsed_time << " fps.";
 	}
 
 	delete graphic_api;

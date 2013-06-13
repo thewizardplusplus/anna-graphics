@@ -40,8 +40,8 @@ public:
 	void removeTextureLoader(const std::string& format);
 	virtual Texture* createTexture(const TextureData& texture_data, const
 		std::string& name = std::string()) = 0;
-	virtual Texture* createTexture(const std::string& filename, const std::
-		string& format = std::string());
+	Texture* createTexture(const std::string& filename, const std::string&
+		format = std::string());
 	virtual void setTexture(Texture* texture) = 0;
 	virtual void clear(void) = 0;
 	void drawWorld(World* world);
