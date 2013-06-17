@@ -59,20 +59,52 @@ bl_info = {
 	"category": "Import-Export"}
 
 import bpy
+from bpy_extras.io_utils import ExportHelper
+from bpy.props import *
 import time
 import platform
-from bpy_extras.io_utils import ExportHelper
 
 class InvalidObjectDataError(Exception):
 	pass
 
-# export operator
+class ErrorDialogOperator(bpy.types.Operator):
+	bl_idname = "error.dialog"
+	bl_label =  "Error!"
+	message =   StringProperty()
+
+	def execute(self, context):
+		self.report({ "INFO" }, self.message)
+		return { "FINISHED" }
+
+	def invoke(self, context, event):
+		return context.window_manager.invoke_popup(self, width = 320, height = \
+			240)
+
+	def draw(self, context):
+		layout = self.layout
+		layout.label(text = "Error!", icon = "ERROR")
+		layout.label(self.message)
+
+class Key:
+	index_of_mesh =  None
+	frame =          None
+	type =           None
+	transformation = None
+
+	def __init__(self, index_of_mesh, frame, type, transformation):
+		self.index_of_mesh =  index_of_mesh
+		self.frame =          frame
+		self.type =           type
+		self.transformation = transformation
+
 class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 	""" Export the active object to Anna Object (*.ao). """
 
-	bl_idname =    "export_mesh.ao"
-	bl_label =     "Anna Object (*.ao)"
-	filename_ext = ".ao"
+	bl_idname =        "export_mesh.ao"
+	bl_label =         "Anna Object (*.ao)"
+	filename_ext =     ".ao"
+	export_animation = BoolProperty(name = "Export animation", description = \
+		"Export animation data", default = True)
 
 	@classmethod
 	def poll(cls, context):
@@ -82,7 +114,7 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 		print("\nStart exported the active object to Anna Object (*.ao)...")
 		start_time = time.time()
 		filepath = bpy.path.ensure_ext(self.filepath, self.filename_ext)
-		exported = self._export(context, filepath)
+		exported = self._export(filepath, self.properties.export_animation)
 		if exported:
 			print("Finished export in {0} seconds to \"{1}\".\n".format(time. \
 				time() - start_time, filepath))
@@ -107,7 +139,7 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 		elif False:
 			return self.execute(context)
 
-	def _export(self, context, filepath):
+	def _export(self, filepath, export_animation):
 		object = bpy.context.active_object
 		if not object:
 			print("\tNo active object.")
@@ -115,9 +147,16 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 
 		data = ""
 		try:
-			data = self._getObjectData(object)
+			data = self._getObjectData(object, export_animation)
 		except InvalidObjectDataError as exception:
-			print(exception)
+			message = str(exception)
+
+			message_for_dialog = message.replace("\tError: ", "")
+			message_for_dialog = message_for_dialog.capitalize()
+			bpy.ops.error.dialog("INVOKE_DEFAULT", message = message_for_dialog)
+
+			print(message)
+			return False
 
 		file = open(filepath, "w")
 		file.write(data)
@@ -125,34 +164,40 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 
 		return True
 
-	def _getObjectData(self, object, is_first_level = True):
-		data = self._getMeshData(object)
+	def _getObjectData(self, object, export_animation, data = "", number = 0, \
+		animation = []):
+		is_main_parent = data == "" and number == 0 and animation == []
 
-		#current_frame = 0
-		#scene = bpy.context.scene
-		#if is_first_level:
-			#current_frame = scene.frame_current
-			#scene.frame_set(scene.frame_start)
-
-		counter = 1
+		data, animation = self._getMeshData(object, export_animation, data, \
+			number, animation)
 		for child in object.children:
-			child_data, child_counter = self._getObjectData(child, False)
-			data += child_data
-			counter += child_counter
+			data, number, animation = self._getObjectData(child, \
+				export_animation, data, number + 1, animation)
 
-		if not is_first_level:
-			return data, counter
+		if not is_main_parent:
+			return data, number, animation
 		else:
 			begin_of_data = "object:\n"
 			begin_of_data += "\tmeshes:\n"
-			begin_of_data += "\t\tnumber: " + str(counter) + "\n"
-			data = begin_of_data + data
+			begin_of_data += "\t\tnumber: " + str(number + 1) + "\n"
 
-			#scene.frame_set(current_frame)
+			end_of_data = "\tanimation_keys:\n"
+			end_of_data += "\t\tnumber: " + str(len(animation)) + "\n"
+			end_of_data += "\t\tkeys:\n"
+			for key in animation:
+				end_of_data += "\t\t\tkey:\n"
+				end_of_data += "\t\t\t\tindex_of_mesh: " + str(key. \
+					index_of_mesh) + "\n"
+				end_of_data += "\t\t\t\tframe: " + str(key.frame) + "\n"
+				end_of_data += "\t\t\t\ttype: " + str(key.type) + "\n"
+				end_of_data += "\t\t\t\ttransformation: " + str(key. \
+					transformation[0]) + " " + str(key.transformation[1]) + \
+					" " + str(key.transformation[2]) + "\n"
 
+			data = begin_of_data + data + end_of_data
 			return data
 
-	def _getMeshData(self, object):
+	def _getMeshData(self, object, export_animation, data, number, animation):
 		name = object.name
 		if object.rotation_euler.order != "XYZ":
 			raise InvalidObjectDataError("\tError: invalid rotation order of " \
@@ -173,7 +218,7 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 			raise InvalidObjectDataError("\tError: the object \"" + name + \
 				"\" hasn't uv-data.")
 
-		data = "\t\tmesh:\n"
+		data += "\t\tmesh:\n"
 		data += "\t\t\tposition: " + str(object.location.x) + " " + str(object \
 			.location.y) + " " + str(object.location.z) + "\n"
 		data += "\t\t\trotation: " + str(object.rotation_euler.x) + " " + str( \
@@ -184,7 +229,6 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 		texture_slots = material.texture_slots
 		image_textures = [texture_slots[key].texture for key in texture_slots. \
 			keys() if texture_slots[key].texture.type == "IMAGE"]
-		#image_files = [bpy.path.basename(texture.image.filepath) for texture \
 		image_files = [texture.image.filepath for texture in image_textures if \
 			getattr(texture.image, "source", "") == "FILE"]
 		if not image_files:
@@ -229,20 +273,54 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 			data += "\t\t\t\t\tuv: " + str(vertex[1].x) + " " + str(vertex[1]. \
 				y) + "\n"
 
-		return data
+		if export_animation and not object.animation_data is None:
+			keys = { "location": {}, "rotation_euler": {}, "scale": {} }
+			for curve in object.animation_data.action.fcurves:
+				curve_type = curve.data_path
+				if curve_type in keys:
+					for key in curve.keyframe_points:
+						frame =   key.co[0]
+						key_map = keys[curve_type]
 
-# registration
+						if not frame in key_map:
+							key_map[frame] = [0.0, 0.0, 0.0]
+						key_map[frame][curve.array_index] = key.co[1]
+
+			for key in keys.items():
+				type =     key[0]
+				key_list = key[1]
+
+				if type == "location":
+					type = "POSITION"
+				elif type == "rotation_euler":
+					type = "ROTATION"
+				elif type == "scale":
+					type = "SCALE"
+				else:
+					continue
+
+				for key in key_list.items():
+					frame =          key[0]
+					transformation = key[1]
+
+					key = Key(number, frame, type, transformation)
+					animation.append(key)
+
+		return data, animation
+
 def menu_func(self, context):
 	self.layout.operator(AnnaObjectExport.bl_idname, text = "Anna Object " + \
 		"(*.ao)")
 
 def register():
+	bpy.utils.register_class(ErrorDialogOperator)
 	bpy.utils.register_module(__name__)
 	bpy.types.INFO_MT_file_export.append(menu_func)
 
 def unregister():
-	bpy.utils.unregister_module(__name__)
 	bpy.types.INFO_MT_file_export.remove(menu_func)
+	bpy.utils.unregister_module(__name__)
+	bpy.utils.unregister_class(ErrorDialogOperator)
 
 if __name__ == "__main__":
 	register()
