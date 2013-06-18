@@ -12,8 +12,6 @@ class Mesh;
 
 class Object {
 public:
-	static Object* loadFromFile(const std::string& filename);
-
 	Object(void);
 	virtual ~Object(void);
 	size_t getNumberOfMeshes(void) const;

@@ -1,8 +1,116 @@
 #include "AnimateObject.h"
+#include "../../utils/Console.h"
 #include "Mesh.h"
+#include <fstream>
 
 using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
+using namespace thewizardplusplus::utils;
+
+AnimateObject* AnimateObject::loadFromFile(const std::string& filename) {
+	std::ifstream file;
+	file.open(filename.c_str(), std::ios_base::in | std::ios_base::binary);
+	if (!file.is_open()) {
+		Console::error() << "Error: unable to open object file \"" << filename
+			<< "\".";
+		return NULL;
+	}
+
+	AnimateObject* result = new AnimateObject();
+	AnimateTrack* track =   new AnimateTrack();
+	file.exceptions(std::ifstream::eofbit | std::ifstream::failbit | std::
+		ifstream::badbit);
+	try {
+		std::string buffer;
+
+		size_t number_of_meshes = 0;
+		file >> buffer >> buffer >> buffer >> number_of_meshes;
+		for (size_t i = 0; i < number_of_meshes; i++) {
+			Mesh* mesh = new Mesh(result);
+			result->addMesh(mesh);
+
+			Vector3D<float> position;
+			file >> buffer >> buffer >> position.x >> position.y >> position.z;
+			mesh->setPosition(position);
+
+			Vector3D<float> rotation;
+			file >> buffer >> rotation.x >> rotation.y >> rotation.z;
+			mesh->setRotation(rotation);
+
+			Vector3D<float> scale;
+			file >> buffer >> scale.x >> scale.y >> scale.z;
+			mesh->setScale(scale);
+
+			std::string texture_path;
+			file >> buffer >> buffer >> texture_path;
+			std::string transparent_type_name;
+			file >> buffer >> transparent_type_name;
+			if (transparent_type_name == "NONE") {
+				mesh->getMaterial().transparent_type = TransparentType::NONE;
+			} else if (transparent_type_name == "ALPHA_TEST") {
+				mesh->getMaterial().transparent_type = TransparentType::
+					ALPHA_TEST;
+			} else if (transparent_type_name == "BLENDING") {
+				mesh->getMaterial().transparent_type = TransparentType::
+					BLENDING;
+			}
+			file >> std::boolalpha >> buffer >> mesh->getMaterial().
+				allow_ambient_light;
+			file >> std::boolalpha >> buffer >> mesh->getMaterial().allow_fog;
+
+			size_t number_of_vertices = 0;
+			file >> buffer >> buffer >> number_of_vertices;
+			for (size_t j = 0; j < number_of_vertices; j++) {
+				Vertex* vertex = new Vertex();
+				mesh->addVertex(vertex);
+
+				file >> buffer >> buffer >> vertex->position.x >> vertex->
+					position.y >> vertex->position.z;
+
+				file >> buffer >> vertex->uv.x >> vertex->uv.y;
+			}
+		}
+
+		size_t number_of_keys = 0;
+		file >> buffer >> buffer >> number_of_keys;
+		for (size_t k = 0; k < number_of_keys; k++) {
+			AnimateKey key;
+			file >> buffer >> buffer >> key.index_of_mesh;
+			file >> buffer >> key.frame;
+			std::string key_type;
+			file >> buffer >> key_type;
+			if (key_type == "POSITION") {
+				key.type = AnimateKeyType::POSITION;
+			} else if (key_type == "ROTATION") {
+				key.type = AnimateKeyType::ROTATION;
+			} else if (key_type == "SCALE") {
+				key.type = AnimateKeyType::SCALE;
+			}
+			file >> buffer >> key.transformation.x >> key.transformation.y >>
+				key.transformation.z;
+
+			track->addKey(key);
+		}
+		if (number_of_keys > 0) {
+			result->setTrack(track);
+		} else {
+			delete track;
+			track = NULL;
+		}
+
+		return result;
+	} catch (const std::ifstream::failure& exception) {
+		delete track;
+		track = NULL;
+
+		delete result;
+		result = NULL;
+
+		Console::error() << "Error: invalid format of object file \"" <<
+			filename << "\".";
+		return NULL;
+	}
+}
 
 AnimateObject::AnimateObject(void) :
 	track(NULL),

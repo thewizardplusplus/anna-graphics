@@ -183,14 +183,13 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 
 			end_of_data = "\tanimation_keys:\n"
 			end_of_data += "\t\tnumber: " + str(len(animation)) + "\n"
-			end_of_data += "\t\tkeys:\n"
 			for key in animation:
-				end_of_data += "\t\t\tkey:\n"
-				end_of_data += "\t\t\t\tindex_of_mesh: " + str(key. \
+				end_of_data += "\t\tkey:\n"
+				end_of_data += "\t\t\tindex_of_mesh: " + str(key. \
 					index_of_mesh) + "\n"
-				end_of_data += "\t\t\t\tframe: " + str(key.frame) + "\n"
-				end_of_data += "\t\t\t\ttype: " + str(key.type) + "\n"
-				end_of_data += "\t\t\t\ttransformation: " + str(key. \
+				end_of_data += "\t\t\tframe: " + str(key.frame) + "\n"
+				end_of_data += "\t\t\ttype: " + str(key.type) + "\n"
+				end_of_data += "\t\t\ttransformation: " + str(key. \
 					transformation[0]) + " " + str(key.transformation[1]) + \
 					" " + str(key.transformation[2]) + "\n"
 
@@ -303,7 +302,7 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 					frame =          key[0]
 					transformation = key[1]
 
-					key = Key(number, frame, type, transformation)
+					key = Key(number, int(round(frame)), type, transformation)
 					animation.append(key)
 
 		return data, animation

@@ -12,6 +12,8 @@ namespace graphics {
 
 class AnimateObject : public Object {
 public:
+	static AnimateObject* loadFromFile(const std::string& filename);
+
 	AnimateObject(void);
 	AnimateTrack* getTrack(void) const;
 	void setTrack(AnimateTrack* track);

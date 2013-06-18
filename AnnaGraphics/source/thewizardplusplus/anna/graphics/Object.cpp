@@ -5,11 +5,6 @@
 using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 
-Object* Object::loadFromFile(const std::string& filename) {
-	(void)filename;
-	return NULL;
-}
-
 Object::Object(void) :
 	scale(1.0f, 1.0f, 1.0f),
 	visible(true)
