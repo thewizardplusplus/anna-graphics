@@ -136,14 +136,14 @@ Texture* GraphicApi::createTexture(const std::string& filename, const std::
 	if (loaders.count(file_format) && loaders[file_format] != NULL) {
 		texture_loader = loaders[file_format];
 	} else {
-		Console::error() << "Error: texture format \"" + file_format + "\" not "
-			"supported.";
+		Console::error() << "Warning: texture format \"" + file_format + "\" "
+			"not supported.";
 		return NULL;
 	}
 
 	TextureData texture_data = texture_loader->load(filename);
 	if (!texture_data.isValid()) {
-		Console::error() << "Error: unable to load texture file \"" + filename
+		Console::error() << "Warning: unable to load texture file \"" + filename
 			+ "\".";
 		return NULL;
 	}

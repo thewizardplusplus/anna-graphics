@@ -59,10 +59,12 @@ bl_info = {
 	"category": "Import-Export"}
 
 import bpy
+import mathutils
 from bpy_extras.io_utils import ExportHelper
 from bpy.props import *
 import time
 import platform
+import math
 
 class InvalidObjectDataError(Exception):
 	pass
@@ -96,6 +98,21 @@ class Key:
 		self.frame =          frame
 		self.type =           type
 		self.transformation = transformation
+
+class Context:
+	is_main_parent =   True
+	object =           None
+	export_animation = True
+	mesh_data =        ""
+	number_of_mesh =   0
+	animation_keys =   []
+	position =         mathutils.Vector((0.0, 0.0, 0.0))
+	rotation =         mathutils.Vector((0.0, 0.0, 0.0))
+	scale =            mathutils.Vector((0.0, 0.0, 0.0))
+
+	def __init__(self, object, export_animation):
+		self.object =           object
+		self.export_animation = export_animation
 
 class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 	""" Export the active object to Anna Object (*.ao). """
@@ -145,45 +162,60 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 			print("\tNo active object.")
 			return False
 
-		data = ""
+		context = Context(object, export_animation)
 		try:
-			data = self._getObjectData(object, export_animation)
+			self._getObjectData(context)
 		except InvalidObjectDataError as exception:
 			message = str(exception)
-
-			message_for_dialog = message.replace("\tError: ", "")
-			message_for_dialog = message_for_dialog.capitalize()
-			bpy.ops.error.dialog("INVOKE_DEFAULT", message = message_for_dialog)
-
 			print(message)
+
+			message = message.replace("\tError: ", "")
+			message = message.capitalize()
+			bpy.ops.error.dialog("INVOKE_DEFAULT", message = message)
+
 			return False
 
 		file = open(filepath, "w")
-		file.write(data)
+		file.write(context.mesh_data)
 		file.close()
 
 		return True
 
-	def _getObjectData(self, object, export_animation, data = "", number = 0, \
-		animation = []):
-		is_main_parent = data == "" and number == 0 and animation == []
+	def _getObjectData(self, context):
+		is_main_parent = context.is_main_parent
+		context.is_main_parent = False
 
-		data, animation = self._getMeshData(object, export_animation, data, \
-			number, animation)
-		for child in object.children:
-			data, number, animation = self._getObjectData(child, \
-				export_animation, data, number + 1, animation)
+		object =   context.object
+		context.position += object.location
+		context.rotation.x += object.rotation_euler.x
+		context.rotation.y += object.rotation_euler.y
+		context.rotation.z += object.rotation_euler.z
+		context.scale +=    object.scale
+		self._getMeshData(context)
 
-		if not is_main_parent:
-			return data, number, animation
-		else:
+		children = object.children
+		position = context.position.copy()
+		rotation = context.rotation.copy()
+		scale =    context.scale.copy()
+		for child in children:
+			context.object =          child
+			context.number_of_mesh += 1
+			context.position =        position
+			context.rotation =        rotation
+			context.scale =           scale
+			self._getObjectData(context)
+
+		if is_main_parent:
 			begin_of_data = "object:\n"
 			begin_of_data += "\tmeshes:\n"
-			begin_of_data += "\t\tnumber: " + str(number + 1) + "\n"
+			begin_of_data += "\t\tnumber: " + str(context.number_of_mesh + 1) \
+				+ "\n"
+			context.mesh_data = begin_of_data + context.mesh_data
 
 			end_of_data = "\tanimation_keys:\n"
-			end_of_data += "\t\tnumber: " + str(len(animation)) + "\n"
-			for key in animation:
+			end_of_data += "\t\tnumber: " + str(len(context.animation_keys)) \
+				+ "\n"
+			for key in context.animation_keys:
 				end_of_data += "\t\tkey:\n"
 				end_of_data += "\t\t\tindex_of_mesh: " + str(key. \
 					index_of_mesh) + "\n"
@@ -192,11 +224,10 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 				end_of_data += "\t\t\ttransformation: " + str(key. \
 					transformation[0]) + " " + str(key.transformation[1]) + \
 					" " + str(key.transformation[2]) + "\n"
+			context.mesh_data += end_of_data
 
-			data = begin_of_data + data + end_of_data
-			return data
-
-	def _getMeshData(self, object, export_animation, data, number, animation):
+	def _getMeshData(self, context):
+		object = context.object
 		name = object.name
 		if object.rotation_euler.order != "XYZ":
 			raise InvalidObjectDataError("\tError: invalid rotation order of " \
@@ -217,13 +248,17 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 			raise InvalidObjectDataError("\tError: the object \"" + name + \
 				"\" hasn't uv-data.")
 
+		data = context.mesh_data
 		data += "\t\tmesh:\n"
-		data += "\t\t\tposition: " + str(object.location.x) + " " + str(object \
-			.location.y) + " " + str(object.location.z) + "\n"
-		data += "\t\t\trotation: " + str(object.rotation_euler.x) + " " + str( \
-			object.rotation_euler.y) + " " + str(object.rotation_euler.z) + "\n"
-		data += "\t\t\tscale: " + str(object.scale.x) + " " + str(object.scale \
-			.y) + " " + str(object.scale.z) + "\n"
+		position = context.position
+		data += "\t\t\tposition: " + str(position.x) + " " + str(position.y) + \
+			" " + str(position.z) + "\n"
+		rotation = context.rotation
+		data += "\t\t\trotation: " + str(rotation.x) + " " + str(rotation.y) + \
+			" " + str(rotation.z) + "\n"
+		scale = context.scale
+		data += "\t\t\tscale: " + str(scale.x) + " " + str(scale.y) + " " + \
+			str(scale.z) + "\n"
 
 		texture_slots = material.texture_slots
 		image_textures = [texture_slots[key].texture for key in texture_slots. \
@@ -272,7 +307,9 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 			data += "\t\t\t\t\tuv: " + str(vertex[1].x) + " " + str(vertex[1]. \
 				y) + "\n"
 
-		if export_animation and not object.animation_data is None:
+		context.mesh_data = data
+
+		if context.export_animation and not object.animation_data is None:
 			keys = { "location": {}, "rotation_euler": {}, "scale": {} }
 			for curve in object.animation_data.action.fcurves:
 				curve_type = curve.data_path
@@ -302,10 +339,14 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 					frame =          key[0]
 					transformation = key[1]
 
-					key = Key(number, int(round(frame)), type, transformation)
-					animation.append(key)
+					frame =          int(round(frame))
+					transformation = [math.degrees(transformation[0]), math. \
+						degrees(transformation[1]), math.degrees( \
+						transformation[2])]
 
-		return data, animation
+					key = Key(context.number_of_mesh, frame, type, \
+						transformation)
+					context.animation_keys.append(key)
 
 def menu_func(self, context):
 	self.layout.operator(AnnaObjectExport.bl_idname, text = "Anna Object " + \

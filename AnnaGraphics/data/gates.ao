@@ -1455,7 +1455,7 @@ object:
 		mesh:
 			position: 0.0 0.0 1.009057879447937
 			rotation: 0.0 0.0 0.0
-			scale: 1.0 1.0 1.0
+			scale: 2.0 2.0 2.0
 			material:
 				texture: .\stone.bmp
 				transparency_type: NONE
@@ -2040,9 +2040,9 @@ object:
 					position: 0.9238795042037964 -0.38268300890922546 -0.06388294696807861
 					uv: 0.0 0.0
 		mesh:
-			position: 0.0 0.0 0.0
+			position: 0.0 0.0 1.009057879447937
 			rotation: 0.0 0.0 -1.8490911912749652e-08
-			scale: 0.7819860577583313 0.7819860577583313 0.7819859981536865
+			scale: 2.7819859981536865 2.7819859981536865 2.7819859981536865
 			material:
 				texture: .\stone.bmp
 				transparency_type: NONE
@@ -2627,9 +2627,9 @@ object:
 					position: 0.9238795638084412 -0.38268306851387024 -0.08169320225715637
 					uv: 0.0 0.0
 		mesh:
-			position: 0.0 0.0 0.0
-			rotation: 0.0 0.0 -1.4648191992705506e-08
-			scale: 0.579904317855835 0.579904317855835 0.579904317855835
+			position: 0.0 0.0 1.009057879447937
+			rotation: 0.0 0.0 -3.313910212909832e-08
+			scale: 3.3618903160095215 3.3618903160095215 3.3618903160095215
 			material:
 				texture: .\stone.bmp
 				transparency_type: NONE
@@ -3214,9 +3214,9 @@ object:
 					position: 0.9238795042037964 -0.3826829791069031 -0.102817103266716
 					uv: 0.0 0.0
 		mesh:
-			position: 0.0 0.0 1.0133174657821655
+			position: 0.0 0.0 2.0223753452301025
 			rotation: 0.0 0.0 0.0
-			scale: 1.0 1.0 1.0
+			scale: 3.0 3.0 3.0
 			material:
 				texture: .\emitting.bmp
 				transparency_type: BLENDING
@@ -3369,9 +3369,9 @@ object:
 					position: 0.14913702011108398 0.36026763916015625 -1.013753056526184
 					uv: -0.0006009340286254883 0.425944447517395
 		mesh:
-			position: 0.0 0.0 0.0
+			position: 0.0 0.0 2.0223753452301025
 			rotation: 0.0 0.0 0.0
-			scale: 1.0 1.0 1.0
+			scale: 4.0 4.0 4.0
 			material:
 				texture: .\stone.bmp
 				transparency_type: NONE
@@ -4254,137 +4254,137 @@ object:
 			index_of_mesh: 1
 			frame: 25
 			type: ROTATION
-			transformation: -1.5707969665527344 -2.22033461147819e-16 2.1981960819127187e-16
+			transformation: -90.00003665542401 -1.2721580234451968e-14 1.2594735803579258e-14
 		key:
 			index_of_mesh: 1
 			frame: 50
 			type: ROTATION
-			transformation: -3.1415939331054688 -2.22033461147819e-16 2.1981960819127187e-16
+			transformation: -180.00007331084802 -1.2721580234451968e-14 1.2594735803579258e-14
 		key:
 			index_of_mesh: 1
 			frame: 75
 			type: ROTATION
-			transformation: -4.712390899658203 -2.22033461147819e-16 2.1981960819127187e-16
+			transformation: -270.0001099662721 -1.2721580234451968e-14 1.2594735803579258e-14
 		key:
 			index_of_mesh: 1
 			frame: 100
 			type: ROTATION
-			transformation: -6.2831878662109375 -2.22033461147819e-16 2.1981960819127187e-16
+			transformation: -360.00014662169605 -1.2721580234451968e-14 1.2594735803579258e-14
 		key:
 			index_of_mesh: 2
 			frame: 0
 			type: ROTATION
-			transformation: 0.0 0.0 -1.8490911912749652e-08
+			transformation: 0.0 0.0 -1.0594512119487315e-06
 		key:
 			index_of_mesh: 2
 			frame: 25
 			type: ROTATION
-			transformation: 2.6906047878583195e-06 1.5707969665527344 2.821827365551144e-06
+			transformation: 0.0001541602986819739 90.00003665542401 0.0001616787985606003
 		key:
 			index_of_mesh: 2
 			frame: 50
 			type: ROTATION
-			transformation: 2.6906047878583195e-06 3.1415939331054688 2.821827365551144e-06
+			transformation: 0.0001541602986819739 180.00007331084802 0.0001616787985606003
 		key:
 			index_of_mesh: 2
 			frame: 75
 			type: ROTATION
-			transformation: 2.6906047878583195e-06 4.712390899658203 2.821827365551144e-06
+			transformation: 0.0001541602986819739 270.0001099662721 0.0001616787985606003
 		key:
 			index_of_mesh: 2
 			frame: 100
 			type: ROTATION
-			transformation: 2.6906047878583195e-06 6.2831878662109375 2.821827365551144e-06
+			transformation: 0.0001541602986819739 360.00014662169605 0.0001616787985606003
 		key:
 			index_of_mesh: 3
 			frame: 0
 			type: ROTATION
-			transformation: 0.0 0.0 -1.4648191992705506e-08
+			transformation: 0.0 0.0 -8.392795786793527e-07
 		key:
 			index_of_mesh: 3
 			frame: 25
 			type: ROTATION
-			transformation: 1.5707969665527344 2.841328949898525e-08 1.4084889699006453e-08
+			transformation: 90.00003665542401 1.6279615703752363e-06 8.070047346603582e-07
 		key:
 			index_of_mesh: 3
 			frame: 50
 			type: ROTATION
-			transformation: 3.1415939331054688 2.841328949898525e-08 1.4084889699006453e-08
+			transformation: 180.00007331084802 1.6279615703752363e-06 8.070047346603582e-07
 		key:
 			index_of_mesh: 3
 			frame: 75
 			type: ROTATION
-			transformation: 4.712390899658203 2.841328949898525e-08 1.4084889699006453e-08
+			transformation: 270.0001099662721 1.6279615703752363e-06 8.070047346603582e-07
 		key:
 			index_of_mesh: 3
 			frame: 100
 			type: ROTATION
-			transformation: 6.2831878662109375 2.841328949898525e-08 1.4084889699006453e-08
+			transformation: 360.00014662169605 1.6279615703752363e-06 8.070047346603582e-07
 		key:
 			index_of_mesh: 4
 			frame: 0
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 4
 			frame: 88
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 4
 			frame: 100
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 4
 			frame: 57
 			type: SCALE
-			transformation: 1.0 1.0 0.0
+			transformation: 57.29577951308232 57.29577951308232 0.0
 		key:
 			index_of_mesh: 4
 			frame: 56
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 4
 			frame: 12
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 4
 			frame: 87
 			type: SCALE
-			transformation: 1.0 1.0 0.0
+			transformation: 57.29577951308232 57.29577951308232 0.0
 		key:
 			index_of_mesh: 4
 			frame: 43
 			type: SCALE
-			transformation: 1.0 1.0 0.0
+			transformation: 57.29577951308232 57.29577951308232 0.0
 		key:
 			index_of_mesh: 4
 			frame: 44
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 4
 			frame: 13
 			type: SCALE
-			transformation: 1.0 1.0 0.0
+			transformation: 57.29577951308232 57.29577951308232 0.0
 		key:
 			index_of_mesh: 5
 			frame: 0
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 5
 			frame: 88
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 5
 			frame: 100
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 5
 			frame: 57
@@ -4394,12 +4394,12 @@ object:
 			index_of_mesh: 5
 			frame: 56
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 5
 			frame: 12
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 5
 			frame: 87
@@ -4414,7 +4414,7 @@ object:
 			index_of_mesh: 5
 			frame: 44
 			type: SCALE
-			transformation: 1.0 1.0 1.0
+			transformation: 57.29577951308232 57.29577951308232 57.29577951308232
 		key:
 			index_of_mesh: 5
 			frame: 13
@@ -4429,29 +4429,29 @@ object:
 			index_of_mesh: 5
 			frame: 88
 			type: POSITION
-			transformation: 0.0 0.0 0.9955751895904541
+			transformation: 0.0 0.0 57.04225655146979
 		key:
 			index_of_mesh: 5
 			frame: 50
 			type: POSITION
-			transformation: 0.0 0.0 0.004525303840637207
+			transformation: 0.0 0.0 0.25928081108285406
 		key:
 			index_of_mesh: 5
 			frame: 100
 			type: POSITION
-			transformation: 0.0 0.0 -1.1920928955078125e-07
+			transformation: 0.0 0.0 -6.830189170012751e-06
 		key:
 			index_of_mesh: 5
 			frame: 56
 			type: POSITION
-			transformation: 0.0 0.0 0.9955751895904541
+			transformation: 0.0 0.0 57.04225655146979
 		key:
 			index_of_mesh: 5
 			frame: 12
 			type: POSITION
-			transformation: 0.0 0.0 1.0001006126403809
+			transformation: 0.0 0.0 57.301544192741815
 		key:
 			index_of_mesh: 5
 			frame: 44
 			type: POSITION
-			transformation: 0.0 0.0 1.0001006126403809
+			transformation: 0.0 0.0 57.301544192741815

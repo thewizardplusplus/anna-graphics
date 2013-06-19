@@ -7,11 +7,11 @@ using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 using namespace thewizardplusplus::utils;
 
-AnimateObject* AnimateObject::loadFromFile(const std::string& filename) {
+AnimateObject* AnimateObject::load(const std::string& filename) {
 	std::ifstream file;
 	file.open(filename.c_str(), std::ios_base::in | std::ios_base::binary);
 	if (!file.is_open()) {
-		Console::error() << "Error: unable to open object file \"" << filename
+		Console::error() << "Warning: unable to open object file \"" << filename
 			<< "\".";
 		return NULL;
 	}
@@ -75,6 +75,7 @@ AnimateObject* AnimateObject::loadFromFile(const std::string& filename) {
 		file >> buffer >> buffer >> number_of_keys;
 		for (size_t k = 0; k < number_of_keys; k++) {
 			AnimateKey key;
+			key.valid = true;
 			file >> buffer >> buffer >> key.index_of_mesh;
 			file >> buffer >> key.frame;
 			std::string key_type;
@@ -106,7 +107,7 @@ AnimateObject* AnimateObject::loadFromFile(const std::string& filename) {
 		delete result;
 		result = NULL;
 
-		Console::error() << "Error: invalid format of object file \"" <<
+		Console::error() << "Warning: invalid format of object file \"" <<
 			filename << "\".";
 		return NULL;
 	}

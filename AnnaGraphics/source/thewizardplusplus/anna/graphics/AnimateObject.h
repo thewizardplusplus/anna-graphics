@@ -12,7 +12,7 @@ namespace graphics {
 
 class AnimateObject : public Object {
 public:
-	static AnimateObject* loadFromFile(const std::string& filename);
+	static AnimateObject* load(const std::string& filename);
 
 	AnimateObject(void);
 	AnimateTrack* getTrack(void) const;

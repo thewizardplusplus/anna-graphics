@@ -6,7 +6,7 @@ using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 
 Mesh::Mesh(Object* object) :
-	object(object),
+	object(NULL),
 	scale(1.0f, 1.0f, 1.0f),
 	visible(true)
 {

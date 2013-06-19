@@ -50,7 +50,7 @@ OpenGlWindow::OpenGlWindow(void) :
 	#ifdef OS_LINUX
 	display = XOpenDisplay(NULL);
 	if (display == NULL) {
-		Console::error() << "Fatal error: can't connect with X Server.";
+		Console::error() << "Error: can't connect with X Server.";
 		std::exit(EXIT_FAILURE);
 	}
 	int screen = DefaultScreen(display);
@@ -58,7 +58,7 @@ OpenGlWindow::OpenGlWindow(void) :
 		None };
 	XVisualInfo* info = glXChooseVisual(display, screen, info_attributes);
 	if (info == NULL) {
-		Console::error() << "Fatal error: failed to choose a pixel format.";
+		Console::error() << "Error: failed to choose a pixel format.";
 		std::exit(EXIT_FAILURE);
 	}
 	size.x = XDisplayWidth(display, info->screen);
@@ -122,7 +122,7 @@ OpenGlWindow::OpenGlWindow(void) :
 
 	result = RegisterClassEx(&window_class);
 	if (!result) {
-		Console::error() << "Fatal error: unable to register the window class.";
+		Console::error() << "Error: unable to register the window class.";
 		std::exit(EXIT_FAILURE);
 	}
 
@@ -136,8 +136,8 @@ OpenGlWindow::OpenGlWindow(void) :
 
 	result = ChangeDisplaySettings(&screen_settings, CDS_FULLSCREEN);
 	if (result != DISP_CHANGE_SUCCESSFUL) {
-		Console::error() << "Fatal error: cannot run in the fullscreen mode at "
-			"the screen resolution on your video card.";
+		Console::error() << "Error: cannot run in the fullscreen mode at the "
+			"screen resolution on your video card.";
 		std::exit(EXIT_FAILURE);
 	}
 
@@ -154,13 +154,13 @@ OpenGlWindow::OpenGlWindow(void) :
 		WS_POPUP | WS_CLIPCHILDREN | WS_CLIPSIBLINGS, 0, 0, size.x, size.y,
 		NULL, NULL, instance, this);
 	if (window == NULL) {
-		Console::error() << "Fatal error: unable to create window.";
+		Console::error() << "Error: unable to create window.";
 		std::exit(EXIT_FAILURE);
 	}
 
 	window_context = GetDC(window);
 	if (window_context == NULL) {
-		Console::error() << "Fatal error: unable to create device context.";
+		Console::error() << "Error: unable to create device context.";
 		std::exit(EXIT_FAILURE);
 	}
 
@@ -171,28 +171,26 @@ OpenGlWindow::OpenGlWindow(void) :
 	unsigned int pixel_format = ChoosePixelFormat(window_context,
 		&pixel_format_descriptor);
 	if (pixel_format == 0) {
-		Console::error() << "Fatal error: can't find an appropriate pixel "
-			"format.";
+		Console::error() << "Error: can't find an appropriate pixel format.";
 		std::exit(EXIT_FAILURE);
 	}
 
 	result = SetPixelFormat(window_context, pixel_format,
 		&pixel_format_descriptor);
 	if (result == 0) {
-		Console::error() << "Fatal error: unable to set pixel format.";
+		Console::error() << "Error: unable to set pixel format.";
 		std::exit(EXIT_FAILURE);
 	}
 
 	opengl_context = wglCreateContext(window_context);
 	if (opengl_context == NULL) {
-		Console::error() << "Fatal error: unable to create OpenGL rendering "
-			"context.";
+		Console::error() << "Error: unable to create OpenGL rendering context.";
 		std::exit(EXIT_FAILURE);
 	}
 
 	result = wglMakeCurrent(window_context, opengl_context);
 	if (result == 0) {
-		Console::error() << "Fatal error: unable to activate OpenGL rendering "
+		Console::error() << "Error: unable to activate OpenGL rendering "
 			"context.";
 		std::exit(EXIT_FAILURE);
 	}
@@ -224,12 +222,12 @@ OpenGlWindow::~OpenGlWindow(void) {
 	if (opengl_context != NULL) {
 		result = wglMakeCurrent(NULL, NULL);
 		if (result == 0) {
-			Console::error() << "Error: unable to release rendering context.";
+			Console::error() << "Warning: unable to release rendering context.";
 		}
 
 		result = wglDeleteContext(opengl_context);
 		if (result == 0) {
-			Console::error() << "Error: unable to delete rendering context.";
+			Console::error() << "Warning: unable to delete rendering context.";
 		}
 
 		opengl_context = NULL;
@@ -238,7 +236,7 @@ OpenGlWindow::~OpenGlWindow(void) {
 	if (window_context != NULL) {
 		result = ReleaseDC(window, window_context);
 		if (result == 0) {
-			Console::error() << "Error: unable to release device context.";
+			Console::error() << "Warning: unable to release device context.";
 		}
 		window_context = NULL;
 	}
@@ -246,14 +244,14 @@ OpenGlWindow::~OpenGlWindow(void) {
 	if (window != NULL) {
 		result = DestroyWindow(window);
 		if (result == 0) {
-			Console::error() << "Error: unable to destroy window.";
+			Console::error() << "Warning: unable to destroy window.";
 		}
 		window = NULL;
 	}
 
 	result = UnregisterClass(WINDOW_CLASS_NAME.c_str(), instance);
 	if (result == 0) {
-		Console::error() << "Error: unable to unregister window class.";
+		Console::error() << "Warning: unable to unregister window class.";
 	}
 	instance = NULL;
 	#endif

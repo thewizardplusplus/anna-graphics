@@ -40,8 +40,7 @@ HEADERS += \
 	source/thewizardplusplus/anna/graphics/BmpTextureLoader.h \
 	source/thewizardplusplus/utils/ByteOrderTesterHelper.h \
 	source/thewizardplusplus/utils/ByteOrderTester.h \
-	source/thewizardplusplus/utils/ByteOrder.h \
-	source/thewizardplusplus/utils/Timer.h
+	source/thewizardplusplus/utils/ByteOrder.h
 SOURCES += \
 	source/thewizardplusplus/anna/graphics/main.cpp \
 	source/thewizardplusplus/utils/Console.cpp \
@@ -68,8 +67,7 @@ SOURCES += \
 	source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.cpp \
 	source/thewizardplusplus/anna/graphics/World.cpp \
 	source/thewizardplusplus/anna/graphics/BmpTextureLoader.cpp \
-	source/thewizardplusplus/utils/ByteOrderTester.cpp \
-	source/thewizardplusplus/utils/Timer.cpp
+	source/thewizardplusplus/utils/ByteOrderTester.cpp
 OTHER_FILES += \
 	docs/to_do.txt \
 	docs/exporters/io_export_ao.py

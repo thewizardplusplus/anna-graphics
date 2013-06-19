@@ -20,8 +20,8 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 	std::ifstream file;
 	file.open(filename.c_str(), std::ios_base::in | std::ios_base::binary);
 	if (!file.is_open()) {
-		Console::error() << "Error: unable to open texture file \"" << filename
-			<< "\".";
+		Console::error() << "Warning: unable to open texture file \"" <<
+			filename << "\".";
 		return TextureData();
 	}
 
@@ -30,7 +30,7 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 	try {
 		size_t mark = readWord(file);
 		if (mark != 0x4d42) {
-			Console::error() << "Error: texture file \"" << filename << "\" "
+			Console::error() << "Warning: texture file \"" << filename << "\" "
 				"has not BMP format.";
 			return TextureData();
 		}
@@ -51,14 +51,14 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 		file.seekg(2, std::ios_base::cur);
 		size_t bits = readWord(file);
 		if (bits != 24 && bits != 32) {
-			Console::error() << "Error: texture file \"" << filename << "\" "
+			Console::error() << "Warning: texture file \"" << filename << "\" "
 				"has not supported value of bits on pixel.";
 			return TextureData();
 		}
 		bool transparent = bits == 32;
 
 		if (readDoubleWord(file) != 0) {
-			Console::error() << "Error: texture file \"" << filename << "\" "
+			Console::error() << "Warning: texture file \"" << filename << "\" "
 				"has not supported compression.";
 			return TextureData();
 		}
@@ -76,7 +76,9 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 
 		file.seekg(data_offset, std::ios_base::beg);
 		char* data = new char[data_size];
-		for (size_t i = 0; i < data_size; !transparent ? i += 3 : i += 4) {
+		for (size_t i = 0; i < static_cast<size_t>(data_size); !transparent ? i
+			+= 3 : i += 4)
+		{
 			data[i + 2] = readByte(file);
 			data[i + 1] = readByte(file);
 			data[i] = readByte(file);
@@ -87,11 +89,11 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 
 		return TextureData(data, Vector2D<size_t>(width, height), transparent);
 	} catch (const std::ifstream::failure& exception) {
-		Console::error() << "Error: unable to read texture file \"" << filename
-			<< "\".";
+		Console::error() << "Warning: unable to read texture file \"" <<
+			filename << "\".";
 		return TextureData();
 	} catch(const std::bad_alloc& exception) {
-		Console::error() << "Error: in process of loading texture file \"" <<
+		Console::error() << "Warning: in process of loading texture file \"" <<
 			filename << "\" was requested too much memory; perhaps some "
 			"parameters of image have been read wrong.";
 		return TextureData();

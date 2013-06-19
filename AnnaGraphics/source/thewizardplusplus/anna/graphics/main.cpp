@@ -1,33 +1,58 @@
 #include "OpenGlGraphicApi.h"
 #include "PlaneMesh.h"
 #include "CubeMesh.h"
-#include "../../utils/Timer.h"
 #include "../../utils/Console.h"
 
 using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 using namespace thewizardplusplus::utils;
 
-const int   WORLD_SIZE =          12;
-const int   WORLD_STEP =          5;
 const float PLAYER_ROTATE_SPEED = 0.1f;
-const float PLAYER_MOVE_SPEED =   0.01f;
+const float PLAYER_MOVE_SPEED = 0.01f;
 
 int main(void) {
-	Timer timer;
-
 	GraphicApi* graphic_api = GraphicApi::create<OpenGlGraphicApi>();
-	Window* window = graphic_api->getWindow();
 
 	World world;
-	Camera camera;
-	camera.setType(CameraType::ORTHOGONAL);
-	world.setCamera(&camera);
-	AnimateObject* object = AnimateObject::loadFromFile("data/gates.ao");
-	object->setScale(1000, 1000, 1000);
-	object->play(true);
-	world.addAnimateObject(object);
 
+	Camera camera;
+	camera.setPosition(0.0f, 0.0f, 1.0f);
+	world.setCamera(&camera);
+
+	for (int x = -100; x <= 100; x++) {
+		Object* line = new Object();
+		line->setPosition(x, 0.0f, 0.0f);
+
+		Mesh* line_mesh = new PlaneMesh(line);
+		line_mesh->setScale(0.01f, 100.0f, 1.0f);
+
+		world.addObject(line);
+	}
+
+	for (int y = -100; y <= 100; y++) {
+		Object* line = new Object();
+		line->setPosition(0.0f, y, 0.0f);
+
+		Mesh* line_mesh = new PlaneMesh(line);
+		line_mesh->setScale(100.0f, 0.01f, 1.0f);
+
+		world.addObject(line);
+	}
+
+	Object* point = new Object();
+
+	Mesh* point_mesh = new CubeMesh(point);
+	point_mesh->setScale(0.1f, 0.1f, 0.1f);
+
+	world.addObject(point);
+
+	AnimateObject* gates = AnimateObject::load("data/gates.ao");
+	if (gates != NULL) {
+		gates->play(true);
+		world.addAnimateObject(gates);
+	}
+
+	Window* window = graphic_api->getWindow();
 	while (!window->isPressedKey(KeyCode::KEY_ESCAPE)) {
 		Vector2D<size_t> center = window->getSize() / 2;
 		Vector2D<size_t> new_position = window->getPointerPosition();
@@ -64,16 +89,11 @@ int main(void) {
 			PLAYER_MOVE_SPEED * direction.x, PLAYER_MOVE_SPEED * direction.y,
 			0.0f));
 
-		size_t elapsed_time = timer.getElapsedTimeInUs();
-		timer.start();
-
-		world.update(elapsed_time / 1000.0f);
+		world.update(10.0f);
 
 		graphic_api->clear();
 		graphic_api->drawWorld(&world);
 		window->update();
-
-		//Console::information() << 1000000.0f / elapsed_time << " fps.";
 	}
 
 	delete graphic_api;
