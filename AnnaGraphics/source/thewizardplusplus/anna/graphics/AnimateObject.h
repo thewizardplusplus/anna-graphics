@@ -10,9 +10,12 @@ namespace thewizardplusplus {
 namespace anna {
 namespace graphics {
 
+class GraphicApi;
+
 class AnimateObject : public Object {
 public:
-	static AnimateObject* load(const std::string& filename);
+	static AnimateObject* load(const std::string& filename, GraphicApi*
+		graphic_api, bool load_animation = true);
 
 	AnimateObject(void);
 	AnimateTrack* getTrack(void) const;
@@ -34,6 +37,8 @@ public:
 	void update(float delta_time_in_ms);
 
 private:
+	static void testMark(std::ifstream& in, const std::string& mark);
+
 	AnimateTrack*       track;
 	size_t              fps;
 	AnimateState::Types state;

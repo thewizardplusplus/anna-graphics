@@ -21,7 +21,7 @@ int main(void) {
 
 	for (int x = -100; x <= 100; x++) {
 		Object* line = new Object();
-		line->setPosition(x, 0.0f, 0.0f);
+		line->setPosition(static_cast<float>(x), 0.0f, 0.0f);
 
 		Mesh* line_mesh = new PlaneMesh(line);
 		line_mesh->setScale(0.01f, 100.0f, 1.0f);
@@ -31,7 +31,7 @@ int main(void) {
 
 	for (int y = -100; y <= 100; y++) {
 		Object* line = new Object();
-		line->setPosition(0.0f, y, 0.0f);
+		line->setPosition(0.0f, static_cast<float>(y), 0.0f);
 
 		Mesh* line_mesh = new PlaneMesh(line);
 		line_mesh->setScale(100.0f, 0.01f, 1.0f);
@@ -46,9 +46,10 @@ int main(void) {
 
 	world.addObject(point);
 
-	AnimateObject* gates = AnimateObject::load("data/gates.ao");
+	AnimateObject* gates = AnimateObject::load("data/gates.ao", graphic_api);
 	if (gates != NULL) {
 		gates->play(true);
+		gates->setFps(10);
 		world.addAnimateObject(gates);
 	}
 
@@ -61,7 +62,7 @@ int main(void) {
 			convertedTo<int>());
 		camera.setRotation(camera.getRotation() + Vector3D<float>(
 			PLAYER_ROTATE_SPEED * delta.y, 0.0f, PLAYER_ROTATE_SPEED * delta.
-			x));
+			x) * 7.5f);
 		camera.setRotation(Maths::clamp(camera.getRotation().x, 90.0f, -90.0f),
 			camera.getRotation().y, camera.getRotation().z);
 
@@ -87,7 +88,7 @@ int main(void) {
 		direction.normalize();
 		camera.setPosition(camera.getPosition() + Vector3D<float>(
 			PLAYER_MOVE_SPEED * direction.x, PLAYER_MOVE_SPEED * direction.y,
-			0.0f));
+			0.0f) * 5.0f);
 
 		world.update(10.0f);
 

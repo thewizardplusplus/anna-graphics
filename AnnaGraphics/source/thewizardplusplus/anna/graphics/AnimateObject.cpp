@@ -1,13 +1,18 @@
 #include "AnimateObject.h"
 #include "../../utils/Console.h"
 #include "Mesh.h"
+#include "../../utils/Path.h"
+#include "GraphicApi.h"
 #include <fstream>
+#include <algorithm>
 
 using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 using namespace thewizardplusplus::utils;
 
-AnimateObject* AnimateObject::load(const std::string& filename) {
+AnimateObject* AnimateObject::load(const std::string& filename, GraphicApi*
+	graphic_api, bool load_animation)
+{
 	std::ifstream file;
 	file.open(filename.c_str(), std::ios_base::in | std::ios_base::binary);
 	if (!file.is_open()) {
@@ -16,35 +21,50 @@ AnimateObject* AnimateObject::load(const std::string& filename) {
 		return NULL;
 	}
 
+	std::string mesh_path = Path(filename).getPathWithoutFilename();
 	AnimateObject* result = new AnimateObject();
 	AnimateTrack* track =   new AnimateTrack();
 	file.exceptions(std::ifstream::eofbit | std::ifstream::failbit | std::
 		ifstream::badbit);
 	try {
-		std::string buffer;
+		testMark(file, "object:");
+		testMark(file, "meshes:");
+		testMark(file, "number:");
 
 		size_t number_of_meshes = 0;
-		file >> buffer >> buffer >> buffer >> number_of_meshes;
+		file >> number_of_meshes;
 		for (size_t i = 0; i < number_of_meshes; i++) {
+			testMark(file, "mesh:");
+
 			Mesh* mesh = new Mesh(result);
 			result->addMesh(mesh);
 
+			testMark(file, "position:");
 			Vector3D<float> position;
-			file >> buffer >> buffer >> position.x >> position.y >> position.z;
+			file >> position.x >> position.y >> position.z;
 			mesh->setPosition(position);
 
+			testMark(file, "rotation:");
 			Vector3D<float> rotation;
-			file >> buffer >> rotation.x >> rotation.y >> rotation.z;
+			file >> rotation.x >> rotation.y >> rotation.z;
 			mesh->setRotation(rotation);
 
+			testMark(file, "scale:");
 			Vector3D<float> scale;
-			file >> buffer >> scale.x >> scale.y >> scale.z;
+			file >> scale.x >> scale.y >> scale.z;
 			mesh->setScale(scale);
 
+			testMark(file, "material:");
+			testMark(file, "texture:");
 			std::string texture_path;
-			file >> buffer >> buffer >> texture_path;
+			file >> texture_path;
+			if (graphic_api != NULL) {
+				mesh->getMaterial().texture = graphic_api->createTexture(
+					mesh_path + texture_path);
+			}
+			testMark(file, "transparency_type:");
 			std::string transparent_type_name;
-			file >> buffer >> transparent_type_name;
+			file >> transparent_type_name;
 			if (transparent_type_name == "NONE") {
 				mesh->getMaterial().transparent_type = TransparentType::NONE;
 			} else if (transparent_type_name == "ALPHA_TEST") {
@@ -54,49 +74,66 @@ AnimateObject* AnimateObject::load(const std::string& filename) {
 				mesh->getMaterial().transparent_type = TransparentType::
 					BLENDING;
 			}
-			file >> std::boolalpha >> buffer >> mesh->getMaterial().
-				allow_ambient_light;
-			file >> std::boolalpha >> buffer >> mesh->getMaterial().allow_fog;
+			testMark(file, "allow_ambient_light:");
+			file >> std::boolalpha >> mesh->getMaterial().allow_ambient_light;
+			testMark(file, "allow_fog:");
+			file >> std::boolalpha >> mesh->getMaterial().allow_fog;
 
+			testMark(file, "vertices:");
+			testMark(file, "number:");
 			size_t number_of_vertices = 0;
-			file >> buffer >> buffer >> number_of_vertices;
+			file >> number_of_vertices;
 			for (size_t j = 0; j < number_of_vertices; j++) {
+				testMark(file, "vertex:");
+
 				Vertex* vertex = new Vertex();
 				mesh->addVertex(vertex);
 
-				file >> buffer >> buffer >> vertex->position.x >> vertex->
-					position.y >> vertex->position.z;
+				testMark(file, "position:");
+				file >> vertex->position.x >> vertex->position.y >> vertex->
+					position.z;
 
-				file >> buffer >> vertex->uv.x >> vertex->uv.y;
+				testMark(file, "uv:");
+				file >> vertex->uv.x >> vertex->uv.y;
 			}
 		}
 
-		size_t number_of_keys = 0;
-		file >> buffer >> buffer >> number_of_keys;
-		for (size_t k = 0; k < number_of_keys; k++) {
-			AnimateKey key;
-			key.valid = true;
-			file >> buffer >> buffer >> key.index_of_mesh;
-			file >> buffer >> key.frame;
-			std::string key_type;
-			file >> buffer >> key_type;
-			if (key_type == "POSITION") {
-				key.type = AnimateKeyType::POSITION;
-			} else if (key_type == "ROTATION") {
-				key.type = AnimateKeyType::ROTATION;
-			} else if (key_type == "SCALE") {
-				key.type = AnimateKeyType::SCALE;
-			}
-			file >> buffer >> key.transformation.x >> key.transformation.y >>
-				key.transformation.z;
+		if (load_animation) {
+			testMark(file, "animation_keys:");
+			testMark(file, "number:");
+			size_t number_of_keys = 0;
+			file >> number_of_keys;
+			for (size_t k = 0; k < number_of_keys; k++) {
+				testMark(file, "key:");
 
-			track->addKey(key);
-		}
-		if (number_of_keys > 0) {
-			result->setTrack(track);
-		} else {
-			delete track;
-			track = NULL;
+				AnimateKey key;
+				key.valid = true;
+				testMark(file, "index_of_mesh:");
+				file >> key.index_of_mesh;
+				testMark(file, "frame:");
+				file >> key.frame;
+				testMark(file, "type:");
+				std::string key_type_name;
+				file >> key_type_name;
+				if (key_type_name == "POSITION") {
+					key.type = AnimateKeyType::POSITION;
+				} else if (key_type_name == "ROTATION") {
+					key.type = AnimateKeyType::ROTATION;
+				} else if (key_type_name == "SCALE") {
+					key.type = AnimateKeyType::SCALE;
+				}
+				testMark(file, "transformation:");
+				file >> key.transformation.x >> key.transformation.y >> key.
+					transformation.z;
+
+				track->addKey(key);
+			}
+			if (number_of_keys > 0) {
+				result->setTrack(track);
+			} else {
+				delete track;
+				track = NULL;
+			}
 		}
 
 		return result;
@@ -108,7 +145,7 @@ AnimateObject* AnimateObject::load(const std::string& filename) {
 		result = NULL;
 
 		Console::error() << "Warning: invalid format of object file \"" <<
-			filename << "\".";
+			filename << "\" - " << exception.what() << ".";
 		return NULL;
 	}
 }
@@ -164,8 +201,8 @@ bool AnimateObject::isLoop(void) const {
 }
 
 size_t AnimateObject::getCurrentFrame(void) const {
-	return Maths::clamp(std::floor(current_time * fps / 1000.0f),
-		getNumberOfFrames());
+	return static_cast<size_t>(Maths::clamp(std::floor(current_time * fps /
+		1000.0f), static_cast<float>(getNumberOfFrames())));
 }
 
 float AnimateObject::getCurrentTime(void) const {
@@ -177,8 +214,10 @@ void AnimateObject::play(bool loop, size_t start_frame, size_t end_frame) {
 		return;
 	}
 
-	this->start_frame = Maths::clamp(start_frame, getNumberOfFrames());
-	this->end_frame = Maths::clamp(end_frame, getNumberOfFrames());
+	this->start_frame = static_cast<size_t>(Maths::clamp(static_cast<float>(
+		start_frame), static_cast<float>(getNumberOfFrames())));
+	this->end_frame = static_cast<size_t>(Maths::clamp(static_cast<float>(
+		end_frame), static_cast<float>(getNumberOfFrames())));
 	this->loop = loop;
 
 	stop(start_frame);
@@ -199,8 +238,8 @@ void AnimateObject::pause(bool pause) {
 
 void AnimateObject::stop(size_t frame) {
 	state = AnimateState::STOPPED;
-	current_time = Maths::clamp(frame, 0.0f, getNumberOfFrames()) / fps *
-		1000.0f;
+	current_time = Maths::clamp(static_cast<float>(frame), 0.0f, static_cast<
+		float>(getNumberOfFrames())) / fps * 1000.0f;
 	processUpdate();
 }
 
@@ -225,6 +264,30 @@ void AnimateObject::update(float delta_time_in_ms) {
 	}
 
 	processUpdate();
+}
+
+void AnimateObject::testMark(std::ifstream& in, const std::string& mark) {
+	std::string buffer;
+	in >> buffer;
+
+	if (buffer != mark) {
+		size_t position = static_cast<size_t>(in.tellg());
+		char* buffer = new char[position + 1];
+		in.seekg(std::ifstream::beg);
+		in.read(buffer, position);
+
+		std::string begin(buffer, position);
+		size_t line = std::count(begin.begin(), begin.end(), '\n') + 1;
+		size_t column = 0;
+		if (line != 1) {
+			column = begin.substr(begin.find_last_of('\n') + 1).length() - mark.
+				length();
+		}
+
+		throw std::ifstream::failure("expected mark \"" + mark + "\" on line " +
+			Converter::toString(line) + " and column " + Converter::toString(
+			column));
+	}
 }
 
 void AnimateObject::processUpdate(void) {

@@ -2,8 +2,7 @@
 #define CONSOLE_H
 
 #include "ConsoleMessageType.h"
-#include <string>
-#include <sstream>
+#include "Converter.h"
 
 namespace thewizardplusplus {
 namespace utils {
@@ -25,10 +24,7 @@ private:
 
 template<typename ValueType>
 Console& Console::operator<<(ValueType value) {
-	std::ostringstream out;
-	out << value;
-	this->message_text += out.str();
-
+	this->message_text += Converter::toString(value);
 	return *this;
 }
 

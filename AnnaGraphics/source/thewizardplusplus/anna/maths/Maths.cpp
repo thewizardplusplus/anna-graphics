@@ -64,7 +64,7 @@ float Maths::interpolate(float x1, float x2, float shift) {
 
 float Maths::randomNumber(float limit1, float limit2) {
 	if (!initialize_prmg) {
-		std::srand(std::time(NULL));
+		std::srand(static_cast<unsigned int>(std::time(NULL)));
 		initialize_prmg = true;
 	}
 

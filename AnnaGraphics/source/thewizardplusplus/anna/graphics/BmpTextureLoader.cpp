@@ -89,10 +89,12 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 
 		return TextureData(data, Vector2D<size_t>(width, height), transparent);
 	} catch (const std::ifstream::failure& exception) {
+		(void)exception;
 		Console::error() << "Warning: unable to read texture file \"" <<
 			filename << "\".";
 		return TextureData();
 	} catch(const std::bad_alloc& exception) {
+		(void)exception;
 		Console::error() << "Warning: in process of loading texture file \"" <<
 			filename << "\" was requested too much memory; perhaps some "
 			"parameters of image have been read wrong.";

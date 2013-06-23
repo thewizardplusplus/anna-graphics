@@ -1,5 +1,6 @@
 #include "GraphicApi.h"
 #include "../../utils/Console.h"
+#include <cctype>
 
 using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
@@ -38,7 +39,7 @@ Vector3D<float> GraphicApi::getAmbientColor(void) const {
 	return ambient_color;
 }
 
-void GraphicApi::setAmbientColor(const maths::Vector3D<float>& ambient_color) {
+void GraphicApi::setAmbientColor(const Vector3D<float>& ambient_color) {
 	this->ambient_color = ambient_color;
 	processSettingAmbientColor(ambient_color);
 }
@@ -61,7 +62,7 @@ void GraphicApi::setFogParameters(const FogParameters& fog_parameters) {
 }
 
 bool GraphicApi::isTextureLoader(const std::string& format) const {
-	return loaders.count(toUpper(format));
+	return loaders.count(toUpper(format)) ? true : false;
 }
 
 GraphicApi::StringList GraphicApi::getSupportedTextureFormats(void) const {
@@ -174,9 +175,8 @@ void GraphicApi::drawWorld(World* world) {
 
 std::string GraphicApi::toUpper(const std::string& string) const {
 	std::string result = string;
-	std::locale locale;
 	for (size_t i = 0; i < result.length(); i++) {
-		result[i] = std::toupper(result[i], locale);
+		result[i] = std::toupper(result[i]);
 	}
 
 	return result;

@@ -23,7 +23,7 @@ Vector2D<size_t> Window::getPointerPosition(void) const {
 	return pointer_position;
 }
 
-void Window::setPointerPosition(const maths::Vector2D<size_t>& position) {
+void Window::setPointerPosition(const Vector2D<size_t>& position) {
 	pointer_position = position;
 	processSettingPointerPosition(pointer_position);
 }

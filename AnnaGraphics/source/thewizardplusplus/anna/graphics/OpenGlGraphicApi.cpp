@@ -69,7 +69,7 @@ void OpenGlGraphicApi::clear(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void OpenGlGraphicApi::processSettingAmbientColor(const maths::Vector3D<float>&
+void OpenGlGraphicApi::processSettingAmbientColor(const Vector3D<float>&
 	ambient_color)
 {
 	float color_array[4] = { ambient_color.x, ambient_color.y, ambient_color.z,
@@ -120,8 +120,8 @@ void OpenGlGraphicApi::setCamera(Camera* camera) {
 			getNearPlane(), camera->getFarPlane());
 	} else {
 		float f = 1.0f / std::tan(Camera::FOV / 2.0f);
-		float projection_matrix[] = { f / (static_cast<double>(window->getSize()
-			.x) / window->getSize().y), 0.0f, 0.0f, 0.0f, 0.0f, f, 0.0f, 0.0f,
+		float projection_matrix[] = { f / (static_cast<float>(window->getSize().
+			x) / window->getSize().y), 0.0f, 0.0f, 0.0f, 0.0f, f, 0.0f, 0.0f,
 			0.0f, 0.0f, (camera->getNearPlane() + camera->getFarPlane()) /
 			(camera->getNearPlane() - camera->getFarPlane()), -1.0f, 0.0f, 0.0f,
 			(2.0f * camera->getNearPlane() * camera->getFarPlane()) / (camera->

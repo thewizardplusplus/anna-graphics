@@ -1,4 +1,5 @@
 TARGET = AnnaGraphics
+CONFIG += console
 CONFIG += warn_on
 CONFIG -= qt
 HEADERS += \
@@ -40,7 +41,9 @@ HEADERS += \
 	source/thewizardplusplus/anna/graphics/BmpTextureLoader.h \
 	source/thewizardplusplus/utils/ByteOrderTesterHelper.h \
 	source/thewizardplusplus/utils/ByteOrderTester.h \
-	source/thewizardplusplus/utils/ByteOrder.h
+	source/thewizardplusplus/utils/ByteOrder.h \
+	source/thewizardplusplus/utils/Converter.h \
+	source/thewizardplusplus/utils/Path.h
 SOURCES += \
 	source/thewizardplusplus/anna/graphics/main.cpp \
 	source/thewizardplusplus/utils/Console.cpp \
@@ -67,15 +70,23 @@ SOURCES += \
 	source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.cpp \
 	source/thewizardplusplus/anna/graphics/World.cpp \
 	source/thewizardplusplus/anna/graphics/BmpTextureLoader.cpp \
-	source/thewizardplusplus/utils/ByteOrderTester.cpp
+	source/thewizardplusplus/utils/ByteOrderTester.cpp \
+	source/thewizardplusplus/utils/Path.cpp
 OTHER_FILES += \
 	docs/to_do.txt \
 	docs/exporters/io_export_ao.py
-QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O3
 unix {
 	LIBS += -lGL
+	QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O3
 }
 win32 {
 	LIBS += -lgdi32 -lopengl32
-	QMAKE_CXXFLAGS += -U__STRICT_ANSI__
+	win32-g++ {
+		QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O3 -U__STRICT_ANSI__
+	}
+	win32-msvc2010 {
+		#DEFINES += RAW_INPUT
+		LIBS += -luser32
+		QMAKE_CXXFLAGS += -W3 -Ox
+	}
 }

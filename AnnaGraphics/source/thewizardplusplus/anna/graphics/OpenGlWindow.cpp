@@ -198,6 +198,28 @@ OpenGlWindow::OpenGlWindow(void) :
 	ShowWindow(window, SW_SHOW);
 	SetForegroundWindow(window);
 	SetFocus(window);
+
+	#ifdef RAW_INPUT
+	const size_t NUMBER_OF_RAW_INPUT_DEVICES = 2;
+	RAWINPUTDEVICE raw_input_device_ids[NUMBER_OF_RAW_INPUT_DEVICES];
+
+	raw_input_device_ids[0].usUsagePage = 0x01 /* HID_USAGE_PAGE_GENERIC */;
+	raw_input_device_ids[0].usUsage =     0x06 /* HID_USAGE_GENERIC_KEYBOARD */;
+	raw_input_device_ids[0].dwFlags =     RIDEV_NOLEGACY;
+	raw_input_device_ids[0].hwndTarget =  window;
+
+	raw_input_device_ids[1].usUsagePage = 0x01 /* HID_USAGE_PAGE_GENERIC */;
+	raw_input_device_ids[1].usUsage =     0x02 /* HID_USAGE_GENERIC_MOUSE */;
+	raw_input_device_ids[1].dwFlags =     RIDEV_NOLEGACY;
+	raw_input_device_ids[1].hwndTarget =  window;
+
+	result = RegisterRawInputDevices(raw_input_device_ids, \
+		NUMBER_OF_RAW_INPUT_DEVICES, sizeof(RAWINPUTDEVICE));
+	if (!result) {
+		Console::error() << "Error: unable to register raw input device.";
+		std::exit(EXIT_FAILURE);
+	}
+	#endif
 	#endif
 
 	initialize();
@@ -348,6 +370,7 @@ LRESULT CALLBACK OpenGlWindow::windowProcedure(HWND window, UINT message, WPARAM
 
 			return 0;
 		}
+		#ifndef RAW_INPUT
 		case WM_KEYDOWN: {
 			KeyCode::Types key = convertKeyCode(word_parameter);
 			keys.push_back(key);
@@ -385,6 +408,91 @@ LRESULT CALLBACK OpenGlWindow::windowProcedure(HWND window, UINT message, WPARAM
 
 			return 0;
 		}
+		#else
+		case WM_INPUT: {
+			/*const size_t NUMBER_OF_KEYS = 256;
+			unsigned char keys[NUMBER_OF_KEYS] = {0};
+			GetKeyboardState(keys);
+			for (size_t i = 0; i < NUMBER_OF_KEYS; i++) {
+				KeyCode::Types key = convertKeyCode(i);
+
+				// проверяю старший бит
+				if (keys[i] & 1 << sizeof(unsigned char) * 8 - 1) {
+					this->keys.push_back(key);
+				} else {
+					this->keys.remove(key);
+				}
+			}
+
+			POINT pointer_position;
+			GetCursorPos(&pointer_position);
+			this->pointer_position.x = pointer_position.x;
+			this->pointer_position.y = pointer_position.y;*/
+
+			unsigned int required_size = 0;
+			GetRawInputData(reinterpret_cast<HRAWINPUT>(long_parameter),
+				RID_INPUT, NULL, &required_size, sizeof(RAWINPUTHEADER));
+
+			unsigned char* data = new unsigned char[required_size];
+			unsigned int gotten_size = GetRawInputData(reinterpret_cast<
+				HRAWINPUT>(long_parameter), RID_INPUT, data, &required_size,
+				sizeof(RAWINPUTHEADER));
+			if (gotten_size != required_size) {
+				Console::error() << "Warning: function GetRawInputData() does "
+					"not return correct size.";
+			}
+
+			RAWINPUT* raw_data = reinterpret_cast<RAWINPUT*>(data);
+			if (raw_data->header.dwType == RIM_TYPEKEYBOARD) {
+				KeyCode::Types key = convertKeyCode(raw_data->data.keyboard.
+					VKey);
+				if (raw_data->data.keyboard.Flags & RI_KEY_BREAK) {
+					keys.remove(key);
+				} else {
+					keys.push_back(key);
+				}
+			} else if (raw_data->header.dwType == RIM_TYPEMOUSE) {
+				if (raw_data->data.mouse.usButtonFlags & \
+					RI_MOUSE_LEFT_BUTTON_DOWN)
+				{
+					buttons.push_back(ButtonCode::BUTTON_LEFT);
+				} else if (raw_data->data.mouse.usButtonFlags & \
+					RI_MOUSE_LEFT_BUTTON_UP)
+				{
+					buttons.remove(ButtonCode::BUTTON_LEFT);
+				} else if (raw_data->data.mouse.usButtonFlags & \
+					RI_MOUSE_MIDDLE_BUTTON_DOWN)
+				{
+					buttons.push_back(ButtonCode::BUTTON_MIDDLE);
+				} else if (raw_data->data.mouse.usButtonFlags & \
+					RI_MOUSE_MIDDLE_BUTTON_UP)
+				{
+					buttons.remove(ButtonCode::BUTTON_MIDDLE);
+				} else if (raw_data->data.mouse.usButtonFlags & \
+					RI_MOUSE_RIGHT_BUTTON_DOWN)
+				{
+					buttons.push_back(ButtonCode::BUTTON_RIGHT);
+				} else if (raw_data->data.mouse.usButtonFlags & \
+					RI_MOUSE_RIGHT_BUTTON_UP)
+				{
+					buttons.remove(ButtonCode::BUTTON_RIGHT);
+				}
+
+				if (raw_data->data.mouse.usFlags & MOUSE_MOVE_ABSOLUTE) {
+					this->pointer_position.x = raw_data->data.mouse.lLastX;
+					this->pointer_position.y = raw_data->data.mouse.lLastY;
+				} else {
+					this->pointer_position.x += raw_data->data.mouse.lLastX;
+					this->pointer_position.y += raw_data->data.mouse.lLastY;
+				}
+			}
+
+			delete[] data;
+			data = NULL;
+
+			return 0;
+		}
+		#endif
 		default:
 			return DefWindowProc(window, message, word_parameter,
 				long_parameter);
