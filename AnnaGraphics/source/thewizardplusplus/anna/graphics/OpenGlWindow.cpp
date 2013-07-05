@@ -336,8 +336,12 @@ void OpenGlWindow::update(void) {
 	#elif defined(OS_WINDOWS)
 	MSG message;
 
-	int result = PeekMessage(&message, NULL, NULL, NULL, PM_REMOVE);
-	if (result != 0) {
+	while (true) {
+		int result = PeekMessage(&message, NULL, NULL, NULL, PM_REMOVE);
+		if (result == 0) {
+			break;
+		}
+
 		TranslateMessage(&message);
 		DispatchMessage(&message);
 	}
@@ -410,25 +414,6 @@ LRESULT CALLBACK OpenGlWindow::windowProcedure(HWND window, UINT message, WPARAM
 		}
 		#else
 		case WM_INPUT: {
-			/*const size_t NUMBER_OF_KEYS = 256;
-			unsigned char keys[NUMBER_OF_KEYS] = {0};
-			GetKeyboardState(keys);
-			for (size_t i = 0; i < NUMBER_OF_KEYS; i++) {
-				KeyCode::Types key = convertKeyCode(i);
-
-				// проверяю старший бит
-				if (keys[i] & 1 << sizeof(unsigned char) * 8 - 1) {
-					this->keys.push_back(key);
-				} else {
-					this->keys.remove(key);
-				}
-			}
-
-			POINT pointer_position;
-			GetCursorPos(&pointer_position);
-			this->pointer_position.x = pointer_position.x;
-			this->pointer_position.y = pointer_position.y;*/
-
 			unsigned int required_size = 0;
 			GetRawInputData(reinterpret_cast<HRAWINPUT>(long_parameter),
 				RID_INPUT, NULL, &required_size, sizeof(RAWINPUTHEADER));

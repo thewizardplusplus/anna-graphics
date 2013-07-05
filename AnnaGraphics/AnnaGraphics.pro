@@ -85,7 +85,7 @@ win32 {
 		QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O3 -U__STRICT_ANSI__
 	}
 	win32-msvc2010 {
-		#DEFINES += RAW_INPUT
+		DEFINES += RAW_INPUT
 		LIBS += -luser32
 		QMAKE_CXXFLAGS += -W3 -Ox
 	}
