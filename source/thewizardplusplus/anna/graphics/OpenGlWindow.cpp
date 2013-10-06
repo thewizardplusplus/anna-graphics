@@ -337,7 +337,7 @@ void OpenGlWindow::update(void) {
 	MSG message;
 
 	while (true) {
-		int result = PeekMessage(&message, NULL, NULL, NULL, PM_REMOVE);
+		int result = PeekMessage(&message, NULL, 0, 0, PM_REMOVE);
 		if (result == 0) {
 			break;
 		}

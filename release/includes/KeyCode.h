@@ -1,0 +1,126 @@
+#ifndef KEYCODE_H
+#define KEYCODE_H
+
+namespace thewizardplusplus {
+namespace anna {
+namespace graphics {
+
+class KeyCode {
+public:
+	enum Types {
+		UNKNOWN_KEY,
+
+		KEY_ESCAPE,
+		KEY_F1,
+		KEY_F2,
+		KEY_F3,
+		KEY_F4,
+		KEY_F5,
+		KEY_F6,
+		KEY_F7,
+		KEY_F8,
+		KEY_F9,
+		KEY_F10,
+		KEY_F11,
+		KEY_F12,
+		KEY_PRINT_SCREEN,
+		KEY_SCROLL_LOCK,
+		KEY_PAUSE,
+
+		KEY_TILDE,
+		KEY_1,
+		KEY_2,
+		KEY_3,
+		KEY_4,
+		KEY_5,
+		KEY_6,
+		KEY_7,
+		KEY_8,
+		KEY_9,
+		KEY_0,
+		KEY_MINUS,
+		KEY_EQUAL,
+		KEY_BACKSPACE,
+
+		KEY_TAB,
+		KEY_CAPS_LOCK,
+		KEY_SHIFT,
+		KEY_CONTROL,
+		KEY_META_LEFT,
+		KEY_META_RIGHT,
+		KEY_ALT,
+		KEY_SPACE,
+		KEY_MENU,
+		KEY_ENTER,
+
+		KEY_A,
+		KEY_B,
+		KEY_C,
+		KEY_D,
+		KEY_E,
+		KEY_F,
+		KEY_G,
+		KEY_H,
+		KEY_I,
+		KEY_J,
+		KEY_K,
+		KEY_L,
+		KEY_M,
+		KEY_N,
+		KEY_O,
+		KEY_P,
+		KEY_Q,
+		KEY_R,
+		KEY_S,
+		KEY_T,
+		KEY_U,
+		KEY_V,
+		KEY_W,
+		KEY_X,
+		KEY_Y,
+		KEY_Z,
+		KEY_BRACKET_RIGHT,
+		KEY_BRACKET_LEFT,
+		KEY_BACKSLASH,
+		KEY_SEMICOLON,
+		KEY_APOSTROPHE,
+		KEY_COMMA,
+		KEY_DOT,
+		KEY_SLASH,
+
+		KEY_INSERT,
+		KEY_DELETE,
+		KEY_HOME,
+		KEY_END,
+		KEY_PAGE_UP,
+		KEY_PAGE_DOWN,
+
+		KEY_UP,
+		KEY_LEFT,
+		KEY_DOWN,
+		KEY_RIGHT,
+
+		KEY_NUM_LOCK,
+		KEY_NUM_DIVIDE,
+		KEY_NUM_MULTIPLY,
+		KEY_NUM_SUBTRACT,
+		KEY_NUM_ADD,
+		KEY_NUM_DECIMAL,
+		KEY_NUM_0,
+		KEY_NUM_1,
+		KEY_NUM_2,
+		KEY_NUM_3,
+		KEY_NUM_4,
+		KEY_NUM_5,
+		KEY_NUM_SPECIAL,
+		KEY_NUM_6,
+		KEY_NUM_7,
+		KEY_NUM_8,
+		KEY_NUM_9
+	};
+};
+
+}
+}
+}
+#endif

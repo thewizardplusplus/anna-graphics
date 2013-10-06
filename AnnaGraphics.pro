@@ -1,8 +1,12 @@
+# общие настройки
 TARGET = AnnaGraphics
 TEMPLATE = lib
 CONFIG += staticlib
+#CONFIG += console
 CONFIG += warn_on
 CONFIG -= qt
+
+# файлы проекта
 HEADERS += \
 	source/thewizardplusplus/utils/os.h \
 	source/thewizardplusplus/utils/ConsoleMessageType.h \
@@ -44,11 +48,7 @@ HEADERS += \
 	source/thewizardplusplus/utils/ByteOrderTester.h \
 	source/thewizardplusplus/utils/ByteOrder.h \
 	source/thewizardplusplus/utils/Converter.h \
-	source/thewizardplusplus/utils/Path.h \
-	source/thewizardplusplus/anna/nicole_wrapper/graphic_core.h \
-	source/thewizardplusplus/anna/nicole_wrapper/utils.h \
-	source/thewizardplusplus/anna/nicole_wrapper/scene.h \
-	source/thewizardplusplus/anna/nicole_wrapper/entity.h
+	source/thewizardplusplus/utils/Path.h
 SOURCES += \
 	source/thewizardplusplus/utils/Console.cpp \
 	source/thewizardplusplus/anna/maths/Maths.cpp \
@@ -75,25 +75,16 @@ SOURCES += \
 	source/thewizardplusplus/anna/graphics/World.cpp \
 	source/thewizardplusplus/anna/graphics/BmpTextureLoader.cpp \
 	source/thewizardplusplus/utils/ByteOrderTester.cpp \
-	source/thewizardplusplus/utils/Path.cpp \
-	source/thewizardplusplus/anna/nicole_wrapper/graphic_core.cpp \
-	source/thewizardplusplus/anna/nicole_wrapper/utils.cpp \
-	source/thewizardplusplus/anna/nicole_wrapper/scene.cpp \
-	source/thewizardplusplus/anna/nicole_wrapper/entity.cpp
-OTHER_FILES += \
-	docs/exporters/io_export_ao.py
+	source/thewizardplusplus/utils/Path.cpp
+
+# флаги компилятора
+unix | win32-g++ {
+	QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O2
+}
 unix {
 	LIBS += -lGL
-	QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O3 -m32
 }
-win32 {
+win32-g++ {
 	LIBS += -lgdi32 -lopengl32
-	win32-g++ {
-		QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O3 -m32 -U__STRICT_ANSI__
-	}
-	win32-msvc2010 {
-		DEFINES += RAW_INPUT
-		LIBS += -luser32
-		QMAKE_CXXFLAGS += -W3 -Ox
-	}
+	QMAKE_CXXFLAGS += -U__STRICT_ANSI__
 }
