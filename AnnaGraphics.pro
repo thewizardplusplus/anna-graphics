@@ -81,10 +81,8 @@ SOURCES += \
 unix | win32-g++ {
 	QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O2
 }
-unix {
-	LIBS += -lGL
-}
+#unix:LIBS += -lGL
 win32-g++ {
-	LIBS += -lgdi32 -lopengl32
+	#LIBS += -lgdi32 -lopengl32
 	QMAKE_CXXFLAGS += -U__STRICT_ANSI__
 }
