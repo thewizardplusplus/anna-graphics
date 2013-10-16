@@ -119,7 +119,7 @@ void OpenGlGraphicApi::setCamera(Camera* camera) {
 		glOrtho(0.0, window->getSize().x, window->getSize().y, 0.0, camera->
 			getNearPlane(), camera->getFarPlane());
 	} else {
-		float f = 1.0f / std::tan(Camera::FOV / 2.0f);
+		float f = 1.0f / std::tan(camera->getFov() / 2.0f);
 		float projection_matrix[] = { f / (static_cast<float>(window->getSize().
 			x) / window->getSize().y), 0.0f, 0.0f, 0.0f, 0.0f, f, 0.0f, 0.0f,
 			0.0f, 0.0f, (camera->getNearPlane() + camera->getFarPlane()) /

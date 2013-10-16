@@ -3,6 +3,7 @@
 
 #include "Camera.h"
 #include "Mesh.h"
+#include <functional>
 
 namespace thewizardplusplus {
 namespace anna {

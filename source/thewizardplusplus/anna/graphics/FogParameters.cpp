@@ -7,8 +7,8 @@ FogParameters::FogParameters(void) :
 	type(FogType::LINEAR),
 	color(0.5f, 0.5f, 0.5f),
 	density(0.5f),
-	start_depth(0.0f),
-	end_depth(0.0f)
+	start_depth(0.1f),
+	end_depth(100.0f)
 {}
 
 FogParameters::FogParameters(const Vector3D<float>& color, float density, float

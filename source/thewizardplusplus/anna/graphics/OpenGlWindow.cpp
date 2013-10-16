@@ -229,7 +229,8 @@ OpenGlWindow::~OpenGlWindow(void) {
 	#ifdef OS_LINUX
 	if (context) {
 		if (!glXMakeCurrent(display, None, NULL)) {
-			Console::error() << "Warning: could not release drawing context.";
+			Console::error() << "AnnaGraphics warning: could not release "
+				"drawing context.";
 		}
 		glXDestroyContext(display, context);
 		context = NULL;
@@ -244,12 +245,14 @@ OpenGlWindow::~OpenGlWindow(void) {
 	if (opengl_context != NULL) {
 		result = wglMakeCurrent(NULL, NULL);
 		if (result == 0) {
-			Console::error() << "Warning: unable to release rendering context.";
+			Console::error() << "AnnaGraphics warning: unable to release "
+				"rendering context.";
 		}
 
 		result = wglDeleteContext(opengl_context);
 		if (result == 0) {
-			Console::error() << "Warning: unable to delete rendering context.";
+			Console::error() << "AnnaGraphics warning: unable to delete "
+				"rendering context.";
 		}
 
 		opengl_context = NULL;
@@ -258,7 +261,8 @@ OpenGlWindow::~OpenGlWindow(void) {
 	if (window_context != NULL) {
 		result = ReleaseDC(window, window_context);
 		if (result == 0) {
-			Console::error() << "Warning: unable to release device context.";
+			Console::error() << "AnnaGraphics warning: unable to release device"
+				" context.";
 		}
 		window_context = NULL;
 	}
@@ -266,14 +270,16 @@ OpenGlWindow::~OpenGlWindow(void) {
 	if (window != NULL) {
 		result = DestroyWindow(window);
 		if (result == 0) {
-			Console::error() << "Warning: unable to destroy window.";
+			Console::error() << "AnnaGraphics warning: unable to destroy "
+				"window.";
 		}
 		window = NULL;
 	}
 
 	result = UnregisterClass(WINDOW_CLASS_NAME.c_str(), instance);
 	if (result == 0) {
-		Console::error() << "Warning: unable to unregister window class.";
+		Console::error() << "AnnaGraphics warning: unable to unregister window "
+			"class.";
 	}
 	instance = NULL;
 	#endif
@@ -423,8 +429,8 @@ LRESULT CALLBACK OpenGlWindow::windowProcedure(HWND window, UINT message, WPARAM
 				HRAWINPUT>(long_parameter), RID_INPUT, data, &required_size,
 				sizeof(RAWINPUTHEADER));
 			if (gotten_size != required_size) {
-				Console::error() << "Warning: function GetRawInputData() does "
-					"not return correct size.";
+				Console::error() << "AnnaGraphics warning: function "
+					"GetRawInputData() does not return correct size.";
 			}
 
 			RAWINPUT* raw_data = reinterpret_cast<RAWINPUT*>(data);

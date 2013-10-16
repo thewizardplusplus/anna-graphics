@@ -11,14 +11,14 @@ namespace graphics {
 
 class Camera {
 public:
-	static const float FOV;
-
-	explicit Camera(CameraType::Types type = CameraType::PERSPECTIVE,
-		float near_plane = 0.1f, float far_plane = 100.0f, const maths::
-		Vector3D<float>& position = maths::Vector3D<float>(), const maths::
+	explicit Camera(CameraType::Types type = CameraType::PERSPECTIVE, float fov
+		= 45.0f, float near_plane = 0.1f, float far_plane = 100.0f, const maths
+		::Vector3D<float>& position = maths::Vector3D<float>(), const maths::
 		Vector3D<float>& rotation = maths::Vector3D<float>());
 	CameraType::Types getType(void) const;
 	void setType(CameraType::Types type);
+	float getFov(void) const;
+	void setFov(float fov);
 	float getNearPlane(void) const;
 	void setNearPlane(float near_plane);
 	float getFarPlane(void) const;
@@ -32,6 +32,7 @@ public:
 
 private:
 	CameraType::Types      type;
+	float                  fov;
 	float                  near_plane;
 	float                  far_plane;
 	maths::Vector3D<float> position;

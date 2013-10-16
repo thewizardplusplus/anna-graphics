@@ -1,12 +1,15 @@
 #include "AnimateObject.h"
-#include "../../utils/Console.h"
-#include "Mesh.h"
+#include "exceptions/UnableToOpenObjectFileException.h"
 #include "../../utils/Path.h"
+#include "Mesh.h"
 #include "GraphicApi.h"
+#include "exceptions/InvalidFormatOfObjectFileException.h"
+#include "../../utils/Converter.h"
 #include <fstream>
 #include <algorithm>
 
 using namespace thewizardplusplus::anna::graphics;
+using namespace thewizardplusplus::anna::graphics::exceptions;
 using namespace thewizardplusplus::anna::maths;
 using namespace thewizardplusplus::utils;
 
@@ -16,9 +19,7 @@ AnimateObject* AnimateObject::load(const std::string& filename, GraphicApi*
 	std::ifstream file;
 	file.open(filename.c_str(), std::ios_base::in | std::ios_base::binary);
 	if (!file.is_open()) {
-		Console::error() << "Warning: unable to open object file \"" << filename
-			<< "\".";
-		return NULL;
+		throw UnableToOpenObjectFileException(filename);
 	}
 
 	std::string mesh_path = Path(filename).getPathWithoutFilename();
@@ -144,9 +145,7 @@ AnimateObject* AnimateObject::load(const std::string& filename, GraphicApi*
 		delete result;
 		result = NULL;
 
-		Console::error() << "Warning: invalid format of object file \"" <<
-			filename << "\" - " << exception.what() << ".";
-		return NULL;
+		throw InvalidFormatOfObjectFileException(filename, exception.what());
 	}
 }
 

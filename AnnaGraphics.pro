@@ -1,8 +1,8 @@
 # общие настройки
 TARGET = AnnaGraphics
-TEMPLATE = lib
-CONFIG += staticlib
-#CONFIG += console
+#TEMPLATE = lib
+#CONFIG += staticlib
+CONFIG += console
 CONFIG += warn_on
 CONFIG -= qt
 
@@ -11,6 +11,11 @@ HEADERS += \
 	source/thewizardplusplus/utils/os.h \
 	source/thewizardplusplus/utils/ConsoleMessageType.h \
 	source/thewizardplusplus/utils/Console.h \
+	source/thewizardplusplus/utils/ByteOrderTesterHelper.h \
+	source/thewizardplusplus/utils/ByteOrderTester.h \
+	source/thewizardplusplus/utils/ByteOrder.h \
+	source/thewizardplusplus/utils/Converter.h \
+	source/thewizardplusplus/utils/Path.h \
 	source/thewizardplusplus/anna/maths/Vector4D.h \
 	source/thewizardplusplus/anna/maths/Vector3D.h \
 	source/thewizardplusplus/anna/maths/Vector2D.h \
@@ -44,13 +49,14 @@ HEADERS += \
 	source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.h \
 	source/thewizardplusplus/anna/graphics/World.h \
 	source/thewizardplusplus/anna/graphics/BmpTextureLoader.h \
-	source/thewizardplusplus/utils/ByteOrderTesterHelper.h \
-	source/thewizardplusplus/utils/ByteOrderTester.h \
-	source/thewizardplusplus/utils/ByteOrder.h \
-	source/thewizardplusplus/utils/Converter.h \
-	source/thewizardplusplus/utils/Path.h
+    source/thewizardplusplus/anna/graphics/exceptions/GraphicsException.h \
+    source/thewizardplusplus/anna/graphics/exceptions/UnableToOpenObjectFileException.h \
+    source/thewizardplusplus/anna/graphics/exceptions/InvalidFormatOfObjectFileException.h
 SOURCES += \
+	source/thewizardplusplus/main.cpp \
 	source/thewizardplusplus/utils/Console.cpp \
+	source/thewizardplusplus/utils/ByteOrderTester.cpp \
+	source/thewizardplusplus/utils/Path.cpp \
 	source/thewizardplusplus/anna/maths/Maths.cpp \
 	source/thewizardplusplus/anna/graphics/Vertex.cpp \
 	source/thewizardplusplus/anna/graphics/Texture.cpp \
@@ -74,15 +80,16 @@ SOURCES += \
 	source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.cpp \
 	source/thewizardplusplus/anna/graphics/World.cpp \
 	source/thewizardplusplus/anna/graphics/BmpTextureLoader.cpp \
-	source/thewizardplusplus/utils/ByteOrderTester.cpp \
-	source/thewizardplusplus/utils/Path.cpp
+    source/thewizardplusplus/anna/graphics/exceptions/GraphicsException.cpp \
+    source/thewizardplusplus/anna/graphics/exceptions/UnableToOpenObjectFileException.cpp \
+    source/thewizardplusplus/anna/graphics/exceptions/InvalidFormatOfObjectFileException.cpp
 
 # флаги компилятора
 unix | win32-g++ {
 	QMAKE_CXXFLAGS += -std=c++98 -pedantic -Wall -W -O2
 }
-#unix:LIBS += -lGL
+unix:LIBS += -lGL
 win32-g++ {
-	#LIBS += -lgdi32 -lopengl32
+	LIBS += -lgdi32 -lopengl32
 	QMAKE_CXXFLAGS += -U__STRICT_ANSI__
 }

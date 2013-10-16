@@ -20,8 +20,8 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 	std::ifstream file;
 	file.open(filename.c_str(), std::ios_base::in | std::ios_base::binary);
 	if (!file.is_open()) {
-		Console::error() << "Warning: unable to open texture file \"" <<
-			filename << "\".";
+		Console::error() << "AnnaGraphics warning: unable to open texture file "
+			"\"" << filename << "\".";
 		return TextureData();
 	}
 
@@ -30,8 +30,8 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 	try {
 		size_t mark = readWord(file);
 		if (mark != 0x4d42) {
-			Console::error() << "Warning: texture file \"" << filename << "\" "
-				"has not BMP format.";
+			Console::error() << "AnnaGraphics warning: texture file \"" <<
+				filename << "\" has not BMP format.";
 			return TextureData();
 		}
 
@@ -51,15 +51,15 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 		file.seekg(2, std::ios_base::cur);
 		size_t bits = readWord(file);
 		if (bits != 24 && bits != 32) {
-			Console::error() << "Warning: texture file \"" << filename << "\" "
-				"has not supported value of bits on pixel.";
+			Console::error() << "AnnaGraphics warning: texture file \"" <<
+				filename << "\" has not supported value of bits on pixel.";
 			return TextureData();
 		}
 		bool transparent = bits == 32;
 
 		if (readDoubleWord(file) != 0) {
-			Console::error() << "Warning: texture file \"" << filename << "\" "
-				"has not supported compression.";
+			Console::error() << "AnnaGraphics warning: texture file \"" <<
+				filename << "\" has not supported compression.";
 			return TextureData();
 		}
 
@@ -90,14 +90,14 @@ TextureData BmpTextureLoader::load(const std::string& filename) {
 		return TextureData(data, Vector2D<size_t>(width, height), transparent);
 	} catch (const std::ifstream::failure& exception) {
 		(void)exception;
-		Console::error() << "Warning: unable to read texture file \"" <<
-			filename << "\".";
+		Console::error() << "AnnaGraphics warning: unable to read texture file "
+			"\"" << filename << "\".";
 		return TextureData();
 	} catch(const std::bad_alloc& exception) {
 		(void)exception;
-		Console::error() << "Warning: in process of loading texture file \"" <<
-			filename << "\" was requested too much memory; perhaps some "
-			"parameters of image have been read wrong.";
+		Console::error() << "AnnaGraphics warning: in process of loading "
+			"texture file \"" << filename << "\" was requested too much memory;"
+			" perhaps some parameters of image have been read wrong.";
 		return TextureData();
 	}
 }
