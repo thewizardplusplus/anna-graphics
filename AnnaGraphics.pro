@@ -20,6 +20,20 @@ HEADERS += \
 	source/thewizardplusplus/anna/maths/Vector3D.h \
 	source/thewizardplusplus/anna/maths/Vector2D.h \
 	source/thewizardplusplus/anna/maths/Maths.h \
+	source/thewizardplusplus/anna/graphics/exceptions/GraphicsException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToOpenObjectFileException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/InvalidFormatOfObjectFileException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/ConnectWithXServerException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/FailedToChoosePixelFormatException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToRegisterWindowClassException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/CannotRunInFullscreenModeException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToCreateWindowException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToCreateDeviceContextException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/CannotFindAppropriatePixelFormatException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToSetPixelFormatException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToCreateOpenGlRenderingContextException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToActivateOpenGlRenderingContextException.h \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToRegisterRawInputDeviceException.h \
 	source/thewizardplusplus/anna/graphics/Vertex.h \
 	source/thewizardplusplus/anna/graphics/TransparentType.h \
 	source/thewizardplusplus/anna/graphics/Texture.h \
@@ -48,16 +62,27 @@ HEADERS += \
 	source/thewizardplusplus/anna/graphics/OpenGlWindow.h \
 	source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.h \
 	source/thewizardplusplus/anna/graphics/World.h \
-	source/thewizardplusplus/anna/graphics/BmpTextureLoader.h \
-    source/thewizardplusplus/anna/graphics/exceptions/GraphicsException.h \
-    source/thewizardplusplus/anna/graphics/exceptions/UnableToOpenObjectFileException.h \
-    source/thewizardplusplus/anna/graphics/exceptions/InvalidFormatOfObjectFileException.h
+	source/thewizardplusplus/anna/graphics/BmpTextureLoader.h
 SOURCES += \
 	source/thewizardplusplus/main.cpp \
 	source/thewizardplusplus/utils/Console.cpp \
 	source/thewizardplusplus/utils/ByteOrderTester.cpp \
 	source/thewizardplusplus/utils/Path.cpp \
 	source/thewizardplusplus/anna/maths/Maths.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/GraphicsException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToOpenObjectFileException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/InvalidFormatOfObjectFileException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/ConnectWithXServerException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/FailedToChoosePixelFormatException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToRegisterWindowClassException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/CannotRunInFullscreenModeException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToCreateWindowException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToCreateDeviceContextException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/CannotFindAppropriatePixelFormatException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToSetPixelFormatException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToCreateOpenGlRenderingContextException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToActivateOpenGlRenderingContextException.cpp \
+	source/thewizardplusplus/anna/graphics/exceptions/UnableToRegisterRawInputDeviceException.cpp \
 	source/thewizardplusplus/anna/graphics/Vertex.cpp \
 	source/thewizardplusplus/anna/graphics/Texture.cpp \
 	source/thewizardplusplus/anna/graphics/Material.cpp \
@@ -79,10 +104,7 @@ SOURCES += \
 	source/thewizardplusplus/anna/graphics/OpenGlWindow.cpp \
 	source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.cpp \
 	source/thewizardplusplus/anna/graphics/World.cpp \
-	source/thewizardplusplus/anna/graphics/BmpTextureLoader.cpp \
-    source/thewizardplusplus/anna/graphics/exceptions/GraphicsException.cpp \
-    source/thewizardplusplus/anna/graphics/exceptions/UnableToOpenObjectFileException.cpp \
-    source/thewizardplusplus/anna/graphics/exceptions/InvalidFormatOfObjectFileException.cpp
+	source/thewizardplusplus/anna/graphics/BmpTextureLoader.cpp
 
 # флаги компилятора
 unix | win32-g++ {

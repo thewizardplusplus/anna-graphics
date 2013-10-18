@@ -1,9 +1,21 @@
 #include "OpenGlWindow.h"
+#include "exceptions/ConnectWithXServerException.h"
+#include "exceptions/FailedToChoosePixelFormatException.h"
+#include "exceptions/UnableToRegisterWindowClassException.h"
+#include "exceptions/CannotRunInFullscreenModeException.h"
+#include "exceptions/UnableToCreateWindowException.h"
+#include "exceptions/UnableToCreateDeviceContextException.h"
+#include "exceptions/CannotFindAppropriatePixelFormatException.h"
+#include "exceptions/UnableToSetPixelFormatException.h"
+#include "exceptions/UnableToCreateOpenGlRenderingContextException.h"
+#include "exceptions/UnableToActivateOpenGlRenderingContextException.h"
+#include "exceptions/UnableToRegisterRawInputDeviceException.h"
 #include "../../utils/Console.h"
 #include <cstdlib>
 #include <cstring>
 
 using namespace thewizardplusplus::anna::graphics;
+using namespace thewizardplusplus::anna::graphics::exceptions;
 using namespace thewizardplusplus::anna::maths;
 using namespace thewizardplusplus::utils;
 
@@ -50,16 +62,14 @@ OpenGlWindow::OpenGlWindow(void) :
 	#ifdef OS_LINUX
 	display = XOpenDisplay(NULL);
 	if (display == NULL) {
-		Console::error() << "Error: can't connect with X Server.";
-		std::exit(EXIT_FAILURE);
+		throw ConnectWithXServerException();
 	}
 	int screen = DefaultScreen(display);
 	int info_attributes[] = { GLX_RGBA, GLX_DOUBLEBUFFER, GLX_DEPTH_SIZE, 24,
 		None };
 	XVisualInfo* info = glXChooseVisual(display, screen, info_attributes);
 	if (info == NULL) {
-		Console::error() << "Error: failed to choose a pixel format.";
-		std::exit(EXIT_FAILURE);
+		throw FailedToChoosePixelFormatException();
 	}
 	size.x = XDisplayWidth(display, info->screen);
 	size.y = XDisplayHeight(display, info->screen);
@@ -122,8 +132,7 @@ OpenGlWindow::OpenGlWindow(void) :
 
 	result = RegisterClassEx(&window_class);
 	if (!result) {
-		Console::error() << "Error: unable to register the window class.";
-		std::exit(EXIT_FAILURE);
+		throw UnableToRegisterWindowClassException();
 	}
 
 	DEVMODE screen_settings;
@@ -136,9 +145,7 @@ OpenGlWindow::OpenGlWindow(void) :
 
 	result = ChangeDisplaySettings(&screen_settings, CDS_FULLSCREEN);
 	if (result != DISP_CHANGE_SUCCESSFUL) {
-		Console::error() << "Error: cannot run in the fullscreen mode at the "
-			"screen resolution on your video card.";
-		std::exit(EXIT_FAILURE);
+		throw CannotRunInFullscreenModeException();
 	}
 
 	ShowCursor(FALSE);
@@ -154,14 +161,12 @@ OpenGlWindow::OpenGlWindow(void) :
 		WS_POPUP | WS_CLIPCHILDREN | WS_CLIPSIBLINGS, 0, 0, size.x, size.y,
 		NULL, NULL, instance, this);
 	if (window == NULL) {
-		Console::error() << "Error: unable to create window.";
-		std::exit(EXIT_FAILURE);
+		throw UnableToCreateWindowException();
 	}
 
 	window_context = GetDC(window);
 	if (window_context == NULL) {
-		Console::error() << "Error: unable to create device context.";
-		std::exit(EXIT_FAILURE);
+		throw UnableToCreateDeviceContextException();
 	}
 
 	PIXELFORMATDESCRIPTOR pixel_format_descriptor = { sizeof(
@@ -171,28 +176,23 @@ OpenGlWindow::OpenGlWindow(void) :
 	unsigned int pixel_format = ChoosePixelFormat(window_context,
 		&pixel_format_descriptor);
 	if (pixel_format == 0) {
-		Console::error() << "Error: can't find an appropriate pixel format.";
-		std::exit(EXIT_FAILURE);
+		throw CannotFindAppropriatePixelFormatException();
 	}
 
 	result = SetPixelFormat(window_context, pixel_format,
 		&pixel_format_descriptor);
 	if (result == 0) {
-		Console::error() << "Error: unable to set pixel format.";
-		std::exit(EXIT_FAILURE);
+		throw UnableToSetPixelFormatException();
 	}
 
 	opengl_context = wglCreateContext(window_context);
 	if (opengl_context == NULL) {
-		Console::error() << "Error: unable to create OpenGL rendering context.";
-		std::exit(EXIT_FAILURE);
+		throw UnableToCreateOpenGlRenderingContextException();
 	}
 
 	result = wglMakeCurrent(window_context, opengl_context);
 	if (result == 0) {
-		Console::error() << "Error: unable to activate OpenGL rendering "
-			"context.";
-		std::exit(EXIT_FAILURE);
+		throw UnableToActivateOpenGlRenderingContextException();
 	}
 
 	ShowWindow(window, SW_SHOW);
@@ -216,8 +216,7 @@ OpenGlWindow::OpenGlWindow(void) :
 	result = RegisterRawInputDevices(raw_input_device_ids, \
 		NUMBER_OF_RAW_INPUT_DEVICES, sizeof(RAWINPUTDEVICE));
 	if (!result) {
-		Console::error() << "Error: unable to register raw input device.";
-		std::exit(EXIT_FAILURE);
+		throw UnableToRegisterRawInputDeviceException();
 	}
 	#endif
 	#endif
