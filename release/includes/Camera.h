@@ -12,7 +12,7 @@ namespace graphics {
 class Camera {
 public:
 	explicit Camera(CameraType::Types type = CameraType::PERSPECTIVE, float fov
-		= 45.0f, float near_plane = 0.1f, float far_plane = 100.0f, const maths
+		= 45.0f, float near_plane = 0.1f, float far_plane = 5000.0f, const maths
 		::Vector3D<float>& position = maths::Vector3D<float>(), const maths::
 		Vector3D<float>& rotation = maths::Vector3D<float>());
 	CameraType::Types getType(void) const;

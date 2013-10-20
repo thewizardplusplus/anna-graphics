@@ -1,12 +1,12 @@
 #ifndef GRAPHICAPI_H
 #define GRAPHICAPI_H
 
-#include "Window.h"
-#include "FogParameters.h"
-#include "Texture.h"
-#include "TextureData.h"
-#include "TextureLoader.h"
-#include "World.h"
+#include <Window.h>
+#include <FogParameters.h>
+#include <Texture.h>
+#include <TextureData.h>
+#include <TextureLoader.h>
+#include <World.h>
 #include <map>
 
 namespace thewizardplusplus {
@@ -73,7 +73,11 @@ private:
 
 template<typename GraphicApiType>
 GraphicApiType* GraphicApi::create(void) {
-	return new GraphicApiType();
+	GraphicApiType* gapi = new GraphicApiType();
+	gapi->setAmbientColor(1.0f, 1.0f, 1.0f);
+	gapi->setFogParameters(FogParameters());
+
+	return gapi;
 }
 
 }

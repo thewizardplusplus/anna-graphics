@@ -16,9 +16,9 @@ public:
 	float                  start_depth;
 	float                  end_depth;
 
-	FogParameters(void);
-	FogParameters(const maths::Vector3D<float>& color, float density, float
-		start_depth, float end_depth, FogType::Types type = FogType::LINEAR);
+	FogParameters(const maths::Vector3D<float>& color = maths::Vector3D<float>(
+		0.5f, 0.5f, 0.5f), float density = 1.0f, float start_depth = 0.1f, float
+		end_depth = 5000.0f, FogType::Types type = FogType::LINEAR);
 };
 
 }

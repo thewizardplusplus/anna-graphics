@@ -73,7 +73,11 @@ private:
 
 template<typename GraphicApiType>
 GraphicApiType* GraphicApi::create(void) {
-	return new GraphicApiType();
+	GraphicApiType* gapi = new GraphicApiType();
+	gapi->setAmbientColor(1.0f, 1.0f, 1.0f);
+	gapi->setFogParameters(FogParameters());
+
+	return gapi;
 }
 
 }
