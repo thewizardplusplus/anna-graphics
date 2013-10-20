@@ -1,8 +1,8 @@
 #ifndef DISTANCETOMESHCOMPARATOR_H
 #define DISTANCETOMESHCOMPARATOR_H
 
-#include "Camera.h"
-#include "Mesh.h"
+#include <Camera.h>
+#include <Mesh.h>
 
 namespace thewizardplusplus {
 namespace anna {

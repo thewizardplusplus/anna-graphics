@@ -19,8 +19,8 @@ int main(void) {
 
 	Window* wnd = gapi->getWindow();
 	while (!wnd->isPressedKey(KeyCode::KEY_ESCAPE)) {
-		cube->setRotation(cube->getRotation() + Vector3D<float>(Maths::
-			randomNumber(), Maths::randomNumber(), Maths::randomNumber()));
+		cube->setRotation(cube->getRotation() + Vector3D<float>(1.0f, 1.0f,
+			1.0f));
 
 		gapi->clear();
 		gapi->drawWorld(&world);
