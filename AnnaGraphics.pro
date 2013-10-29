@@ -112,6 +112,8 @@ unix | win32-g++ {
 }
 #unix:LIBS += -lGL
 win32-g++ {
+	DEFINES += RAW_INPUT
+
 	#LIBS += -lgdi32 -lopengl32
 	QMAKE_CXXFLAGS += -U__STRICT_ANSI__
 }
