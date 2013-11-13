@@ -121,9 +121,11 @@ unsigned int BmpTextureLoader::readWord(std::ifstream& in) const {
 	ByteOrder::Types byte_order = ByteOrderTester::test();
 	switch (byte_order) {
 		case ByteOrder::LITTLE_ENDIAN:
-			return buffer[0] | buffer[1] << 8;
+			return static_cast<unsigned char>(buffer[0]) | static_cast<unsigned
+				char>(buffer[1]) << 8;
 		case ByteOrder::BIG_ENDIAN: {
-			return buffer[1] << 8 | buffer[0];
+			return static_cast<unsigned char>(buffer[1]) << 8 | static_cast<
+				unsigned char>(buffer[0]);
 		}
 		default:
 			return 0;
@@ -137,11 +139,13 @@ unsigned long BmpTextureLoader::readDoubleWord(std::ifstream& in) const {
 	ByteOrder::Types byte_order = ByteOrderTester::test();
 	switch (byte_order) {
 		case ByteOrder::LITTLE_ENDIAN:
-			return buffer[0] | buffer[1] << 8 | buffer[2] << 16 | buffer[3] <<
-				24;
+			return static_cast<unsigned char>(buffer[0]) | static_cast<unsigned
+				char>(buffer[1]) << 8 | static_cast<unsigned char>(buffer[2]) <<
+				16 | static_cast<unsigned char>(buffer[3]) << 24;
 		case ByteOrder::BIG_ENDIAN: {
-			return buffer[3] << 24 | buffer[2] << 16 | buffer[1] << 8 | buffer[
-				0];
+			return static_cast<unsigned char>(buffer[3]) << 24 | static_cast<
+				unsigned char>(buffer[2]) << 16 | static_cast<unsigned char>(
+				buffer[1]) << 8 | static_cast<unsigned char>(buffer[0]);
 		}
 		default:
 			return 0;
@@ -155,11 +159,13 @@ long BmpTextureLoader::readLong(std::ifstream& in) const {
 	ByteOrder::Types byte_order = ByteOrderTester::test();
 	switch (byte_order) {
 		case ByteOrder::LITTLE_ENDIAN:
-			return buffer[0] | buffer[1] << 8 | buffer[2] << 16 | buffer[3] <<
-				24;
+			return static_cast<unsigned char>(buffer[0]) | static_cast<unsigned
+				char>(buffer[1]) << 8 | static_cast<unsigned char>(buffer[2]) <<
+				16 | static_cast<unsigned char>(buffer[3]) << 24;
 		case ByteOrder::BIG_ENDIAN: {
-			return buffer[3] << 24 | buffer[2] << 16 | buffer[1] << 8 | buffer[
-				0];
+			return static_cast<unsigned char>(buffer[3]) << 24 | static_cast<
+				unsigned char>(buffer[2]) << 16 | static_cast<unsigned char>(
+				buffer[1]) << 8 | static_cast<unsigned char>(buffer[0]);
 		}
 		default:
 			return 0;
