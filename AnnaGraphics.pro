@@ -1,8 +1,8 @@
 # общие настройки
 TARGET = AnnaGraphics
-TEMPLATE = lib
-CONFIG += staticlib
-#CONFIG += console
+#TEMPLATE = lib
+#CONFIG += staticlib
+CONFIG += console
 CONFIG += warn_on
 CONFIG -= qt
 
@@ -64,7 +64,7 @@ HEADERS += \
 	source/thewizardplusplus/anna/graphics/World.h \
 	source/thewizardplusplus/anna/graphics/BmpTextureLoader.h
 SOURCES += \
-	#source/thewizardplusplus/main.cpp \
+	source/thewizardplusplus/main.cpp \
 	source/thewizardplusplus/utils/Console.cpp \
 	source/thewizardplusplus/utils/ByteOrderTester.cpp \
 	source/thewizardplusplus/utils/Path.cpp \
@@ -110,10 +110,10 @@ SOURCES += \
 unix | win32-g++ {
 	QMAKE_CXXFLAGS += -std=c++03 -pedantic -Wall -W -O2
 }
-#unix:LIBS += -lGL
+unix:LIBS += -lGL -lX11 -pthread
 win32-g++ {
 	DEFINES += RAW_INPUT
 
-	#LIBS += -lgdi32 -lopengl32
+	LIBS += -lgdi32 -lopengl32
 	QMAKE_CXXFLAGS += -U__STRICT_ANSI__
 }
