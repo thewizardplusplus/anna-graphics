@@ -1,0 +1,5 @@
+<map id="thewizardplusplus::anna::graphics::TextureLoader::getSupportedFormats" name="thewizardplusplus::anna::graphics::TextureLoader::getSupportedFormats">
+<area shape="rect" id="node2" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#a5c89d44517c00a2165077efc2d76a7cf" title="thewizardplusplus::\lanna::graphics::GraphicApi\l::addTextureLoader" alt="" coords="253,5,432,61"/>
+<area shape="rect" id="node4" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#ad53e8b943204574140da62f5fd969375" title="thewizardplusplus::\lanna::graphics::GraphicApi\l::removeTextureLoader" alt="" coords="253,85,432,141"/>
+<area shape="rect" id="node3" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a7a2bc68ec44d5c37fb65f33ad6e2c6a2" title="thewizardplusplus::\lanna::graphics::OpenGlGraphic\lApi::OpenGlGraphicApi" alt="" coords="481,5,685,61"/>
+</map>

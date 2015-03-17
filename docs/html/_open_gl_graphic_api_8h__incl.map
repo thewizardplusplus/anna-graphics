@@ -1,0 +1,24 @@
+<map id="source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.h" name="source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.h">
+<area shape="rect" id="node2" href="$_graphic_api_8h.html" title="GraphicApi.h" alt="" coords="689,96,786,123"/>
+<area shape="rect" id="node3" href="$_window_8h.html" title="Window.h" alt="" coords="821,171,899,197"/>
+<area shape="rect" id="node12" href="$_fog_parameters_8h.html" title="FogParameters.h" alt="" coords="462,171,585,197"/>
+<area shape="rect" id="node15" href="$_texture_8h.html" title="Texture.h" alt="" coords="1070,320,1146,347"/>
+<area shape="rect" id="node16" href="$_texture_data_8h.html" title="TextureData.h" alt="" coords="589,245,694,272"/>
+<area shape="rect" id="node17" href="$_texture_loader_8h.html" title="TextureLoader.h" alt="" coords="680,171,795,197"/>
+<area shape="rect" id="node18" href="$_world_8h.html" title="World.h" alt="" coords="334,171,401,197"/>
+<area shape="rect" id="node4" href="$_vector2_d_8h.html" title="../maths/Vector2D.h" alt="" coords="759,469,898,496"/>
+<area shape="rect" id="node9" href="$_key_code_8h.html" title="KeyCode.h" alt="" coords="908,245,994,272"/>
+<area shape="rect" id="node10" href="$_button_code_8h.html" title="ButtonCode.h" alt="" coords="781,245,883,272"/>
+<area shape="rect" id="node5" href="$_maths_8h.html" title="Maths.h" alt="" coords="401,544,470,571"/>
+<area shape="rect" id="node13" href="$_fog_type_8h.html" title="FogType.h" alt="" coords="481,245,565,272"/>
+<area shape="rect" id="node14" href="$_vector3_d_8h.html" title="../maths/Vector3D.h" alt="" coords="299,469,438,496"/>
+<area shape="rect" id="node19" href="$_camera_8h.html" title="Camera.h" alt="" coords="477,395,555,421"/>
+<area shape="rect" id="node22" href="$_object_8h.html" title="Object.h" alt="" coords="328,320,398,347"/>
+<area shape="rect" id="node24" href="$_animate_object_8h.html" title="AnimateObject.h" alt="" coords="185,245,303,272"/>
+<area shape="rect" id="node20" href="$_camera_type_8h.html" title="CameraType.h" alt="" coords="463,469,570,496"/>
+<area shape="rect" id="node21" href="$_vector4_d_8h.html" title="../maths/Vector4D.h" alt="" coords="595,469,734,496"/>
+<area shape="rect" id="node25" href="$_animate_state_8h.html" title="AnimateState.h" alt="" coords="193,320,303,347"/>
+<area shape="rect" id="node26" href="$_animate_track_8h.html" title="AnimateTrack.h" alt="" coords="54,320,169,347"/>
+<area shape="rect" id="node27" href="$_animate_key_8h.html" title="AnimateKey.h" alt="" coords="59,395,163,421"/>
+<area shape="rect" id="node28" href="$_animate_key_type_8h.html" title="AnimateKeyType.h" alt="" coords="54,469,187,496"/>
+</map>

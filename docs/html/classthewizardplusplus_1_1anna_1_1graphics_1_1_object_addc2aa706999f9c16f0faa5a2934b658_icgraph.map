@@ -1,0 +1,6 @@
+<map id="thewizardplusplus::anna::graphics::Object::addMesh" name="thewizardplusplus::anna::graphics::Object::addMesh">
+<area shape="rect" id="node2" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#af625fcd4a2956b93d9131d193c1259b3" title="thewizardplusplus::\lanna::graphics::AnimateObject::load" alt="" coords="209,5,442,46"/>
+<area shape="rect" id="node3" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#ab003a2432b0fbcb48bb82340457aef71" title="thewizardplusplus::\lanna::graphics::Mesh::Mesh" alt="" coords="232,70,419,111"/>
+<area shape="rect" id="node4" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#ae7a6e91b4e233df57c8bfe9e1c631e6e" title="thewizardplusplus::\lanna::graphics::Mesh\l::setObject" alt="" coords="252,135,399,191"/>
+<area shape="rect" id="node5" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#acbe7b811e111cc62f337dc17470ddbe8" title="thewizardplusplus::\lanna::graphics::Object\l::removeMesh" alt="" coords="491,135,645,191"/>
+</map>

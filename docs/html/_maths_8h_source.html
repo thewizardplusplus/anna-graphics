@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Исходный файл source/thewizardplusplus/anna/maths/Maths.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_maths_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Maths.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_maths_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MATHS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MATHS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>thewizardplusplus {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>anna {</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespacethewizardplusplus_1_1anna_1_1maths.html">    6</a></span>&#160;<span class="keyword">namespace </span>maths {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html">Maths</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#ab5f5e8d8f24d6eacfeeb7b00c4d64622">   10</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#ab5f5e8d8f24d6eacfeeb7b00c4d64622">PI</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">   11</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>   <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a> = 4;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">isEqual</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">int</span> bits_not_compare =</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">isEqual</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">int</span> bits_not_compare =</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">isEqual</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> x, <span class="keywordtype">long</span> <span class="keywordtype">double</span> y, <span class="keywordtype">int</span> bits_not_compare =</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a44707c6f6960961ccd2c6a29b55371fc">isNull</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">int</span> bits_not_compare =</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a44707c6f6960961ccd2c6a29b55371fc">isNull</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">int</span> bits_not_compare =</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a44707c6f6960961ccd2c6a29b55371fc">isNull</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> x, <span class="keywordtype">int</span> bits_not_compare =</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a74b21705ea4da1e4c49ec00da4360c82">toDegrees</a>(<span class="keywordtype">float</span> angle);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a0520867eb1375bfa4c999eaa9762deb4">toRadians</a>(<span class="keywordtype">float</span> angle);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#acf36a94e7119abdf7e3816241b0d9bca">clamp</a>(<span class="keywordtype">float</span> number, <span class="keywordtype">float</span> limit1 = 1.0f, <span class="keywordtype">float</span> limit2 = 0.0f);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">interpolate</a>(<span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> shift);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a069b731171fbb2384a77dc5d40009570">randomNumber</a>(<span class="keywordtype">float</span> limit1 = 1.0f, <span class="keywordtype">float</span> limit2 = 0.0f);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> initialize_prmg;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_acf36a94e7119abdf7e3816241b0d9bca"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#acf36a94e7119abdf7e3816241b0d9bca">thewizardplusplus::anna::maths::Maths::clamp</a></div><div class="ttdeci">static float clamp(float number, float limit1=1.0f, float limit2=0.0f)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00048">Maths.cpp:48</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_a6ce62c9c04f3ab894a57e0ed4ca2404a"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">thewizardplusplus::anna::maths::Maths::isEqual</a></div><div class="ttdeci">static bool isEqual(float x, float y, int bits_not_compare=DEFAULT_BITS_NOT_COMPARE)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00013">Maths.cpp:13</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_a069b731171fbb2384a77dc5d40009570"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a069b731171fbb2384a77dc5d40009570">thewizardplusplus::anna::maths::Maths::randomNumber</a></div><div class="ttdeci">static float randomNumber(float limit1=1.0f, float limit2=0.0f)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00065">Maths.cpp:65</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_afc5abffd2899ce6a6a2dc54f26793d6e"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">thewizardplusplus::anna::maths::Maths::interpolate</a></div><div class="ttdeci">static float interpolate(float x1, float x2, float shift)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00061">Maths.cpp:61</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html">thewizardplusplus::anna::maths::Maths</a></div><div class="ttdef"><b>Definition:</b> <a href="_maths_8h_source.html#l00008">Maths.h:8</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_ab5f5e8d8f24d6eacfeeb7b00c4d64622"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#ab5f5e8d8f24d6eacfeeb7b00c4d64622">thewizardplusplus::anna::maths::Maths::PI</a></div><div class="ttdeci">static const float PI</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8h_source.html#l00010">Maths.h:10</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_a0520867eb1375bfa4c999eaa9762deb4"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a0520867eb1375bfa4c999eaa9762deb4">thewizardplusplus::anna::maths::Maths::toRadians</a></div><div class="ttdeci">static float toRadians(float angle)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00044">Maths.cpp:44</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_a44707c6f6960961ccd2c6a29b55371fc"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a44707c6f6960961ccd2c6a29b55371fc">thewizardplusplus::anna::maths::Maths::isNull</a></div><div class="ttdeci">static bool isNull(float x, int bits_not_compare=DEFAULT_BITS_NOT_COMPARE)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00028">Maths.cpp:28</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_a74b21705ea4da1e4c49ec00da4360c82"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a74b21705ea4da1e4c49ec00da4360c82">thewizardplusplus::anna::maths::Maths::toDegrees</a></div><div class="ttdeci">static float toDegrees(float angle)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00040">Maths.cpp:40</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_a75f09f0aec377a8532b750235c0c16ce"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">thewizardplusplus::anna::maths::Maths::DEFAULT_BITS_NOT_COMPARE</a></div><div class="ttdeci">static const int DEFAULT_BITS_NOT_COMPARE</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8h_source.html#l00011">Maths.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0336ce38ab64e2a7ed4a9562c4d5571e.html">source</a></li><li class="navelem"><a class="el" href="dir_bea6e9abe0e966af7f9a4d04eeceaa1b.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="dir_556f2a3c2e5316ac71f910d46cf95b27.html">anna</a></li><li class="navelem"><a class="el" href="dir_27aac03e81c60fd2d06284b0d156bd2c.html">maths</a></li><li class="navelem"><a class="el" href="_maths_8h.html">Maths.h</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<map id="source/thewizardplusplus/utils/os.h" name="source/thewizardplusplus/utils/os.h">
+<area shape="rect" id="node2" href="$_path_8h.html" title="source/thewizardplusplus\l/utils/Path.h" alt="" coords="251,97,420,138"/>
+<area shape="rect" id="node5" href="$_byte_order_8h.html" title="source/thewizardplusplus\l/utils/ByteOrder.h" alt="" coords="445,97,613,138"/>
+<area shape="rect" id="node9" href="$_open_gl_window_8h.html" title="source/thewizardplusplus\l/anna/graphics/OpenGlWindow.h" alt="" coords="653,97,867,138"/>
+<area shape="rect" id="node3" href="$_animate_object_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/AnimateObject.cpp" alt="" coords="5,187,227,229"/>
+<area shape="rect" id="node4" href="$_path_8cpp.html" title="source/thewizardplusplus\l/utils/Path.cpp" alt="" coords="251,187,420,229"/>
+<area shape="rect" id="node6" href="$_byte_order_tester_8h.html" title="source/thewizardplusplus\l/utils/ByteOrderTester.h" alt="" coords="445,187,613,229"/>
+<area shape="rect" id="node7" href="$_bmp_texture_loader_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/BmpTextureLoader.cpp" alt="" coords="289,278,535,319"/>
+<area shape="rect" id="node8" href="$_byte_order_tester_8cpp.html" title="source/thewizardplusplus\l/utils/ByteOrderTester.cpp" alt="" coords="559,278,733,319"/>
+<area shape="rect" id="node10" href="$_open_gl_graphic_api_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/OpenGlGraphicApi.cpp" alt="" coords="638,187,881,229"/>
+<area shape="rect" id="node11" href="$_open_gl_window_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/OpenGlWindow.cpp" alt="" coords="907,187,1133,229"/>
+</map>

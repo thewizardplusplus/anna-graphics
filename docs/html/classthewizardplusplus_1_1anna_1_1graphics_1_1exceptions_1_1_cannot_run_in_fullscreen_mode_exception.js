@@ -1,0 +1,4 @@
+var classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_cannot_run_in_fullscreen_mode_exception =
+[
+    [ "CannotRunInFullscreenModeException", "classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_cannot_run_in_fullscreen_mode_exception.html#aef9ed6c92d66f278e6c15a518f61eba4", null ]
+];

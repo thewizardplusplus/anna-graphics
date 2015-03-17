@@ -1,0 +1,4 @@
+var classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_unable_to_set_pixel_format_exception =
+[
+    [ "UnableToSetPixelFormatException", "classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_unable_to_set_pixel_format_exception.html#ab213a7263fd8a325d55773d70988b65e", null ]
+];

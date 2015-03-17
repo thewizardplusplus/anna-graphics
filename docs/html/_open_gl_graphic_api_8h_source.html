@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Исходный файл source/thewizardplusplus/anna/graphics/OpenGlGraphicApi.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_open_gl_graphic_api_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">OpenGlGraphicApi.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_open_gl_graphic_api_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OPENGLGRAPHICAPI_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define OPENGLGRAPHICAPI_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_graphic_api_8h.html">GraphicApi.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>thewizardplusplus {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>anna {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>graphics {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html">OpenGlGraphicApi</a> : <span class="keyword">public</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html">GraphicApi</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a7a2bc68ec44d5c37fb65f33ad6e2c6a2">OpenGlGraphicApi</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture.html">Texture</a>* <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a7c55063db53dd59ed494c04f66aa34c0">createTexture</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_data.html">TextureData</a>&amp; texture_data, <span class="keyword">const</span> std::</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">string</span>&amp; name = std::string());</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#ad19ffdd14ed85ef4dc7b5dfbd69edbea">setTexture</a>(<a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture.html">Texture</a>* texture);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a3c358aa0799d451edfa90464c0ac4069">clear</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#af96ee2f8a49362849c3d6186362c79d2">processSettingAmbientColor</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D&lt;float&gt;</a>&amp;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#a1c20ed91424c913640d744d866b572f3">ambient_color</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a2819ef52fadd7c73500d21395c8b0a8b">processSettingFogParameters</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html">FogParameters</a>&amp;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#a984512002b5b3cf824178b924980dea6">fog_parameters</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#ab0a64cb5054d70c7aad4743ffc2a5ee3">setBlendingMode</a>(<span class="keywordtype">bool</span> blending_mode);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#adf04c0a2d27826c531ec59279e9aaa85">setCamera</a>(<a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html">Camera</a>* camera);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#afc7996e3f59d56e281398ce9b8ee2956">drawMesh</a>(<a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">Mesh</a>* mesh);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> DEFAULT_TEXTURE_SIZE =</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        512;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> DEFAULT_TEXTURE_PIECES =</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        16;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D&lt;unsigned char&gt;</a> DEFAULT_TEXTURE_LIGHT_COLOR;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D&lt;unsigned char&gt;</a> DEFAULT_TEXTURE_DARK_COLOR;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string                    TEXTURE_FROM_DATA_BASE_NAME;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture.html">Texture</a>* default_texture;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span>      last_id_texture_from_data;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> createDefaultTexture(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api_html_a1c20ed91424c913640d744d866b572f3"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#a1c20ed91424c913640d744d866b572f3">thewizardplusplus::anna::graphics::GraphicApi::ambient_color</a></div><div class="ttdeci">maths::Vector3D&lt; float &gt; ambient_color</div><div class="ttdef"><b>Definition:</b> <a href="_graphic_api_8h_source.html#l00055">GraphicApi.h:55</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_data_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_data.html">thewizardplusplus::anna::graphics::TextureData</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_data_8h_source.html#l00010">TextureData.h:10</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_a7c55063db53dd59ed494c04f66aa34c0"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a7c55063db53dd59ed494c04f66aa34c0">thewizardplusplus::anna::graphics::OpenGlGraphicApi::createTexture</a></div><div class="ttdeci">virtual Texture * createTexture(const TextureData &amp;texture_data, const std::string &amp;name=std::string())</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00029">OpenGlGraphicApi.cpp:29</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html">thewizardplusplus::anna::graphics::GraphicApi</a></div><div class="ttdef"><b>Definition:</b> <a href="_graphic_api_8h_source.html#l00016">GraphicApi.h:16</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_afc7996e3f59d56e281398ce9b8ee2956"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#afc7996e3f59d56e281398ce9b8ee2956">thewizardplusplus::anna::graphics::OpenGlGraphicApi::drawMesh</a></div><div class="ttdeci">virtual void drawMesh(Mesh *mesh)</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00141">OpenGlGraphicApi.cpp:141</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">thewizardplusplus::anna::maths::Vector3D&lt; float &gt;</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_a7a2bc68ec44d5c37fb65f33ad6e2c6a2"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a7a2bc68ec44d5c37fb65f33ad6e2c6a2">thewizardplusplus::anna::graphics::OpenGlGraphicApi::OpenGlGraphicApi</a></div><div class="ttdeci">OpenGlGraphicApi(void)</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00020">OpenGlGraphicApi.cpp:20</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_a2819ef52fadd7c73500d21395c8b0a8b"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a2819ef52fadd7c73500d21395c8b0a8b">thewizardplusplus::anna::graphics::OpenGlGraphicApi::processSettingFogParameters</a></div><div class="ttdeci">virtual void processSettingFogParameters(const FogParameters &amp;fog_parameters)</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00080">OpenGlGraphicApi.cpp:80</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_adf04c0a2d27826c531ec59279e9aaa85"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#adf04c0a2d27826c531ec59279e9aaa85">thewizardplusplus::anna::graphics::OpenGlGraphicApi::setCamera</a></div><div class="ttdeci">virtual void setCamera(Camera *camera)</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00111">OpenGlGraphicApi.cpp:111</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html">thewizardplusplus::anna::graphics::Camera</a></div><div class="ttdef"><b>Definition:</b> <a href="_camera_8h_source.html#l00012">Camera.h:12</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html">thewizardplusplus::anna::graphics::OpenGlGraphicApi</a></div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8h_source.html#l00010">OpenGlGraphicApi.h:10</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">thewizardplusplus::anna::graphics::Mesh</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8h_source.html#l00014">Mesh.h:14</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_a3c358aa0799d451edfa90464c0ac4069"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#a3c358aa0799d451edfa90464c0ac4069">thewizardplusplus::anna::graphics::OpenGlGraphicApi::clear</a></div><div class="ttdeci">virtual void clear(void)</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00068">OpenGlGraphicApi.cpp:68</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api_html_a984512002b5b3cf824178b924980dea6"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#a984512002b5b3cf824178b924980dea6">thewizardplusplus::anna::graphics::GraphicApi::fog_parameters</a></div><div class="ttdeci">FogParameters fog_parameters</div><div class="ttdef"><b>Definition:</b> <a href="_graphic_api_8h_source.html#l00057">GraphicApi.h:57</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_af96ee2f8a49362849c3d6186362c79d2"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#af96ee2f8a49362849c3d6186362c79d2">thewizardplusplus::anna::graphics::OpenGlGraphicApi::processSettingAmbientColor</a></div><div class="ttdeci">virtual void processSettingAmbientColor(const maths::Vector3D&lt; float &gt; &amp;ambient_color)</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00072">OpenGlGraphicApi.cpp:72</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_ab0a64cb5054d70c7aad4743ffc2a5ee3"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#ab0a64cb5054d70c7aad4743ffc2a5ee3">thewizardplusplus::anna::graphics::OpenGlGraphicApi::setBlendingMode</a></div><div class="ttdeci">virtual void setBlendingMode(bool blending_mode)</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00103">OpenGlGraphicApi.cpp:103</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture.html">thewizardplusplus::anna::graphics::Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_8h_source.html#l00010">Texture.h:10</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html">thewizardplusplus::anna::graphics::FogParameters</a></div><div class="ttdef"><b>Definition:</b> <a href="_fog_parameters_8h_source.html#l00011">FogParameters.h:11</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api_html_ad19ffdd14ed85ef4dc7b5dfbd69edbea"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#ad19ffdd14ed85ef4dc7b5dfbd69edbea">thewizardplusplus::anna::graphics::OpenGlGraphicApi::setTexture</a></div><div class="ttdeci">virtual void setTexture(Texture *texture)</div><div class="ttdef"><b>Definition:</b> <a href="_open_gl_graphic_api_8cpp_source.html#l00058">OpenGlGraphicApi.cpp:58</a></div></div>
+<div class="ttc" id="_graphic_api_8h_html"><div class="ttname"><a href="_graphic_api_8h.html">GraphicApi.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0336ce38ab64e2a7ed4a9562c4d5571e.html">source</a></li><li class="navelem"><a class="el" href="dir_bea6e9abe0e966af7f9a4d04eeceaa1b.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="dir_556f2a3c2e5316ac71f910d46cf95b27.html">anna</a></li><li class="navelem"><a class="el" href="dir_667c23a1bc4afd8ce2a23579a0950306.html">graphics</a></li><li class="navelem"><a class="el" href="_open_gl_graphic_api_8h.html">OpenGlGraphicApi.h</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

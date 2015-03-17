@@ -1,0 +1,4 @@
+var classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_unable_to_register_raw_input_device_exception =
+[
+    [ "UnableToRegisterRawInputDeviceException", "classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_unable_to_register_raw_input_device_exception.html#a0bb18e5f9465c07a768df3dd657fce69", null ]
+];

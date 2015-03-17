@@ -47,7 +47,10 @@ OBJECTS = \
 BUILD = build/
 BUILD_HEADERS = $(BUILD)headers/
 BUILD_LIBRARIES = $(BUILD)libraries/anna/graphics/
+DOCS = docs/
 CXXFLAGS += -std=c++03 -Wpedantic -Wall -Wextra -O2
+
+.PHONY: docs clean
 
 main: $(OBJECTS)
 	mkdir -p $(BUILD_LIBRARIES)
@@ -56,6 +59,10 @@ main: $(OBJECTS)
 	$(RM) -r $(BUILD_HEADERS)
 	mkdir -p $(BUILD_HEADERS)
 	rsync -r --include="*/" --include="*.h" --exclude="*" $(SOURCE_BASE) $(BUILD_HEADERS)
+
+docs:
+	$(RM) -r $(DOCS)/html/
+	doxygen $(DOCS)Doxyfile
 
 clean:
 	find . -name "*.o" -type f -delete

@@ -1,0 +1,4 @@
+var classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_connect_with_x_server_exception =
+[
+    [ "ConnectWithXServerException", "classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_connect_with_x_server_exception.html#acf7783dc4d760cc04eb350a7ea4ebcd6", null ]
+];

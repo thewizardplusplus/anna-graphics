@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Исходный файл source/thewizardplusplus/anna/maths/Vector3D.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_vector3_d_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Vector3D.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vector3_d_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VECTOR3D_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define VECTOR3D_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_maths_8h.html">Maths.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>thewizardplusplus {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>anna {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>maths {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">   16</a></span>&#160;    Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">   17</a></span>&#160;    Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">   18</a></span>&#160;    Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a6561dfa96ff26d19844598933a9eb451">Vector3D</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a6561dfa96ff26d19844598933a9eb451">Vector3D</a>(Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>, Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>, Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ad8c7933f3324296198c0f03a15018358">operator==</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a0b0237039ecdc300df308cf82021756c">operator!=</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a983833d70b901aa059b8437962cd5662">operator-</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a689ae1a26095f6105474681616d9e5ab">operator+</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ae0e02ce36288321ec79264c371bee480">operator+=</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a983833d70b901aa059b8437962cd5662">operator-</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a660cdf7bec3114cf22fa66f5147e74e9">operator-=</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#aecba1db11586878b78df7fe938b7b0da">operator*</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a790c45cebc318e56c78eda241586c9f2">operator*=</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#aecba1db11586878b78df7fe938b7b0da">operator*</a>(Type number) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a790c45cebc318e56c78eda241586c9f2">operator*=</a>(Type number);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#abfd489ddc4aaf527a9097fc39a89ccc2">operator/</a>(Type number) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4dee80c4ca14c8c99622b2a0cc41ec1b">operator/=</a>(Type number);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a31ad32de486bb9a892d9b3480daa02a4">isApproximatelyEqualTo</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">inline</span> Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#acea25c7f8ba618f24f3bba1032a48c89">dot</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a9393cafaca9a22ddc5e8f86e1229066b">cross</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">inline</span> Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#afb19a9a645bfee26f9c90b8d0ce42f0d">squaredLength</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">inline</span> Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a67dd94d5a446847fd0aaec500237e959">length</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#abf5b8f46e803afd6ca3de79e99a924d9">normalized</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a97368e02d47e7967074e7bd97b8ea63e">normalize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a18d47af63dbb377787f1813a2aeee7b0">interpolatedTo</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D</a>&amp; target, <span class="keywordtype">float</span> shift) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">inline</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4f213e08ab6f2209a07bb631a28bddee">interpolateTo</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D</a>&amp; target, <span class="keywordtype">float</span> shift);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> OtherType&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;OtherType&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a5433c740a07cac396ae4f53ba1ea3b61">convertedTo</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a420e763be58f5a73cd0a3bb5723c8848">toString</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a6561dfa96ff26d19844598933a9eb451">   50</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a6561dfa96ff26d19844598933a9eb451">Vector3D&lt;Type&gt;::Vector3D</a>(<span class="keywordtype">void</span>) :</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    x(0),</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    y(0),</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    z(0)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ae10846900e8371840f8030be74d331ec">   57</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a6561dfa96ff26d19844598933a9eb451">Vector3D&lt;Type&gt;::Vector3D</a>(Type x, Type y, Type z) :</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    x(x),</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    y(y),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    z(z)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ad8c7933f3324296198c0f03a15018358">   64</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ad8c7933f3324296198c0f03a15018358">Vector3D&lt;Type&gt;::operator==</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> x == vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> &amp;&amp; y == vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> &amp;&amp; z == vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a0b0237039ecdc300df308cf82021756c">   69</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a0b0237039ecdc300df308cf82021756c">Vector3D&lt;Type&gt;::operator!=</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> x != vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> || y != vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> || z != vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a983833d70b901aa059b8437962cd5662">   74</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a983833d70b901aa059b8437962cd5662">Vector3D&lt;Type&gt;::operator-</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = -x;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = -y;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = -z;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a689ae1a26095f6105474681616d9e5ab">   84</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a689ae1a26095f6105474681616d9e5ab">Vector3D&lt;Type&gt;::operator+</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = x + vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = y + vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = z + vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ae0e02ce36288321ec79264c371bee480">   94</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ae0e02ce36288321ec79264c371bee480">Vector3D&lt;Type&gt;::operator+=</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    x += vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    y += vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    z += vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a439ae9e75f2ad5d37dbe025e187993d3">  103</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a983833d70b901aa059b8437962cd5662">Vector3D&lt;Type&gt;::operator-</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = x - vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = y - vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = z - vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a660cdf7bec3114cf22fa66f5147e74e9">  113</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a660cdf7bec3114cf22fa66f5147e74e9">Vector3D&lt;Type&gt;::operator-=</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    x -= vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    y -= vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    z -= vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#aecba1db11586878b78df7fe938b7b0da">  122</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#aecba1db11586878b78df7fe938b7b0da">Vector3D&lt;Type&gt;::operator*</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = x * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = y * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = z * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a790c45cebc318e56c78eda241586c9f2">  132</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a790c45cebc318e56c78eda241586c9f2">Vector3D&lt;Type&gt;::operator*=</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    x *= vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    y *= vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    z *= vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8b51453632f2ca7242ff04c4545d51c5">  141</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#aecba1db11586878b78df7fe938b7b0da">Vector3D&lt;Type&gt;::operator*</a>(Type number)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = x * number;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = y * number;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = z * number;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a182eae7e9d9a63c873681af2138491cb">  151</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a790c45cebc318e56c78eda241586c9f2">Vector3D&lt;Type&gt;::operator*=</a>(Type number) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    x *= number;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    y *= number;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    z *= number;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#abfd489ddc4aaf527a9097fc39a89ccc2">  160</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#abfd489ddc4aaf527a9097fc39a89ccc2">Vector3D&lt;Type&gt;::operator/</a>(Type number)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = x / number;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = y / number;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = z / number;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4dee80c4ca14c8c99622b2a0cc41ec1b">  170</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4dee80c4ca14c8c99622b2a0cc41ec1b">Vector3D&lt;Type&gt;::operator/=</a>(Type number) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    x /= number;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    y /= number;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    z /= number;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a31ad32de486bb9a892d9b3480daa02a4">  179</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a31ad32de486bb9a892d9b3480daa02a4">Vector3D&lt;Type&gt;::isApproximatelyEqualTo</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">Maths::isEqual</a>(x, vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>) &amp;&amp; <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">Maths::isEqual</a>(y, vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>) &amp;&amp;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">Maths::isEqual</a>(z, vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#acea25c7f8ba618f24f3bba1032a48c89">  186</a></span>&#160;Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#acea25c7f8ba618f24f3bba1032a48c89">Vector3D&lt;Type&gt;::dot</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> x * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> + y * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> + z * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a9393cafaca9a22ddc5e8f86e1229066b">  191</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a9393cafaca9a22ddc5e8f86e1229066b">Vector3D&lt;Type&gt;::cross</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; vector)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = y * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> - z * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = z * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> - x * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = x * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> - y * vector.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#afb19a9a645bfee26f9c90b8d0ce42f0d">  201</a></span>&#160;Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#afb19a9a645bfee26f9c90b8d0ce42f0d">Vector3D&lt;Type&gt;::squaredLength</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">return</span> x * x + y * y + z * z;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a67dd94d5a446847fd0aaec500237e959">  206</a></span>&#160;Type <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a67dd94d5a446847fd0aaec500237e959">Vector3D&lt;Type&gt;::length</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> std::sqrt(x * x + y * y + z * z);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#abf5b8f46e803afd6ca3de79e99a924d9">  211</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#abf5b8f46e803afd6ca3de79e99a924d9">Vector3D&lt;Type&gt;::normalized</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    Type length = this-&gt;length();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> (length != 0) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = x / length;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = y / length;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = z / length;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a97368e02d47e7967074e7bd97b8ea63e">  224</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a97368e02d47e7967074e7bd97b8ea63e">Vector3D&lt;Type&gt;::normalize</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    Type length = this-&gt;length();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">if</span> (length != 0) {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        x /= length;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        y /= length;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        z /= length;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a18d47af63dbb377787f1813a2aeee7b0">  234</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a18d47af63dbb377787f1813a2aeee7b0">Vector3D&lt;Type&gt;::interpolatedTo</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; target,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">float</span> shift)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> result;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a> = <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">Maths::interpolate</a>(x, target.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>, shift);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a> = <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">Maths::interpolate</a>(y, target.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>, shift);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    result.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a> = <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">Maths::interpolate</a>(z, target.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>, shift);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4f213e08ab6f2209a07bb631a28bddee">  246</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4f213e08ab6f2209a07bb631a28bddee">Vector3D&lt;Type&gt;::interpolateTo</a>(<span class="keyword">const</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;Type&gt;</a>&amp; target,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">float</span> shift)</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    x = <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">Maths::interpolate</a>(x, target.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">x</a>, shift);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    y = <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">Maths::interpolate</a>(y, target.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">y</a>, shift);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    z = <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">Maths::interpolate</a>(z, target.<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">z</a>, shift);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> OtherType&gt;</div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a5433c740a07cac396ae4f53ba1ea3b61">  258</a></span>&#160;<a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;OtherType&gt;</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a5433c740a07cac396ae4f53ba1ea3b61">Vector3D&lt;Type&gt;::convertedTo</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D&lt;OtherType&gt;</a>(<span class="keyword">static_cast&lt;</span>OtherType<span class="keyword">&gt;</span>(x), <span class="keyword">static_cast&lt;</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        OtherType<span class="keyword">&gt;</span>(y), <span class="keyword">static_cast&lt;</span>OtherType<span class="keyword">&gt;</span>(z));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a420e763be58f5a73cd0a3bb5723c8848">  264</a></span>&#160;std::string <a class="code" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a420e763be58f5a73cd0a3bb5723c8848">Vector3D&lt;Type&gt;::toString</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    std::ostringstream out;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Vector3D(&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; z &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    std::string result = out.str();</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a18d47af63dbb377787f1813a2aeee7b0"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a18d47af63dbb377787f1813a2aeee7b0">thewizardplusplus::anna::maths::Vector3D::interpolatedTo</a></div><div class="ttdeci">Vector3D interpolatedTo(const Vector3D &amp;target, float shift) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00234">Vector3D.h:234</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_ad8c7933f3324296198c0f03a15018358"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ad8c7933f3324296198c0f03a15018358">thewizardplusplus::anna::maths::Vector3D::operator==</a></div><div class="ttdeci">bool operator==(const Vector3D&lt; Type &gt; &amp;vector) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00064">Vector3D.h:64</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a64f3c8391244944d3654a16aed482ed5"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a64f3c8391244944d3654a16aed482ed5">thewizardplusplus::anna::maths::Vector3D::x</a></div><div class="ttdeci">Type x</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00016">Vector3D.h:16</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_acea25c7f8ba618f24f3bba1032a48c89"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#acea25c7f8ba618f24f3bba1032a48c89">thewizardplusplus::anna::maths::Vector3D::dot</a></div><div class="ttdeci">Type dot(const Vector3D&lt; Type &gt; &amp;vector) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00186">Vector3D.h:186</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a49bcd2151c8e4056b3cfb77761456340"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a49bcd2151c8e4056b3cfb77761456340">thewizardplusplus::anna::maths::Vector3D::z</a></div><div class="ttdeci">Type z</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00018">Vector3D.h:18</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a660cdf7bec3114cf22fa66f5147e74e9"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a660cdf7bec3114cf22fa66f5147e74e9">thewizardplusplus::anna::maths::Vector3D::operator-=</a></div><div class="ttdeci">Vector3D&lt; Type &gt; operator-=(const Vector3D&lt; Type &gt; &amp;vector)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00113">Vector3D.h:113</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">thewizardplusplus::anna::maths::Vector3D</a></div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00014">Vector3D.h:14</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a4f213e08ab6f2209a07bb631a28bddee"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4f213e08ab6f2209a07bb631a28bddee">thewizardplusplus::anna::maths::Vector3D::interpolateTo</a></div><div class="ttdeci">Vector3D interpolateTo(const Vector3D &amp;target, float shift)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00246">Vector3D.h:246</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a689ae1a26095f6105474681616d9e5ab"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a689ae1a26095f6105474681616d9e5ab">thewizardplusplus::anna::maths::Vector3D::operator+</a></div><div class="ttdeci">Vector3D&lt; Type &gt; operator+(const Vector3D&lt; Type &gt; &amp;vector) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00084">Vector3D.h:84</a></div></div>
+<div class="ttc" id="_maths_8h_html"><div class="ttname"><a href="_maths_8h.html">Maths.h</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a983833d70b901aa059b8437962cd5662"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a983833d70b901aa059b8437962cd5662">thewizardplusplus::anna::maths::Vector3D::operator-</a></div><div class="ttdeci">Vector3D&lt; Type &gt; operator-(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00074">Vector3D.h:74</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a4dee80c4ca14c8c99622b2a0cc41ec1b"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4dee80c4ca14c8c99622b2a0cc41ec1b">thewizardplusplus::anna::maths::Vector3D::operator/=</a></div><div class="ttdeci">Vector3D&lt; Type &gt; operator/=(Type number)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00170">Vector3D.h:170</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a8d5bce57f4185c35127883814f7b7a49"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a8d5bce57f4185c35127883814f7b7a49">thewizardplusplus::anna::maths::Vector3D::y</a></div><div class="ttdeci">Type y</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00017">Vector3D.h:17</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_a6ce62c9c04f3ab894a57e0ed4ca2404a"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">thewizardplusplus::anna::maths::Maths::isEqual</a></div><div class="ttdeci">static bool isEqual(float x, float y, int bits_not_compare=DEFAULT_BITS_NOT_COMPARE)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00013">Maths.cpp:13</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a97368e02d47e7967074e7bd97b8ea63e"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a97368e02d47e7967074e7bd97b8ea63e">thewizardplusplus::anna::maths::Vector3D::normalize</a></div><div class="ttdeci">void normalize(void)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00224">Vector3D.h:224</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a790c45cebc318e56c78eda241586c9f2"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a790c45cebc318e56c78eda241586c9f2">thewizardplusplus::anna::maths::Vector3D::operator*=</a></div><div class="ttdeci">Vector3D&lt; Type &gt; operator*=(const Vector3D&lt; Type &gt; &amp;vector)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00132">Vector3D.h:132</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a5433c740a07cac396ae4f53ba1ea3b61"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a5433c740a07cac396ae4f53ba1ea3b61">thewizardplusplus::anna::maths::Vector3D::convertedTo</a></div><div class="ttdeci">Vector3D&lt; OtherType &gt; convertedTo(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00258">Vector3D.h:258</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a31ad32de486bb9a892d9b3480daa02a4"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a31ad32de486bb9a892d9b3480daa02a4">thewizardplusplus::anna::maths::Vector3D::isApproximatelyEqualTo</a></div><div class="ttdeci">bool isApproximatelyEqualTo(const Vector3D&lt; Type &gt; &amp;vector) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00179">Vector3D.h:179</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_html_afc5abffd2899ce6a6a2dc54f26793d6e"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">thewizardplusplus::anna::maths::Maths::interpolate</a></div><div class="ttdeci">static float interpolate(float x1, float x2, float shift)</div><div class="ttdef"><b>Definition:</b> <a href="_maths_8cpp_source.html#l00061">Maths.cpp:61</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_afb19a9a645bfee26f9c90b8d0ce42f0d"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#afb19a9a645bfee26f9c90b8d0ce42f0d">thewizardplusplus::anna::maths::Vector3D::squaredLength</a></div><div class="ttdeci">Type squaredLength(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00201">Vector3D.h:201</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a6561dfa96ff26d19844598933a9eb451"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a6561dfa96ff26d19844598933a9eb451">thewizardplusplus::anna::maths::Vector3D::Vector3D</a></div><div class="ttdeci">Vector3D(void)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00050">Vector3D.h:50</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a9393cafaca9a22ddc5e8f86e1229066b"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a9393cafaca9a22ddc5e8f86e1229066b">thewizardplusplus::anna::maths::Vector3D::cross</a></div><div class="ttdeci">Vector3D&lt; Type &gt; cross(const Vector3D&lt; Type &gt; &amp;vector) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00191">Vector3D.h:191</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a67dd94d5a446847fd0aaec500237e959"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a67dd94d5a446847fd0aaec500237e959">thewizardplusplus::anna::maths::Vector3D::length</a></div><div class="ttdeci">Type length(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00206">Vector3D.h:206</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a0b0237039ecdc300df308cf82021756c"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a0b0237039ecdc300df308cf82021756c">thewizardplusplus::anna::maths::Vector3D::operator!=</a></div><div class="ttdeci">bool operator!=(const Vector3D&lt; Type &gt; &amp;vector) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00069">Vector3D.h:69</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_ae0e02ce36288321ec79264c371bee480"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#ae0e02ce36288321ec79264c371bee480">thewizardplusplus::anna::maths::Vector3D::operator+=</a></div><div class="ttdeci">Vector3D&lt; Type &gt; operator+=(const Vector3D&lt; Type &gt; &amp;vector)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00094">Vector3D.h:94</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_a420e763be58f5a73cd0a3bb5723c8848"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a420e763be58f5a73cd0a3bb5723c8848">thewizardplusplus::anna::maths::Vector3D::toString</a></div><div class="ttdeci">std::string toString(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00264">Vector3D.h:264</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_aecba1db11586878b78df7fe938b7b0da"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#aecba1db11586878b78df7fe938b7b0da">thewizardplusplus::anna::maths::Vector3D::operator*</a></div><div class="ttdeci">Vector3D&lt; Type &gt; operator*(const Vector3D&lt; Type &gt; &amp;vector) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00122">Vector3D.h:122</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_abf5b8f46e803afd6ca3de79e99a924d9"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#abf5b8f46e803afd6ca3de79e99a924d9">thewizardplusplus::anna::maths::Vector3D::normalized</a></div><div class="ttdeci">Vector3D&lt; Type &gt; normalized(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00211">Vector3D.h:211</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d_html_abfd489ddc4aaf527a9097fc39a89ccc2"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#abfd489ddc4aaf527a9097fc39a89ccc2">thewizardplusplus::anna::maths::Vector3D::operator/</a></div><div class="ttdeci">Vector3D&lt; Type &gt; operator/(Type number) const </div><div class="ttdef"><b>Definition:</b> <a href="_vector3_d_8h_source.html#l00160">Vector3D.h:160</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0336ce38ab64e2a7ed4a9562c4d5571e.html">source</a></li><li class="navelem"><a class="el" href="dir_bea6e9abe0e966af7f9a4d04eeceaa1b.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="dir_556f2a3c2e5316ac71f910d46cf95b27.html">anna</a></li><li class="navelem"><a class="el" href="dir_27aac03e81c60fd2d06284b0d156bd2c.html">maths</a></li><li class="navelem"><a class="el" href="_vector3_d_8h.html">Vector3D.h</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

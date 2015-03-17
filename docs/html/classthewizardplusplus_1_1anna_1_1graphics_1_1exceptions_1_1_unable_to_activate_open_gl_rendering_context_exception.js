@@ -1,0 +1,4 @@
+var classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_unable_to_activate_open_gl_rendering_context_exception =
+[
+    [ "UnableToActivateOpenGlRenderingContextException", "classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_unable_to_activate_open_gl_rendering_context_exception.html#a1d59b8f1c18460d176068c4efbdca8de", null ]
+];

@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Исходный файл source/thewizardplusplus/anna/graphics/World.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_world_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">World.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_world_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef WORLD_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define WORLD_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_camera_8h.html">Camera.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_object_8h.html">Object.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_animate_object_8h.html">AnimateObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>thewizardplusplus {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>anna {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>graphics {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html">World</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#ac162f3fa1faaef674f5da3d821e32ccc">World</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a2b1f837573746324336571e0fec15f78">~World</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html">Camera</a>* <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a7acba86848385a57f68d66fc623ba5c3">getCamera</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a8f7f3726337e156efa570fd56b6135bd">setCamera</a>(<a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html">Camera</a>* camera);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a431a7683deed37ffc601d595c163c88f">getNumberOfObjects</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html">Object</a>* <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a5d3b04b3cfcafc9859169a0a4ef46471">getObject</a>(<span class="keywordtype">size_t</span> number) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a984e7d8277474aefd3f1a878d33c5f9e">addObject</a>(<a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html">Object</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a5344ae519d7edd23dc94c6b4d972cb58">addAnimateObject</a>(<a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html">AnimateObject</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a2edbb6f191ea1560ba47c9c49b75ff05">removeObject</a>(<a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html">Object</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a655529ba5d22a355bb274ace541f3959">getNumberOfOpaqueMeshes</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">Mesh</a>* <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a31db3f6f87cc00f0a445b54267ca3b15">getOpaqueMesh</a>(<span class="keywordtype">size_t</span> number) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#ae14d40d1ccc20a2c0debb829c39d047d">getNumberOfTransparentMeshes</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">Mesh</a>* <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#af858169c3d2016662da6b10863ac559b">getTransparentMesh</a>(<span class="keywordtype">size_t</span> number) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a14cbac7cb9b5c6bcd896a3ca769e7c49">sortTransparentMeshes</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a8c87215d43ae2942a920fc947a16b1a0">update</a>(<span class="keywordtype">float</span> delta_time_in_ms);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Object*&gt;        ObjectVector;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;AnimateObject*&gt; AnimateObjectVector;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;Mesh*&gt;          MeshVector;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html">Camera</a>*             camera;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ObjectVector        objects;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    AnimateObjectVector animate_objects;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    MeshVector          opaque_meshes;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    MeshVector          transparent_meshes;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_af858169c3d2016662da6b10863ac559b"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#af858169c3d2016662da6b10863ac559b">thewizardplusplus::anna::graphics::World::getTransparentMesh</a></div><div class="ttdeci">Mesh * getTransparentMesh(size_t number) const </div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00085">World.cpp:85</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_ac162f3fa1faaef674f5da3d821e32ccc"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#ac162f3fa1faaef674f5da3d821e32ccc">thewizardplusplus::anna::graphics::World::World</a></div><div class="ttdeci">World(void)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00007">World.cpp:7</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html">thewizardplusplus::anna::graphics::World</a></div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00012">World.h:12</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a2edbb6f191ea1560ba47c9c49b75ff05"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a2edbb6f191ea1560ba47c9c49b75ff05">thewizardplusplus::anna::graphics::World::removeObject</a></div><div class="ttdeci">void removeObject(Object *object)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00061">World.cpp:61</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a8c87215d43ae2942a920fc947a16b1a0"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a8c87215d43ae2942a920fc947a16b1a0">thewizardplusplus::anna::graphics::World::update</a></div><div class="ttdeci">void update(float delta_time_in_ms)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00100">World.cpp:100</a></div></div>
+<div class="ttc" id="_animate_object_8h_html"><div class="ttname"><a href="_animate_object_8h.html">AnimateObject.h</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html">thewizardplusplus::anna::graphics::AnimateObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_animate_object_8h_source.html#l00015">AnimateObject.h:15</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_object_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html">thewizardplusplus::anna::graphics::Object</a></div><div class="ttdef"><b>Definition:</b> <a href="_object_8h_source.html#l00013">Object.h:13</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a31db3f6f87cc00f0a445b54267ca3b15"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a31db3f6f87cc00f0a445b54267ca3b15">thewizardplusplus::anna::graphics::World::getOpaqueMesh</a></div><div class="ttdeci">Mesh * getOpaqueMesh(size_t number) const </div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00073">World.cpp:73</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a5d3b04b3cfcafc9859169a0a4ef46471"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a5d3b04b3cfcafc9859169a0a4ef46471">thewizardplusplus::anna::graphics::World::getObject</a></div><div class="ttdeci">Object * getObject(size_t number) const </div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00031">World.cpp:31</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html">thewizardplusplus::anna::graphics::Camera</a></div><div class="ttdef"><b>Definition:</b> <a href="_camera_8h_source.html#l00012">Camera.h:12</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a7acba86848385a57f68d66fc623ba5c3"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a7acba86848385a57f68d66fc623ba5c3">thewizardplusplus::anna::graphics::World::getCamera</a></div><div class="ttdeci">Camera * getCamera(void)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00019">World.cpp:19</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a655529ba5d22a355bb274ace541f3959"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a655529ba5d22a355bb274ace541f3959">thewizardplusplus::anna::graphics::World::getNumberOfOpaqueMeshes</a></div><div class="ttdeci">size_t getNumberOfOpaqueMeshes(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00069">World.cpp:69</a></div></div>
+<div class="ttc" id="_object_8h_html"><div class="ttname"><a href="_object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">thewizardplusplus::anna::graphics::Mesh</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8h_source.html#l00014">Mesh.h:14</a></div></div>
+<div class="ttc" id="_camera_8h_html"><div class="ttname"><a href="_camera_8h.html">Camera.h</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a8f7f3726337e156efa570fd56b6135bd"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a8f7f3726337e156efa570fd56b6135bd">thewizardplusplus::anna::graphics::World::setCamera</a></div><div class="ttdeci">void setCamera(Camera *camera)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00023">World.cpp:23</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a5344ae519d7edd23dc94c6b4d972cb58"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a5344ae519d7edd23dc94c6b4d972cb58">thewizardplusplus::anna::graphics::World::addAnimateObject</a></div><div class="ttdeci">void addAnimateObject(AnimateObject *object)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00054">World.cpp:54</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a2b1f837573746324336571e0fec15f78"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a2b1f837573746324336571e0fec15f78">thewizardplusplus::anna::graphics::World::~World</a></div><div class="ttdeci">~World(void)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00011">World.cpp:11</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_ae14d40d1ccc20a2c0debb829c39d047d"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#ae14d40d1ccc20a2c0debb829c39d047d">thewizardplusplus::anna::graphics::World::getNumberOfTransparentMeshes</a></div><div class="ttdeci">size_t getNumberOfTransparentMeshes(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00081">World.cpp:81</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a984e7d8277474aefd3f1a878d33c5f9e"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a984e7d8277474aefd3f1a878d33c5f9e">thewizardplusplus::anna::graphics::World::addObject</a></div><div class="ttdeci">void addObject(Object *object)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00039">World.cpp:39</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a431a7683deed37ffc601d595c163c88f"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a431a7683deed37ffc601d595c163c88f">thewizardplusplus::anna::graphics::World::getNumberOfObjects</a></div><div class="ttdeci">size_t getNumberOfObjects(void) const </div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00027">World.cpp:27</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_world_html_a14cbac7cb9b5c6bcd896a3ca769e7c49"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a14cbac7cb9b5c6bcd896a3ca769e7c49">thewizardplusplus::anna::graphics::World::sortTransparentMeshes</a></div><div class="ttdeci">void sortTransparentMeshes(void)</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00093">World.cpp:93</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0336ce38ab64e2a7ed4a9562c4d5571e.html">source</a></li><li class="navelem"><a class="el" href="dir_bea6e9abe0e966af7f9a4d04eeceaa1b.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="dir_556f2a3c2e5316ac71f910d46cf95b27.html">anna</a></li><li class="navelem"><a class="el" href="dir_667c23a1bc4afd8ce2a23579a0950306.html">graphics</a></li><li class="navelem"><a class="el" href="_world_8h.html">World.h</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

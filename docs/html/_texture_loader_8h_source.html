@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Исходный файл source/thewizardplusplus/anna/graphics/TextureLoader.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_texture_loader_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">TextureLoader.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_texture_loader_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TEXTURELOADER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TEXTURELOADER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_texture_data_8h.html">TextureData.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>thewizardplusplus {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>anna {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>graphics {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html">TextureLoader</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a9ecbd1c6a45eee546c63d53631da5b46">   13</a></span>&#160;    <span class="keyword">typedef</span> std::list&lt;std::string&gt; <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a9ecbd1c6a45eee546c63d53631da5b46">StringList</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a034f4e7be9f168db99258ad2c31cd4a9">~TextureLoader</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a9ecbd1c6a45eee546c63d53631da5b46">StringList</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#ada431191bb31560084f361ea6d8f1ab1">getSupportedFormats</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_data.html">TextureData</a> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a64ffd1691505ed2cba08e7516e7aea86">load</a>(<span class="keyword">const</span> std::string&amp; filename) = 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#aa7c6b9f590dd4b38c5a45a3981b54a45">free</a>(<a class="code" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_data.html">TextureData</a>&amp; data) = 0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader_html_ada431191bb31560084f361ea6d8f1ab1"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#ada431191bb31560084f361ea6d8f1ab1">thewizardplusplus::anna::graphics::TextureLoader::getSupportedFormats</a></div><div class="ttdeci">virtual StringList getSupportedFormats(void) const =0</div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_data_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_data.html">thewizardplusplus::anna::graphics::TextureData</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_data_8h_source.html#l00010">TextureData.h:10</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader_html_a034f4e7be9f168db99258ad2c31cd4a9"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a034f4e7be9f168db99258ad2c31cd4a9">thewizardplusplus::anna::graphics::TextureLoader::~TextureLoader</a></div><div class="ttdeci">virtual ~TextureLoader(void)</div><div class="ttdef"><b>Definition:</b> <a href="_texture_loader_8cpp_source.html#l00005">TextureLoader.cpp:5</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader_html"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html">thewizardplusplus::anna::graphics::TextureLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_loader_8h_source.html#l00011">TextureLoader.h:11</a></div></div>
+<div class="ttc" id="_texture_data_8h_html"><div class="ttname"><a href="_texture_data_8h.html">TextureData.h</a></div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader_html_aa7c6b9f590dd4b38c5a45a3981b54a45"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#aa7c6b9f590dd4b38c5a45a3981b54a45">thewizardplusplus::anna::graphics::TextureLoader::free</a></div><div class="ttdeci">virtual void free(TextureData &amp;data)=0</div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader_html_a64ffd1691505ed2cba08e7516e7aea86"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a64ffd1691505ed2cba08e7516e7aea86">thewizardplusplus::anna::graphics::TextureLoader::load</a></div><div class="ttdeci">virtual TextureData load(const std::string &amp;filename)=0</div></div>
+<div class="ttc" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader_html_a9ecbd1c6a45eee546c63d53631da5b46"><div class="ttname"><a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a9ecbd1c6a45eee546c63d53631da5b46">thewizardplusplus::anna::graphics::TextureLoader::StringList</a></div><div class="ttdeci">std::list&lt; std::string &gt; StringList</div><div class="ttdef"><b>Definition:</b> <a href="_texture_loader_8h_source.html#l00013">TextureLoader.h:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0336ce38ab64e2a7ed4a9562c4d5571e.html">source</a></li><li class="navelem"><a class="el" href="dir_bea6e9abe0e966af7f9a4d04eeceaa1b.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="dir_556f2a3c2e5316ac71f910d46cf95b27.html">anna</a></li><li class="navelem"><a class="el" href="dir_667c23a1bc4afd8ce2a23579a0950306.html">graphics</a></li><li class="navelem"><a class="el" href="_texture_loader_8h.html">TextureLoader.h</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

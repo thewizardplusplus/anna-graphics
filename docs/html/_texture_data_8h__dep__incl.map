@@ -1,0 +1,12 @@
+<map id="source/thewizardplusplus/anna/graphics/TextureData.h" name="source/thewizardplusplus/anna/graphics/TextureData.h">
+<area shape="rect" id="node2" href="$_graphic_api_8h.html" title="source/thewizardplusplus\l/anna/graphics/GraphicApi.h" alt="" coords="417,187,604,229"/>
+<area shape="rect" id="node7" href="$_texture_loader_8h.html" title="source/thewizardplusplus\l/anna/graphics/TextureLoader.h" alt="" coords="617,97,823,138"/>
+<area shape="rect" id="node11" href="$_texture_data_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/TextureData.cpp" alt="" coords="847,97,1055,138"/>
+<area shape="rect" id="node3" href="$_animate_object_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/AnimateObject.cpp" alt="" coords="5,278,227,319"/>
+<area shape="rect" id="node4" href="$_graphic_api_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/GraphicApi.cpp" alt="" coords="251,278,449,319"/>
+<area shape="rect" id="node5" href="$_open_gl_graphic_api_8h.html" title="source/thewizardplusplus\l/anna/graphics/OpenGlGraphicApi.h" alt="" coords="475,278,705,319"/>
+<area shape="rect" id="node6" href="$_open_gl_graphic_api_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/OpenGlGraphicApi.cpp" alt="" coords="545,369,788,410"/>
+<area shape="rect" id="node8" href="$_bmp_texture_loader_8h.html" title="source/thewizardplusplus\l/anna/graphics/BmpTextureLoader.h" alt="" coords="628,187,860,229"/>
+<area shape="rect" id="node10" href="$_texture_loader_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/TextureLoader.cpp" alt="" coords="884,187,1103,229"/>
+<area shape="rect" id="node9" href="$_bmp_texture_loader_8cpp.html" title="source/thewizardplusplus\l/anna/graphics/BmpTextureLoader.cpp" alt="" coords="781,278,1027,319"/>
+</map>

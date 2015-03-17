@@ -1,0 +1,6 @@
+<map id="thewizardplusplus::anna::graphics::AnimateObject::play" name="thewizardplusplus::anna::graphics::AnimateObject::play">
+<area shape="rect" id="node2" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a6a0a6c7a6479ec417b1bc83e00255fc5" title="thewizardplusplus::\lanna::graphics::AnimateObject::play" alt="" coords="289,70,522,111"/>
+<area shape="rect" id="node3" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a85d733eccc34cd92a23ad1326b0652cf" title="thewizardplusplus::\lanna::graphics::AnimateObject\l::getNumberOfFrames" alt="" coords="587,4,789,60"/>
+<area shape="rect" id="node5" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a607342ed5536270dda3a14871067e5fb" title="thewizardplusplus::\lanna::graphics::AnimateObject::stop" alt="" coords="571,83,805,125"/>
+<area shape="rect" id="node4" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html#a4a4dfbdc8d1c7a188df32d57b3461bad" title="thewizardplusplus::\lanna::graphics::AnimateTrack\l::getNumberOfFrames" alt="" coords="854,4,1050,60"/>
+</map>

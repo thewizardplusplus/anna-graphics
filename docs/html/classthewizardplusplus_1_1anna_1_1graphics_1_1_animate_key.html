@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Класс thewizardplusplus::anna::graphics::AnimateKey</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс thewizardplusplus::anna::graphics::AnimateKey</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_animate_key_8h_source.html">AnimateKey.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса thewizardplusplus::anna::graphics::AnimateKey:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key__coll__graph.png" border="0" usemap="#thewizardplusplus_1_1anna_1_1graphics_1_1_animate_key_coll__map" alt="Collaboration graph"/></div>
+<map name="thewizardplusplus_1_1anna_1_1graphics_1_1_animate_key_coll__map" id="thewizardplusplus_1_1anna_1_1graphics_1_1_animate_key_coll__map">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html" title="thewizardplusplus::\lanna::maths::Vector3D\l\&lt; float \&gt;" alt="" coords="20,5,177,61"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ae6356e70972701c35b01be680b116729"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#ae6356e70972701c35b01be680b116729">AnimateKey</a> (void)</td></tr>
+<tr class="separator:ae6356e70972701c35b01be680b116729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac59e28f478e90ea75113ebab04988e9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#ac59e28f478e90ea75113ebab04988e9f">AnimateKey</a> (size_t <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#a1e5cc1e36fe5832b3c522f780f446ec3">index_of_mesh</a>, size_t <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#ac764553d28c28abd7a6c2676cea7abd1">frame</a>, <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key_type.html#a5b250c7500c3c3c4ac9430a78b441497">AnimateKeyType::Types</a> <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#a1a82ea6bf2d40d609550ba310c4fedd9">type</a>, <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#afd916dcfee3e8fe7347dbaf1909defff">transformation</a>)</td></tr>
+<tr class="separator:ac59e28f478e90ea75113ebab04988e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416772a2e64e6e6cc5fd2a956f75095c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#a416772a2e64e6e6cc5fd2a956f75095c">operator==</a> (const <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html">AnimateKey</a> &amp;animate_key)</td></tr>
+<tr class="separator:a416772a2e64e6e6cc5fd2a956f75095c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a31819d3ccf87136ca91edd35d1a1ad6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#a31819d3ccf87136ca91edd35d1a1ad6f">valid</a></td></tr>
+<tr class="separator:a31819d3ccf87136ca91edd35d1a1ad6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5cc1e36fe5832b3c522f780f446ec3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#a1e5cc1e36fe5832b3c522f780f446ec3">index_of_mesh</a></td></tr>
+<tr class="separator:a1e5cc1e36fe5832b3c522f780f446ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac764553d28c28abd7a6c2676cea7abd1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#ac764553d28c28abd7a6c2676cea7abd1">frame</a></td></tr>
+<tr class="separator:ac764553d28c28abd7a6c2676cea7abd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a82ea6bf2d40d609550ba310c4fedd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key_type.html#a5b250c7500c3c3c4ac9430a78b441497">AnimateKeyType::Types</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#a1a82ea6bf2d40d609550ba310c4fedd9">type</a></td></tr>
+<tr class="separator:a1a82ea6bf2d40d609550ba310c4fedd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd916dcfee3e8fe7347dbaf1909defff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html#afd916dcfee3e8fe7347dbaf1909defff">transformation</a></td></tr>
+<tr class="separator:afd916dcfee3e8fe7347dbaf1909defff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="_animate_key_8h_source.html">AnimateKey.h</a> строка <a class="el" href="_animate_key_8h_source.html#l00011">11</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="ae6356e70972701c35b01be680b116729"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnimateKey::AnimateKey </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_key_8cpp_source.html">AnimateKey.cpp</a> строка <a class="el" href="_animate_key_8cpp_source.html#l00006">6</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac59e28f478e90ea75113ebab04988e9f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnimateKey::AnimateKey </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index_of_mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key_type.html#a5b250c7500c3c3c4ac9430a78b441497">AnimateKeyType::Types</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>transformation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_key_8cpp_source.html">AnimateKey.cpp</a> строка <a class="el" href="_animate_key_8cpp_source.html#l00013">13</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a416772a2e64e6e6cc5fd2a956f75095c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimateKey::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html">AnimateKey</a> &amp;&#160;</td>
+          <td class="paramname"><em>animate_key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_key_8cpp_source.html">AnimateKey.cpp</a> строка <a class="el" href="_animate_key_8cpp_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="ac764553d28c28abd7a6c2676cea7abd1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t thewizardplusplus::anna::graphics::AnimateKey::frame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_key_8h_source.html">AnimateKey.h</a> строка <a class="el" href="_animate_key_8h_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1e5cc1e36fe5832b3c522f780f446ec3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t thewizardplusplus::anna::graphics::AnimateKey::index_of_mesh</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_key_8h_source.html">AnimateKey.h</a> строка <a class="el" href="_animate_key_8h_source.html#l00014">14</a></p>
+
+</div>
+</div>
+<a class="anchor" id="afd916dcfee3e8fe7347dbaf1909defff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt;float&gt; thewizardplusplus::anna::graphics::AnimateKey::transformation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_key_8h_source.html">AnimateKey.h</a> строка <a class="el" href="_animate_key_8h_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1a82ea6bf2d40d609550ba310c4fedd9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key_type.html#a5b250c7500c3c3c4ac9430a78b441497">AnimateKeyType::Types</a> thewizardplusplus::anna::graphics::AnimateKey::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_key_8h_source.html">AnimateKey.h</a> строка <a class="el" href="_animate_key_8h_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a31819d3ccf87136ca91edd35d1a1ad6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool thewizardplusplus::anna::graphics::AnimateKey::valid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_key_8h_source.html">AnimateKey.h</a> строка <a class="el" href="_animate_key_8h_source.html#l00013">13</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>source/thewizardplusplus/anna/graphics/<a class="el" href="_animate_key_8h_source.html">AnimateKey.h</a></li>
+<li>source/thewizardplusplus/anna/graphics/<a class="el" href="_animate_key_8cpp_source.html">AnimateKey.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacethewizardplusplus.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna.html">anna</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna_1_1graphics.html">graphics</a></li><li class="navelem"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_key.html">AnimateKey</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

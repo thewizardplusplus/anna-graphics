@@ -1,0 +1,722 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Класс thewizardplusplus::anna::graphics::AnimateObject</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс thewizardplusplus::anna::graphics::AnimateObject</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_animate_object_8h_source.html">AnimateObject.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:thewizardplusplus::anna::graphics::AnimateObject:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object__inherit__graph.png" border="0" usemap="#thewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_inherit__map" alt="Inheritance graph"/></div>
+<map name="thewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_inherit__map" id="thewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_inherit__map">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html" title="thewizardplusplus::\lanna::graphics::Object" alt="" coords="29,6,181,47"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса thewizardplusplus::anna::graphics::AnimateObject:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object__coll__graph.png" border="0" usemap="#thewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_coll__map" alt="Collaboration graph"/></div>
+<map name="thewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_coll__map" id="thewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_coll__map">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html" title="thewizardplusplus::\lanna::graphics::Object" alt="" coords="29,155,181,197"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html" title="thewizardplusplus::\lanna::maths::Vector3D\l\&lt; float \&gt;" alt="" coords="27,5,184,61"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a51a1e8e1d12a5e1c2ebee65fe00f057f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a51a1e8e1d12a5e1c2ebee65fe00f057f">AnimateObject</a> (void)</td></tr>
+<tr class="separator:a51a1e8e1d12a5e1c2ebee65fe00f057f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92085b8909160b1e11e614e9cf0bd505"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html">AnimateTrack</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a92085b8909160b1e11e614e9cf0bd505">getTrack</a> (void) const </td></tr>
+<tr class="separator:a92085b8909160b1e11e614e9cf0bd505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c9335dd3edba3737d355e7acf7375f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a70c9335dd3edba3737d355e7acf7375f">setTrack</a> (<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html">AnimateTrack</a> *track)</td></tr>
+<tr class="separator:a70c9335dd3edba3737d355e7acf7375f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d733eccc34cd92a23ad1326b0652cf"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a85d733eccc34cd92a23ad1326b0652cf">getNumberOfFrames</a> (void) const </td></tr>
+<tr class="separator:a85d733eccc34cd92a23ad1326b0652cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d52fdc343f7b2b881248f5fa7955cfb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a3d52fdc343f7b2b881248f5fa7955cfb">getFps</a> (void) const </td></tr>
+<tr class="separator:a3d52fdc343f7b2b881248f5fa7955cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673fcbd1173373e3021cbcac22a3042d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a673fcbd1173373e3021cbcac22a3042d">setFps</a> (size_t fps)</td></tr>
+<tr class="separator:a673fcbd1173373e3021cbcac22a3042d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51be5607dc6d64c9c0957087a7e250fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_state.html#a822551a0a8b0e472eaf6e0c10fd90542">AnimateState::Types</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a51be5607dc6d64c9c0957087a7e250fd">getState</a> (void) const </td></tr>
+<tr class="separator:a51be5607dc6d64c9c0957087a7e250fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e584dfeb706f18eafe12baf27c134b3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a8e584dfeb706f18eafe12baf27c134b3">getStartFrame</a> (void) const </td></tr>
+<tr class="separator:a8e584dfeb706f18eafe12baf27c134b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fc16fdcc6fd6cde4471655a20e3fdd8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a7fc16fdcc6fd6cde4471655a20e3fdd8">getEndFrame</a> (void) const </td></tr>
+<tr class="separator:a7fc16fdcc6fd6cde4471655a20e3fdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a995e2b83a71fd3896247236a6994fbc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a995e2b83a71fd3896247236a6994fbc6">isLoop</a> (void) const </td></tr>
+<tr class="separator:a995e2b83a71fd3896247236a6994fbc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a51ee1d6818a59f459a6e4eaa98afc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a10a51ee1d6818a59f459a6e4eaa98afc">getCurrentFrame</a> (void) const </td></tr>
+<tr class="separator:a10a51ee1d6818a59f459a6e4eaa98afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6645c35545926d116e674f28fe9ece4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#af6645c35545926d116e674f28fe9ece4">getCurrentTime</a> (void) const </td></tr>
+<tr class="separator:af6645c35545926d116e674f28fe9ece4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0a6c7a6479ec417b1bc83e00255fc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a6a0a6c7a6479ec417b1bc83e00255fc5">play</a> (bool loop, size_t start_frame, size_t end_frame)</td></tr>
+<tr class="separator:a6a0a6c7a6479ec417b1bc83e00255fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ebfa00d15f1055cbf387d30dd654dd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a2ebfa00d15f1055cbf387d30dd654dd1">play</a> (bool loop)</td></tr>
+<tr class="separator:a2ebfa00d15f1055cbf387d30dd654dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522358d2ab29300d7942e091a9c19479"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a522358d2ab29300d7942e091a9c19479">pause</a> (bool pause)</td></tr>
+<tr class="separator:a522358d2ab29300d7942e091a9c19479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a905180c5a504fddf919a402f29d0f520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a905180c5a504fddf919a402f29d0f520">stop</a> (size_t frame)</td></tr>
+<tr class="separator:a905180c5a504fddf919a402f29d0f520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a607342ed5536270dda3a14871067e5fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a607342ed5536270dda3a14871067e5fb">stop</a> (void)</td></tr>
+<tr class="separator:a607342ed5536270dda3a14871067e5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad534c2eb06cbe54220b1fddfa1519ba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#ad534c2eb06cbe54220b1fddfa1519ba0">update</a> (float delta_time_in_ms)</td></tr>
+<tr class="separator:ad534c2eb06cbe54220b1fddfa1519ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html">thewizardplusplus::anna::graphics::Object</a></td></tr>
+<tr class="memitem:a99247dee536d27f43ee7b3f7d8587a3c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a99247dee536d27f43ee7b3f7d8587a3c">Object</a> (void)</td></tr>
+<tr class="separator:a99247dee536d27f43ee7b3f7d8587a3c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ec2177266554587e8ddb40eb72ae1c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#ac9ec2177266554587e8ddb40eb72ae1c">~Object</a> (void)</td></tr>
+<tr class="separator:ac9ec2177266554587e8ddb40eb72ae1c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad01e4d9b84232b76f873210623f4b37b inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#ad01e4d9b84232b76f873210623f4b37b">getNumberOfMeshes</a> (void) const </td></tr>
+<tr class="separator:ad01e4d9b84232b76f873210623f4b37b inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a775e15c6ecc4f79d981e3e242b1e029c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">Mesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a775e15c6ecc4f79d981e3e242b1e029c">getMesh</a> (size_t number) const </td></tr>
+<tr class="separator:a775e15c6ecc4f79d981e3e242b1e029c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc2aa706999f9c16f0faa5a2934b658 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#addc2aa706999f9c16f0faa5a2934b658">addMesh</a> (<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">Mesh</a> *mesh)</td></tr>
+<tr class="separator:addc2aa706999f9c16f0faa5a2934b658 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe7b811e111cc62f337dc17470ddbe8 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#acbe7b811e111cc62f337dc17470ddbe8">removeMesh</a> (<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">Mesh</a> *mesh)</td></tr>
+<tr class="separator:acbe7b811e111cc62f337dc17470ddbe8 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab134cdea6b9cf68ef128e3a6886de82d inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#ab134cdea6b9cf68ef128e3a6886de82d">getPosition</a> (void) const </td></tr>
+<tr class="separator:ab134cdea6b9cf68ef128e3a6886de82d inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9b1e1c602cbd84967de06b549b45a9 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a1c9b1e1c602cbd84967de06b549b45a9">setPosition</a> (const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a5c05807b2deef89ae168525d746d6b66">position</a>)</td></tr>
+<tr class="separator:a1c9b1e1c602cbd84967de06b549b45a9 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f791496e7faa8e728268b88f56496d1 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a3f791496e7faa8e728268b88f56496d1">setPosition</a> (float x, float y, float z)</td></tr>
+<tr class="separator:a3f791496e7faa8e728268b88f56496d1 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42bc292d67d44c3d8167e03464949900 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a42bc292d67d44c3d8167e03464949900">getRotation</a> (void) const </td></tr>
+<tr class="separator:a42bc292d67d44c3d8167e03464949900 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e339b19e5cc0b0b81495b8351b928f inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#ad1e339b19e5cc0b0b81495b8351b928f">setRotation</a> (const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#ab24685d51c4cea57bcedd953fc199aff">rotation</a>)</td></tr>
+<tr class="separator:ad1e339b19e5cc0b0b81495b8351b928f inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a19187ba6283151bc271d5927c6abc inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a27a19187ba6283151bc271d5927c6abc">setRotation</a> (float x, float y, float z)</td></tr>
+<tr class="separator:a27a19187ba6283151bc271d5927c6abc inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b2921cc8808b3a6d7604aa93b4857c3 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a2b2921cc8808b3a6d7604aa93b4857c3">getScale</a> (void) const </td></tr>
+<tr class="separator:a2b2921cc8808b3a6d7604aa93b4857c3 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6640924860c66994960b396a6b04bd7c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a6640924860c66994960b396a6b04bd7c">setScale</a> (const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a3ff1f0a14a42caa4ca213ef08438382f">scale</a>)</td></tr>
+<tr class="separator:a6640924860c66994960b396a6b04bd7c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6851b042761bda5450fceb0b5e98428 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#aa6851b042761bda5450fceb0b5e98428">setScale</a> (float x, float y, float z)</td></tr>
+<tr class="separator:aa6851b042761bda5450fceb0b5e98428 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa61484e1299841a184e797bf0f89f2c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#aaa61484e1299841a184e797bf0f89f2c">isVisible</a> (void) const </td></tr>
+<tr class="separator:aaa61484e1299841a184e797bf0f89f2c inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431c2985e07fbbfbf970fcbef2a560a6 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a431c2985e07fbbfbf970fcbef2a560a6">setVisible</a> (bool <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#abcaa6fdc3fdcf607bba770751e222b2e">visible</a>)</td></tr>
+<tr class="separator:a431c2985e07fbbfbf970fcbef2a560a6 inherit pub_methods_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:af625fcd4a2956b93d9131d193c1259b3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html">AnimateObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#af625fcd4a2956b93d9131d193c1259b3">load</a> (const std::string &amp;filename, <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html">GraphicApi</a> *graphic_api, bool load_animation=true)</td></tr>
+<tr class="separator:af625fcd4a2956b93d9131d193c1259b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_types_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classthewizardplusplus_1_1anna_1_1graphics_1_1_object')"><img src="closed.png" alt="-"/>&#160;Защищенные типы унаследованные от <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html">thewizardplusplus::anna::graphics::Object</a></td></tr>
+<tr class="memitem:ae64211315f424a18704ea584afadbfdd inherit pro_types_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html">Mesh</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#ae64211315f424a18704ea584afadbfdd">MeshVector</a></td></tr>
+<tr class="separator:ae64211315f424a18704ea584afadbfdd inherit pro_types_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object')"><img src="closed.png" alt="-"/>&#160;Защищенные данные унаследованные от <a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html">thewizardplusplus::anna::graphics::Object</a></td></tr>
+<tr class="memitem:a2fc0b05256ce151a3a2b0b188b05d95e inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#ae64211315f424a18704ea584afadbfdd">MeshVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a2fc0b05256ce151a3a2b0b188b05d95e">meshes</a></td></tr>
+<tr class="separator:a2fc0b05256ce151a3a2b0b188b05d95e inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c05807b2deef89ae168525d746d6b66 inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a5c05807b2deef89ae168525d746d6b66">position</a></td></tr>
+<tr class="separator:a5c05807b2deef89ae168525d746d6b66 inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab24685d51c4cea57bcedd953fc199aff inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#ab24685d51c4cea57bcedd953fc199aff">rotation</a></td></tr>
+<tr class="separator:ab24685d51c4cea57bcedd953fc199aff inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff1f0a14a42caa4ca213ef08438382f inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#a3ff1f0a14a42caa4ca213ef08438382f">scale</a></td></tr>
+<tr class="separator:a3ff1f0a14a42caa4ca213ef08438382f inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcaa6fdc3fdcf607bba770751e222b2e inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#abcaa6fdc3fdcf607bba770751e222b2e">visible</a></td></tr>
+<tr class="separator:abcaa6fdc3fdcf607bba770751e222b2e inherit pro_attribs_classthewizardplusplus_1_1anna_1_1graphics_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="_animate_object_8h_source.html">AnimateObject.h</a> строка <a class="el" href="_animate_object_8h_source.html#l00015">15</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a51a1e8e1d12a5e1c2ebee65fe00f057f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnimateObject::AnimateObject </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00152">152</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a10a51ee1d6818a59f459a6e4eaa98afc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t AnimateObject::getCurrentFrame </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00202">202</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a10a51ee1d6818a59f459a6e4eaa98afc_cgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a10a51ee1d6818a59f459a6e4eaa98afc_cgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a10a51ee1d6818a59f459a6e4eaa98afc_cgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a10a51ee1d6818a59f459a6e4eaa98afc_cgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a85d733eccc34cd92a23ad1326b0652cf" title="thewizardplusplus::\lanna::graphics::AnimateObject\l::getNumberOfFrames" alt="" coords="257,4,458,60"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html#a4a4dfbdc8d1c7a188df32d57b3461bad" title="thewizardplusplus::\lanna::graphics::AnimateTrack\l::getNumberOfFrames" alt="" coords="507,4,703,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af6645c35545926d116e674f28fe9ece4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AnimateObject::getCurrentTime </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00207">207</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7fc16fdcc6fd6cde4471655a20e3fdd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t AnimateObject::getEndFrame </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00194">194</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3d52fdc343f7b2b881248f5fa7955cfb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t AnimateObject::getFps </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00178">178</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a85d733eccc34cd92a23ad1326b0652cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t AnimateObject::getNumberOfFrames </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00170">170</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a85d733eccc34cd92a23ad1326b0652cf_cgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a85d733eccc34cd92a23ad1326b0652cf_cgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a85d733eccc34cd92a23ad1326b0652cf_cgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a85d733eccc34cd92a23ad1326b0652cf_cgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html#a4a4dfbdc8d1c7a188df32d57b3461bad" title="thewizardplusplus::\lanna::graphics::AnimateTrack\l::getNumberOfFrames" alt="" coords="257,4,453,60"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a85d733eccc34cd92a23ad1326b0652cf_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a85d733eccc34cd92a23ad1326b0652cf_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a85d733eccc34cd92a23ad1326b0652cf_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a85d733eccc34cd92a23ad1326b0652cf_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a10a51ee1d6818a59f459a6e4eaa98afc" title="thewizardplusplus::\lanna::graphics::AnimateObject\l::getCurrentFrame" alt="" coords="273,5,474,61"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a6a0a6c7a6479ec417b1bc83e00255fc5" title="thewizardplusplus::\lanna::graphics::AnimateObject::play" alt="" coords="257,85,490,126"/><area shape="rect" id="node5" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a905180c5a504fddf919a402f29d0f520" title="thewizardplusplus::\lanna::graphics::AnimateObject::stop" alt="" coords="256,150,491,191"/><area shape="rect" id="node4" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a2ebfa00d15f1055cbf387d30dd654dd1" title="thewizardplusplus::\lanna::graphics::AnimateObject::play" alt="" coords="539,85,773,126"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e584dfeb706f18eafe12baf27c134b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t AnimateObject::getStartFrame </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00190">190</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a51be5607dc6d64c9c0957087a7e250fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_state.html#a822551a0a8b0e472eaf6e0c10fd90542">AnimateState::Types</a> AnimateObject::getState </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00186">186</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a92085b8909160b1e11e614e9cf0bd505"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html">AnimateTrack</a> * AnimateObject::getTrack </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00162">162</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a995e2b83a71fd3896247236a6994fbc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimateObject::isLoop </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00198">198</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af625fcd4a2956b93d9131d193c1259b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html">AnimateObject</a> * AnimateObject::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html">GraphicApi</a> *&#160;</td>
+          <td class="paramname"><em>graphic_api</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>load_animation</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00016">16</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_af625fcd4a2956b93d9131d193c1259b3_cgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_af625fcd4a2956b93d9131d193c1259b3_cgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_af625fcd4a2956b93d9131d193c1259b3_cgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_af625fcd4a2956b93d9131d193c1259b3_cgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1utils_1_1_path.html#af09074f1c29ba280d09477ba7d0e6fa4" title="thewizardplusplus::\lutils::Path::getPathWithout\lFilename" alt="" coords="300,5,479,61"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_object.html#addc2aa706999f9c16f0faa5a2934b658" title="thewizardplusplus::\lanna::graphics::Object\l::addMesh" alt="" coords="313,85,466,141"/><area shape="rect" id="node6" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#a6c93cbd9861f322b75d17722a8c00637" title="thewizardplusplus::\lanna::graphics::Mesh\l::setPosition" alt="" coords="316,165,463,221"/><area shape="rect" id="node7" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#a92c9a73abb7f78e5daa3ee51e61f509b" title="thewizardplusplus::\lanna::graphics::Mesh\l::setRotation" alt="" coords="316,245,463,301"/><area shape="rect" id="node8" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#abc24cbb89778d6949c79b809ccb369c9" title="thewizardplusplus::\lanna::graphics::Mesh\l::setScale" alt="" coords="316,325,463,381"/><area shape="rect" id="node9" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#ad0f8bc002427fe84a556976c1456ecf6" title="thewizardplusplus::\lanna::graphics::Mesh\l::getMaterial" alt="" coords="316,405,463,461"/><area shape="rect" id="node10" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#aab6476d3b7f9b5277be052a3f22ba726" title="thewizardplusplus::\lanna::graphics::GraphicApi\l::createTexture" alt="" coords="300,485,479,541"/><area shape="rect" id="node11" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#ae2077068278c1bc4745a7040b5ce7dfe" title="thewizardplusplus::\lanna::graphics::Mesh\l::addVertex" alt="" coords="316,565,463,621"/><area shape="rect" id="node12" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html#a8fd7d1aa1313568156eb83800536d2de" title="thewizardplusplus::\lanna::graphics::AnimateTrack\l::addKey" alt="" coords="291,645,487,701"/><area shape="rect" id="node13" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a70c9335dd3edba3737d355e7acf7375f" title="thewizardplusplus::\lanna::graphics::AnimateObject\l::setTrack" alt="" coords="289,725,490,781"/><area shape="rect" id="node4" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#ace0adedaee2d62cb21a54f0a64908198" title="thewizardplusplus::\lanna::graphics::Mesh\l::getObject" alt="" coords="539,5,685,61"/><area shape="rect" id="node5" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#ae7a6e91b4e233df57c8bfe9e1c631e6e" title="thewizardplusplus::\lanna::graphics::Mesh\l::setObject" alt="" coords="539,85,685,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a522358d2ab29300d7942e091a9c19479"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimateObject::pause </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pause</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00230">230</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6a0a6c7a6479ec417b1bc83e00255fc5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimateObject::play </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>loop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>start_frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>end_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00211">211</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a6a0a6c7a6479ec417b1bc83e00255fc5_cgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a6a0a6c7a6479ec417b1bc83e00255fc5_cgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a6a0a6c7a6479ec417b1bc83e00255fc5_cgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a6a0a6c7a6479ec417b1bc83e00255fc5_cgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a85d733eccc34cd92a23ad1326b0652cf" title="thewizardplusplus::\lanna::graphics::AnimateObject\l::getNumberOfFrames" alt="" coords="305,5,506,61"/><area shape="rect" id="node4" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a607342ed5536270dda3a14871067e5fb" title="thewizardplusplus::\lanna::graphics::AnimateObject::stop" alt="" coords="288,85,523,126"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html#a4a4dfbdc8d1c7a188df32d57b3461bad" title="thewizardplusplus::\lanna::graphics::AnimateTrack\l::getNumberOfFrames" alt="" coords="571,5,767,61"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a6a0a6c7a6479ec417b1bc83e00255fc5_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a6a0a6c7a6479ec417b1bc83e00255fc5_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a6a0a6c7a6479ec417b1bc83e00255fc5_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a6a0a6c7a6479ec417b1bc83e00255fc5_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a2ebfa00d15f1055cbf387d30dd654dd1" title="thewizardplusplus::\lanna::graphics::AnimateObject::play" alt="" coords="289,5,522,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ebfa00d15f1055cbf387d30dd654dd1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimateObject::play </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>loop</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00226">226</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a2ebfa00d15f1055cbf387d30dd654dd1_cgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a2ebfa00d15f1055cbf387d30dd654dd1_cgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a2ebfa00d15f1055cbf387d30dd654dd1_cgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a2ebfa00d15f1055cbf387d30dd654dd1_cgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a6a0a6c7a6479ec417b1bc83e00255fc5" title="thewizardplusplus::\lanna::graphics::AnimateObject::play" alt="" coords="289,70,522,111"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a85d733eccc34cd92a23ad1326b0652cf" title="thewizardplusplus::\lanna::graphics::AnimateObject\l::getNumberOfFrames" alt="" coords="587,4,789,60"/><area shape="rect" id="node5" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a607342ed5536270dda3a14871067e5fb" title="thewizardplusplus::\lanna::graphics::AnimateObject::stop" alt="" coords="571,83,805,125"/><area shape="rect" id="node4" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html#a4a4dfbdc8d1c7a188df32d57b3461bad" title="thewizardplusplus::\lanna::graphics::AnimateTrack\l::getNumberOfFrames" alt="" coords="854,4,1050,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a673fcbd1173373e3021cbcac22a3042d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimateObject::setFps </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>fps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00182">182</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a70c9335dd3edba3737d355e7acf7375f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimateObject::setTrack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html">AnimateTrack</a> *&#160;</td>
+          <td class="paramname"><em>track</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00166">166</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a70c9335dd3edba3737d355e7acf7375f_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a70c9335dd3edba3737d355e7acf7375f_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a70c9335dd3edba3737d355e7acf7375f_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a70c9335dd3edba3737d355e7acf7375f_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#af625fcd4a2956b93d9131d193c1259b3" title="thewizardplusplus::\lanna::graphics::AnimateObject::load" alt="" coords="257,11,490,53"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a905180c5a504fddf919a402f29d0f520"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimateObject::stop </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00238">238</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a905180c5a504fddf919a402f29d0f520_cgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a905180c5a504fddf919a402f29d0f520_cgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a905180c5a504fddf919a402f29d0f520_cgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a905180c5a504fddf919a402f29d0f520_cgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a85d733eccc34cd92a23ad1326b0652cf" title="thewizardplusplus::\lanna::graphics::AnimateObject\l::getNumberOfFrames" alt="" coords="289,4,490,60"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_track.html#a4a4dfbdc8d1c7a188df32d57b3461bad" title="thewizardplusplus::\lanna::graphics::AnimateTrack\l::getNumberOfFrames" alt="" coords="539,4,735,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a607342ed5536270dda3a14871067e5fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimateObject::stop </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00245">245</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a607342ed5536270dda3a14871067e5fb_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a607342ed5536270dda3a14871067e5fb_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a607342ed5536270dda3a14871067e5fb_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object_a607342ed5536270dda3a14871067e5fb_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a6a0a6c7a6479ec417b1bc83e00255fc5" title="thewizardplusplus::\lanna::graphics::AnimateObject::play" alt="" coords="289,5,522,46"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#a2ebfa00d15f1055cbf387d30dd654dd1" title="thewizardplusplus::\lanna::graphics::AnimateObject::play" alt="" coords="571,5,805,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad534c2eb06cbe54220b1fddfa1519ba0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimateObject::update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>delta_time_in_ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a> строка <a class="el" href="_animate_object_8cpp_source.html#l00249">249</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>source/thewizardplusplus/anna/graphics/<a class="el" href="_animate_object_8h_source.html">AnimateObject.h</a></li>
+<li>source/thewizardplusplus/anna/graphics/<a class="el" href="_animate_object_8cpp_source.html">AnimateObject.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacethewizardplusplus.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna.html">anna</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna_1_1graphics.html">graphics</a></li><li class="navelem"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html">AnimateObject</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Класс thewizardplusplus::anna::maths::Maths</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс thewizardplusplus::anna::maths::Maths</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_maths_8h_source.html">Maths.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a6ce62c9c04f3ab894a57e0ed4ca2404a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a6ce62c9c04f3ab894a57e0ed4ca2404a">isEqual</a> (float x, float y, int bits_not_compare=<a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>)</td></tr>
+<tr class="separator:a6ce62c9c04f3ab894a57e0ed4ca2404a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d7b4773a8eedbb3ceefc9e5c389e99"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#ac5d7b4773a8eedbb3ceefc9e5c389e99">isEqual</a> (double x, double y, int bits_not_compare=<a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>)</td></tr>
+<tr class="separator:ac5d7b4773a8eedbb3ceefc9e5c389e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7edba8db1d4018674d27ec46047458c8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a7edba8db1d4018674d27ec46047458c8">isEqual</a> (long double x, long double y, int bits_not_compare=<a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>)</td></tr>
+<tr class="separator:a7edba8db1d4018674d27ec46047458c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44707c6f6960961ccd2c6a29b55371fc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a44707c6f6960961ccd2c6a29b55371fc">isNull</a> (float x, int bits_not_compare=<a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>)</td></tr>
+<tr class="separator:a44707c6f6960961ccd2c6a29b55371fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad36392d040a742e5211a7d53e72e0e24"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#ad36392d040a742e5211a7d53e72e0e24">isNull</a> (double x, int bits_not_compare=<a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>)</td></tr>
+<tr class="separator:ad36392d040a742e5211a7d53e72e0e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0795e841bb5ed6e777f535f6fb6e8c0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#af0795e841bb5ed6e777f535f6fb6e8c0">isNull</a> (long double x, int bits_not_compare=<a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a>)</td></tr>
+<tr class="separator:af0795e841bb5ed6e777f535f6fb6e8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b21705ea4da1e4c49ec00da4360c82"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a74b21705ea4da1e4c49ec00da4360c82">toDegrees</a> (float angle)</td></tr>
+<tr class="separator:a74b21705ea4da1e4c49ec00da4360c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0520867eb1375bfa4c999eaa9762deb4"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a0520867eb1375bfa4c999eaa9762deb4">toRadians</a> (float angle)</td></tr>
+<tr class="separator:a0520867eb1375bfa4c999eaa9762deb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf36a94e7119abdf7e3816241b0d9bca"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#acf36a94e7119abdf7e3816241b0d9bca">clamp</a> (float number, float limit1=1.0f, float limit2=0.0f)</td></tr>
+<tr class="separator:acf36a94e7119abdf7e3816241b0d9bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc5abffd2899ce6a6a2dc54f26793d6e"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e">interpolate</a> (float x1, float x2, float shift)</td></tr>
+<tr class="separator:afc5abffd2899ce6a6a2dc54f26793d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069b731171fbb2384a77dc5d40009570"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a069b731171fbb2384a77dc5d40009570">randomNumber</a> (float limit1=1.0f, float limit2=0.0f)</td></tr>
+<tr class="separator:a069b731171fbb2384a77dc5d40009570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:ab5f5e8d8f24d6eacfeeb7b00c4d64622"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#ab5f5e8d8f24d6eacfeeb7b00c4d64622">PI</a> = 3.14159f</td></tr>
+<tr class="separator:ab5f5e8d8f24d6eacfeeb7b00c4d64622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75f09f0aec377a8532b750235c0c16ce"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a> = 4</td></tr>
+<tr class="separator:a75f09f0aec377a8532b750235c0c16ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="_maths_8h_source.html">Maths.h</a> строка <a class="el" href="_maths_8h_source.html#l00008">8</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a class="anchor" id="acf36a94e7119abdf7e3816241b0d9bca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Maths::clamp </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>limit1</em> = <code>1.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>limit2</em> = <code>0.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00048">48</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_acf36a94e7119abdf7e3816241b0d9bca_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1maths_1_1_maths_acf36a94e7119abdf7e3816241b0d9bca_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_acf36a94e7119abdf7e3816241b0d9bca_icgraph" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_acf36a94e7119abdf7e3816241b0d9bca_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#afc5abffd2899ce6a6a2dc54f26793d6e" title="thewizardplusplus::\lanna::maths::Maths::\linterpolate" alt="" coords="235,205,381,261"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector2_d.html#a52822a93bab4a961c2d661ab27e053c3" title="thewizardplusplus::\lanna::maths::Vector2D\l::interpolatedTo" alt="" coords="429,5,587,61"/><area shape="rect" id="node4" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector2_d.html#aeef758f4ce7014cdf21f255f0e1a4b57" title="thewizardplusplus::\lanna::maths::Vector2D\l::interpolateTo" alt="" coords="429,85,587,141"/><area shape="rect" id="node5" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a18d47af63dbb377787f1813a2aeee7b0" title="thewizardplusplus::\lanna::maths::Vector3D\l::interpolatedTo" alt="" coords="429,165,587,221"/><area shape="rect" id="node6" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4f213e08ab6f2209a07bb631a28bddee" title="thewizardplusplus::\lanna::maths::Vector3D\l::interpolateTo" alt="" coords="429,245,587,301"/><area shape="rect" id="node7" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector4_d.html#a54f760c05d86aa4faee23dc3ee324581" title="thewizardplusplus::\lanna::maths::Vector4D\l::interpolatedTo" alt="" coords="429,325,587,381"/><area shape="rect" id="node8" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector4_d.html#aa311173fc4ffa9f6d4f8c606403344f6" title="thewizardplusplus::\lanna::maths::Vector4D\l::interpolateTo" alt="" coords="429,405,587,461"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afc5abffd2899ce6a6a2dc54f26793d6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Maths::interpolate </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>shift</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00061">61</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_afc5abffd2899ce6a6a2dc54f26793d6e_cgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1maths_1_1_maths_afc5abffd2899ce6a6a2dc54f26793d6e_cgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_afc5abffd2899ce6a6a2dc54f26793d6e_cgraph" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_afc5abffd2899ce6a6a2dc54f26793d6e_cgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#acf36a94e7119abdf7e3816241b0d9bca" title="thewizardplusplus::\lanna::maths::Maths::clamp" alt="" coords="200,11,381,53"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_afc5abffd2899ce6a6a2dc54f26793d6e_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1maths_1_1_maths_afc5abffd2899ce6a6a2dc54f26793d6e_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_afc5abffd2899ce6a6a2dc54f26793d6e_icgraph" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_afc5abffd2899ce6a6a2dc54f26793d6e_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector2_d.html#a52822a93bab4a961c2d661ab27e053c3" title="thewizardplusplus::\lanna::maths::Vector2D\l::interpolatedTo" alt="" coords="200,5,357,61"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector2_d.html#aeef758f4ce7014cdf21f255f0e1a4b57" title="thewizardplusplus::\lanna::maths::Vector2D\l::interpolateTo" alt="" coords="200,85,357,141"/><area shape="rect" id="node4" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a18d47af63dbb377787f1813a2aeee7b0" title="thewizardplusplus::\lanna::maths::Vector3D\l::interpolatedTo" alt="" coords="200,165,357,221"/><area shape="rect" id="node5" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a4f213e08ab6f2209a07bb631a28bddee" title="thewizardplusplus::\lanna::maths::Vector3D\l::interpolateTo" alt="" coords="200,245,357,301"/><area shape="rect" id="node6" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector4_d.html#a54f760c05d86aa4faee23dc3ee324581" title="thewizardplusplus::\lanna::maths::Vector4D\l::interpolatedTo" alt="" coords="200,325,357,381"/><area shape="rect" id="node7" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector4_d.html#aa311173fc4ffa9f6d4f8c606403344f6" title="thewizardplusplus::\lanna::maths::Vector4D\l::interpolateTo" alt="" coords="200,405,357,461"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ce62c9c04f3ab894a57e0ed4ca2404a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Maths::isEqual </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bits_not_compare</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00013">13</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_a6ce62c9c04f3ab894a57e0ed4ca2404a_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1maths_1_1_maths_a6ce62c9c04f3ab894a57e0ed4ca2404a_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_a6ce62c9c04f3ab894a57e0ed4ca2404a_icgraph" id="classthewizardplusplus_1_1anna_1_1maths_1_1_maths_a6ce62c9c04f3ab894a57e0ed4ca2404a_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector2_d.html#a6a285e17403e41f3950422b16c756210" title="thewizardplusplus::\lanna::maths::Vector2D\l::isApproximatelyEqualTo" alt="" coords="200,5,371,61"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html#a31ad32de486bb9a892d9b3480daa02a4" title="thewizardplusplus::\lanna::maths::Vector3D\l::isApproximatelyEqualTo" alt="" coords="200,85,371,141"/><area shape="rect" id="node4" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector4_d.html#a6d5edd3642cb9e49702c8d5fd4e36f41" title="thewizardplusplus::\lanna::maths::Vector4D\l::isApproximatelyEqualTo" alt="" coords="200,165,371,221"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5d7b4773a8eedbb3ceefc9e5c389e99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Maths::isEqual </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bits_not_compare</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7edba8db1d4018674d27ec46047458c8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Maths::isEqual </td>
+          <td>(</td>
+          <td class="paramtype">long double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bits_not_compare</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a44707c6f6960961ccd2c6a29b55371fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Maths::isNull </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bits_not_compare</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad36392d040a742e5211a7d53e72e0e24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Maths::isNull </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bits_not_compare</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00032">32</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af0795e841bb5ed6e777f535f6fb6e8c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Maths::isNull </td>
+          <td>(</td>
+          <td class="paramtype">long double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bits_not_compare</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html#a75f09f0aec377a8532b750235c0c16ce">DEFAULT_BITS_NOT_COMPARE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a069b731171fbb2384a77dc5d40009570"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Maths::randomNumber </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>limit1</em> = <code>1.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>limit2</em> = <code>0.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00065">65</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a74b21705ea4da1e4c49ec00da4360c82"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Maths::toDegrees </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00040">40</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0520867eb1375bfa4c999eaa9762deb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Maths::toRadians </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8cpp_source.html">Maths.cpp</a> строка <a class="el" href="_maths_8cpp_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a75f09f0aec377a8532b750235c0c16ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int thewizardplusplus::anna::maths::Maths::DEFAULT_BITS_NOT_COMPARE = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8h_source.html">Maths.h</a> строка <a class="el" href="_maths_8h_source.html#l00011">11</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab5f5e8d8f24d6eacfeeb7b00c4d64622"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Maths::PI = 3.14159f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_maths_8h_source.html">Maths.h</a> строка <a class="el" href="_maths_8h_source.html#l00010">10</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>source/thewizardplusplus/anna/maths/<a class="el" href="_maths_8h_source.html">Maths.h</a></li>
+<li>source/thewizardplusplus/anna/maths/<a class="el" href="_maths_8cpp_source.html">Maths.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacethewizardplusplus.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna.html">anna</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna_1_1maths.html">maths</a></li><li class="navelem"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_maths.html">Maths</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

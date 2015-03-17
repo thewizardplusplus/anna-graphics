@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Класс thewizardplusplus::anna::graphics::FogParameters</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс thewizardplusplus::anna::graphics::FogParameters</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_fog_parameters_8h_source.html">FogParameters.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса thewizardplusplus::anna::graphics::FogParameters:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters__coll__graph.png" border="0" usemap="#thewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters_coll__map" alt="Collaboration graph"/></div>
+<map name="thewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters_coll__map" id="thewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters_coll__map">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html" title="thewizardplusplus::\lanna::maths::Vector3D\l\&lt; float \&gt;" alt="" coords="28,5,185,61"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a81b4b29d22c7b5e50128420beec0922a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html#a81b4b29d22c7b5e50128420beec0922a">FogParameters</a> (const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html#a2547b1c239b421666850d047c8c82a6c">color</a>=<a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;(0.5f, 0.5f, 0.5f), float density=1.0f, float start_depth=0.1f, float end_depth=5000.0f, FogType::Types type=FogType::LINEAR)</td></tr>
+<tr class="separator:a81b4b29d22c7b5e50128420beec0922a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a3a0d8d0c2c606f5ca6069b1b42d63aba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_type.html#afb63fa264ea19f1eaa4c2dfb372c3c7c">FogType::Types</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html#a3a0d8d0c2c606f5ca6069b1b42d63aba">type</a></td></tr>
+<tr class="separator:a3a0d8d0c2c606f5ca6069b1b42d63aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2547b1c239b421666850d047c8c82a6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html#a2547b1c239b421666850d047c8c82a6c">color</a></td></tr>
+<tr class="separator:a2547b1c239b421666850d047c8c82a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af19a0f5eee7811171354a630a8633095"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html#af19a0f5eee7811171354a630a8633095">density</a></td></tr>
+<tr class="separator:af19a0f5eee7811171354a630a8633095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612d0110cad61416b2f2467804d08bb7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html#a612d0110cad61416b2f2467804d08bb7">start_depth</a></td></tr>
+<tr class="separator:a612d0110cad61416b2f2467804d08bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4017ee4792fab5e4c352a367dd2828bb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html#a4017ee4792fab5e4c352a367dd2828bb">end_depth</a></td></tr>
+<tr class="separator:a4017ee4792fab5e4c352a367dd2828bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="_fog_parameters_8h_source.html">FogParameters.h</a> строка <a class="el" href="_fog_parameters_8h_source.html#l00011">11</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a81b4b29d22c7b5e50128420beec0922a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FogParameters::FogParameters </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>color</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt;float&gt;(		0.5f,&#160;0.5f,&#160;0.5f)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>density</em> = <code>1.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>start_depth</em> = <code>0.1f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>end_depth</em> = <code>5000.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_type.html#afb63fa264ea19f1eaa4c2dfb372c3c7c">FogType::Types</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_type.html#afb63fa264ea19f1eaa4c2dfb372c3c7ca65569274d16b137829d2bc5d76c2eb5d">FogType::LINEAR</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_fog_parameters_8cpp_source.html">FogParameters.cpp</a> строка <a class="el" href="_fog_parameters_8cpp_source.html#l00006">6</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a2547b1c239b421666850d047c8c82a6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt;float&gt; thewizardplusplus::anna::graphics::FogParameters::color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_fog_parameters_8h_source.html">FogParameters.h</a> строка <a class="el" href="_fog_parameters_8h_source.html#l00014">14</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af19a0f5eee7811171354a630a8633095"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float thewizardplusplus::anna::graphics::FogParameters::density</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_fog_parameters_8h_source.html">FogParameters.h</a> строка <a class="el" href="_fog_parameters_8h_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4017ee4792fab5e4c352a367dd2828bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float thewizardplusplus::anna::graphics::FogParameters::end_depth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_fog_parameters_8h_source.html">FogParameters.h</a> строка <a class="el" href="_fog_parameters_8h_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a612d0110cad61416b2f2467804d08bb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float thewizardplusplus::anna::graphics::FogParameters::start_depth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_fog_parameters_8h_source.html">FogParameters.h</a> строка <a class="el" href="_fog_parameters_8h_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3a0d8d0c2c606f5ca6069b1b42d63aba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_type.html#afb63fa264ea19f1eaa4c2dfb372c3c7c">FogType::Types</a> thewizardplusplus::anna::graphics::FogParameters::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_fog_parameters_8h_source.html">FogParameters.h</a> строка <a class="el" href="_fog_parameters_8h_source.html#l00013">13</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>source/thewizardplusplus/anna/graphics/<a class="el" href="_fog_parameters_8h_source.html">FogParameters.h</a></li>
+<li>source/thewizardplusplus/anna/graphics/<a class="el" href="_fog_parameters_8cpp_source.html">FogParameters.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacethewizardplusplus.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna.html">anna</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna_1_1graphics.html">graphics</a></li><li class="navelem"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_fog_parameters.html">FogParameters</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

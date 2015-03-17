@@ -1,0 +1,4 @@
+var classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_cannot_find_appropriate_pixel_format_exception =
+[
+    [ "CannotFindAppropriatePixelFormatException", "classthewizardplusplus_1_1anna_1_1graphics_1_1exceptions_1_1_cannot_find_appropriate_pixel_format_exception.html#ac8516e103400f62ac1062c5678bec9b4", null ]
+];

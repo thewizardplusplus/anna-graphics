@@ -1,0 +1,9 @@
+<map id="thewizardplusplus::anna::graphics::OpenGlGraphicApi::setCamera" name="thewizardplusplus::anna::graphics::OpenGlGraphicApi::setCamera">
+<area shape="rect" id="node2" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a4c712b20d4a8860e0367ae2305f56116" title="thewizardplusplus::\lanna::graphics::Camera\l::getType" alt="" coords="259,5,421,61"/>
+<area shape="rect" id="node3" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_window.html#afd8a739b3ae779435388c6879c1e4dd0" title="thewizardplusplus::\lanna::graphics::Window\l::getSize" alt="" coords="259,85,421,141"/>
+<area shape="rect" id="node4" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a6d47089dec44d2d10a6213fc3e656d12" title="thewizardplusplus::\lanna::graphics::Camera\l::getFarPlane" alt="" coords="259,165,421,221"/>
+<area shape="rect" id="node5" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a5d6b7524d3a51dd79e0bd60bc4e11d28" title="thewizardplusplus::\lanna::graphics::Camera\l::getFov" alt="" coords="259,245,421,301"/>
+<area shape="rect" id="node6" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a3ea83eae4982df59c5e2efd362f0f82d" title="thewizardplusplus::\lanna::graphics::Camera\l::getNearPlane" alt="" coords="259,325,421,381"/>
+<area shape="rect" id="node7" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#ab4074031e0eb52c832a455b14874f578" title="thewizardplusplus::\lanna::graphics::Camera\l::getRotation" alt="" coords="259,405,421,461"/>
+<area shape="rect" id="node8" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a94c1034b3b60375b0b6a0bfb74da8e2c" title="thewizardplusplus::\lanna::graphics::Camera\l::getPosition" alt="" coords="259,485,421,541"/>
+</map>

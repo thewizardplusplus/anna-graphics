@@ -1,0 +1,7 @@
+<map id="thewizardplusplus::anna::graphics::Mesh::getMaterial" name="thewizardplusplus::anna::graphics::Mesh::getMaterial">
+<area shape="rect" id="node2" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_animate_object.html#af625fcd4a2956b93d9131d193c1259b3" title="thewizardplusplus::\lanna::graphics::AnimateObject::load" alt="" coords="201,5,434,46"/>
+<area shape="rect" id="node3" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#afc7996e3f59d56e281398ce9b8ee2956" title="thewizardplusplus::\lanna::graphics::OpenGlGraphic\lApi::drawMesh" alt="" coords="215,69,419,125"/>
+<area shape="rect" id="node4" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_skybox.html#af6dec7f66f2cb9176c909be15a2dfcd5" title="thewizardplusplus::\lanna::graphics::Skybox\l::Skybox" alt="" coords="238,149,397,205"/>
+<area shape="rect" id="node5" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a984e7d8277474aefd3f1a878d33c5f9e" title="thewizardplusplus::\lanna::graphics::World\l::addObject" alt="" coords="243,229,392,285"/>
+<area shape="rect" id="node6" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_world.html#a5344ae519d7edd23dc94c6b4d972cb58" title="thewizardplusplus::\lanna::graphics::World\l::addAnimateObject" alt="" coords="483,229,632,285"/>
+</map>

@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Anna Graphics: Класс thewizardplusplus::anna::graphics::Camera</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Anna Graphics
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Трёхмерный графический движок, написанный на C++ на базе OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Перечисления</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Элементы перечислений</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс thewizardplusplus::anna::graphics::Camera</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_camera_8h_source.html">Camera.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a31c75b6c0c57fad721d7116de9f2a07c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a31c75b6c0c57fad721d7116de9f2a07c">Camera</a> (<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_type.html#a3371966c6ce45d8bcfed45a467a15353">CameraType::Types</a> type=<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_type.html#a3371966c6ce45d8bcfed45a467a15353aa52221e37298494e7c0a8ed834a07fee">CameraType::PERSPECTIVE</a>, float fov=45.0f, float near_plane=0.1f, float far_plane=5000.0f, const maths::Vector3D&lt; float &gt; &amp;position=maths::Vector3D&lt; float &gt;(), const maths::Vector3D&lt; float &gt; &amp;rotation=maths::Vector3D&lt; float &gt;())</td></tr>
+<tr class="separator:a31c75b6c0c57fad721d7116de9f2a07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c712b20d4a8860e0367ae2305f56116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_type.html#a3371966c6ce45d8bcfed45a467a15353">CameraType::Types</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a4c712b20d4a8860e0367ae2305f56116">getType</a> (void) const </td></tr>
+<tr class="separator:a4c712b20d4a8860e0367ae2305f56116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b8f1875ebcdeec97b34dab53fa94eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a21b8f1875ebcdeec97b34dab53fa94eb">setType</a> (<a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_type.html#a3371966c6ce45d8bcfed45a467a15353">CameraType::Types</a> type)</td></tr>
+<tr class="separator:a21b8f1875ebcdeec97b34dab53fa94eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d6b7524d3a51dd79e0bd60bc4e11d28"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a5d6b7524d3a51dd79e0bd60bc4e11d28">getFov</a> (void) const </td></tr>
+<tr class="separator:a5d6b7524d3a51dd79e0bd60bc4e11d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d4dba9b253711a47f2e61c0188f4f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#ab7d4dba9b253711a47f2e61c0188f4f6">setFov</a> (float fov)</td></tr>
+<tr class="separator:ab7d4dba9b253711a47f2e61c0188f4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea83eae4982df59c5e2efd362f0f82d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a3ea83eae4982df59c5e2efd362f0f82d">getNearPlane</a> (void) const </td></tr>
+<tr class="separator:a3ea83eae4982df59c5e2efd362f0f82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423e9933d788d1dd21743afd1a5edab4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a423e9933d788d1dd21743afd1a5edab4">setNearPlane</a> (float near_plane)</td></tr>
+<tr class="separator:a423e9933d788d1dd21743afd1a5edab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d47089dec44d2d10a6213fc3e656d12"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a6d47089dec44d2d10a6213fc3e656d12">getFarPlane</a> (void) const </td></tr>
+<tr class="separator:a6d47089dec44d2d10a6213fc3e656d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d801d79ba5e35ab7e5685f8f2a1002"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#ae2d801d79ba5e35ab7e5685f8f2a1002">setFarPlane</a> (float far_plane)</td></tr>
+<tr class="separator:ae2d801d79ba5e35ab7e5685f8f2a1002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c1034b3b60375b0b6a0bfb74da8e2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a94c1034b3b60375b0b6a0bfb74da8e2c">getPosition</a> (void) const </td></tr>
+<tr class="separator:a94c1034b3b60375b0b6a0bfb74da8e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecab6995bf97da9e54c5367a6725235a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#aecab6995bf97da9e54c5367a6725235a">setPosition</a> (const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;position)</td></tr>
+<tr class="separator:aecab6995bf97da9e54c5367a6725235a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7766c666e9a4997ccb68abda54c6dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a5c7766c666e9a4997ccb68abda54c6dc">setPosition</a> (float x, float y, float z)</td></tr>
+<tr class="separator:a5c7766c666e9a4997ccb68abda54c6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4074031e0eb52c832a455b14874f578"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#ab4074031e0eb52c832a455b14874f578">getRotation</a> (void) const </td></tr>
+<tr class="separator:ab4074031e0eb52c832a455b14874f578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a4dd89704fec5e28c63136113130783"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#a6a4dd89704fec5e28c63136113130783">setRotation</a> (const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;rotation)</td></tr>
+<tr class="separator:a6a4dd89704fec5e28c63136113130783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7689553e60c5b162bb27ebb3a85e7a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html#ab7689553e60c5b162bb27ebb3a85e7a4">setRotation</a> (float x, float y, float z)</td></tr>
+<tr class="separator:ab7689553e60c5b162bb27ebb3a85e7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="_camera_8h_source.html">Camera.h</a> строка <a class="el" href="_camera_8h_source.html#l00012">12</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a31c75b6c0c57fad721d7116de9f2a07c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Camera::Camera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_type.html#a3371966c6ce45d8bcfed45a467a15353">CameraType::Types</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_type.html#a3371966c6ce45d8bcfed45a467a15353aa52221e37298494e7c0a8ed834a07fee">CameraType::PERSPECTIVE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fov</em> = <code>45.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>near_plane</em> = <code>0.1f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>far_plane</em> = <code>5000.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>position</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt;float&gt;()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rotation</em> = <code><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt;float&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00006">6</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a6d47089dec44d2d10a6213fc3e656d12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Camera::getFarPlane </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00041">41</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a6d47089dec44d2d10a6213fc3e656d12_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a6d47089dec44d2d10a6213fc3e656d12_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a6d47089dec44d2d10a6213fc3e656d12_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a6d47089dec44d2d10a6213fc3e656d12_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#adf04c0a2d27826c531ec59279e9aaa85" title="thewizardplusplus::\lanna::graphics::OpenGlGraphic\lApi::setCamera" alt="" coords="217,4,421,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d6b7524d3a51dd79e0bd60bc4e11d28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Camera::getFov </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00025">25</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a5d6b7524d3a51dd79e0bd60bc4e11d28_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a5d6b7524d3a51dd79e0bd60bc4e11d28_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a5d6b7524d3a51dd79e0bd60bc4e11d28_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a5d6b7524d3a51dd79e0bd60bc4e11d28_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#adf04c0a2d27826c531ec59279e9aaa85" title="thewizardplusplus::\lanna::graphics::OpenGlGraphic\lApi::setCamera" alt="" coords="217,4,421,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ea83eae4982df59c5e2efd362f0f82d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Camera::getNearPlane </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00033">33</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a3ea83eae4982df59c5e2efd362f0f82d_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a3ea83eae4982df59c5e2efd362f0f82d_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a3ea83eae4982df59c5e2efd362f0f82d_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a3ea83eae4982df59c5e2efd362f0f82d_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#adf04c0a2d27826c531ec59279e9aaa85" title="thewizardplusplus::\lanna::graphics::OpenGlGraphic\lApi::setCamera" alt="" coords="217,4,421,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a94c1034b3b60375b0b6a0bfb74da8e2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D</a>&lt; float &gt; Camera::getPosition </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00049">49</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a94c1034b3b60375b0b6a0bfb74da8e2c_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a94c1034b3b60375b0b6a0bfb74da8e2c_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a94c1034b3b60375b0b6a0bfb74da8e2c_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a94c1034b3b60375b0b6a0bfb74da8e2c_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_distance_to_mesh_comparator.html#aa49df23194a6a5a13e1a6573ff392de1" title="thewizardplusplus::\lanna::graphics::DistanceTo\lMeshComparator::operator()" alt="" coords="226,5,411,61"/><area shape="rect" id="node3" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#adf04c0a2d27826c531ec59279e9aaa85" title="thewizardplusplus::\lanna::graphics::OpenGlGraphic\lApi::setCamera" alt="" coords="217,85,421,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab4074031e0eb52c832a455b14874f578"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">Vector3D</a>&lt; float &gt; Camera::getRotation </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00063">63</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_ab4074031e0eb52c832a455b14874f578_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_ab4074031e0eb52c832a455b14874f578_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_ab4074031e0eb52c832a455b14874f578_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_ab4074031e0eb52c832a455b14874f578_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#adf04c0a2d27826c531ec59279e9aaa85" title="thewizardplusplus::\lanna::graphics::OpenGlGraphic\lApi::setCamera" alt="" coords="217,4,421,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c712b20d4a8860e0367ae2305f56116"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_type.html#a3371966c6ce45d8bcfed45a467a15353">CameraType::Types</a> Camera::getType </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00017">17</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a4c712b20d4a8860e0367ae2305f56116_icgraph.png" border="0" usemap="#classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a4c712b20d4a8860e0367ae2305f56116_icgraph" alt=""/></div>
+<map name="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a4c712b20d4a8860e0367ae2305f56116_icgraph" id="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_a4c712b20d4a8860e0367ae2305f56116_icgraph">
+<area shape="rect" id="node2" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_open_gl_graphic_api.html#adf04c0a2d27826c531ec59279e9aaa85" title="thewizardplusplus::\lanna::graphics::OpenGlGraphic\lApi::setCamera" alt="" coords="217,4,421,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2d801d79ba5e35ab7e5685f8f2a1002"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setFarPlane </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>far_plane</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00045">45</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab7d4dba9b253711a47f2e61c0188f4f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setFov </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fov</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00029">29</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a423e9933d788d1dd21743afd1a5edab4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setNearPlane </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>near_plane</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00037">37</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aecab6995bf97da9e54c5367a6725235a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5c7766c666e9a4997ccb68abda54c6dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00057">57</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6a4dd89704fec5e28c63136113130783"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setRotation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classthewizardplusplus_1_1anna_1_1maths_1_1_vector3_d.html">maths::Vector3D</a>&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00067">67</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab7689553e60c5b162bb27ebb3a85e7a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setRotation </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00071">71</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a21b8f1875ebcdeec97b34dab53fa94eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera_type.html#a3371966c6ce45d8bcfed45a467a15353">CameraType::Types</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a> строка <a class="el" href="_camera_8cpp_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>source/thewizardplusplus/anna/graphics/<a class="el" href="_camera_8h_source.html">Camera.h</a></li>
+<li>source/thewizardplusplus/anna/graphics/<a class="el" href="_camera_8cpp_source.html">Camera.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacethewizardplusplus.html">thewizardplusplus</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna.html">anna</a></li><li class="navelem"><a class="el" href="namespacethewizardplusplus_1_1anna_1_1graphics.html">graphics</a></li><li class="navelem"><a class="el" href="classthewizardplusplus_1_1anna_1_1graphics_1_1_camera.html">Camera</a></li>
+    <li class="footer">Документация по Anna Graphics. Последние изменения: Вс 25 Сен 2016 19:33:06. Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

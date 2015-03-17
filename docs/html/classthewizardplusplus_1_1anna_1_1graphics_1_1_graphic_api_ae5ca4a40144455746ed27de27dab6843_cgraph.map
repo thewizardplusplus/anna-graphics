@@ -1,0 +1,7 @@
+<map id="thewizardplusplus::anna::graphics::GraphicApi::createTexture" name="thewizardplusplus::anna::graphics::GraphicApi::createTexture">
+<area shape="rect" id="node2" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#a61bef5ef9c5c5a39ee44d102ec919e91" title="thewizardplusplus::\lanna::graphics::GraphicApi\l::toUpper" alt="" coords="259,5,437,61"/>
+<area shape="rect" id="node3" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#a64ffd1691505ed2cba08e7516e7aea86" title="thewizardplusplus::\lanna::graphics::TextureLoader::load" alt="" coords="233,85,463,126"/>
+<area shape="rect" id="node4" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_data.html#a53f2fe0959a1dcbd343b10157fdffc22" title="thewizardplusplus::\lanna::graphics::TextureData\l::isValid" alt="" coords="255,149,441,205"/>
+<area shape="rect" id="node5" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_graphic_api.html#aab6476d3b7f9b5277be052a3f22ba726" title="thewizardplusplus::\lanna::graphics::GraphicApi\l::createTexture" alt="" coords="259,229,437,285"/>
+<area shape="rect" id="node6" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_texture_loader.html#aa7c6b9f590dd4b38c5a45a3981b54a45" title="thewizardplusplus::\lanna::graphics::TextureLoader::free" alt="" coords="234,309,462,350"/>
+</map>

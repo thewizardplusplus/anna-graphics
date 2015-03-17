@@ -1,0 +1,5 @@
+<map id="thewizardplusplus::anna::graphics::Skybox::Skybox" name="thewizardplusplus::anna::graphics::Skybox::Skybox">
+<area shape="rect" id="node2" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#a6c93cbd9861f322b75d17722a8c00637" title="thewizardplusplus::\lanna::graphics::Mesh\l::setPosition" alt="" coords="213,5,360,61"/>
+<area shape="rect" id="node3" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#ad0f8bc002427fe84a556976c1456ecf6" title="thewizardplusplus::\lanna::graphics::Mesh\l::getMaterial" alt="" coords="213,85,360,141"/>
+<area shape="rect" id="node4" href="$classthewizardplusplus_1_1anna_1_1graphics_1_1_mesh.html#a92c9a73abb7f78e5daa3ee51e61f509b" title="thewizardplusplus::\lanna::graphics::Mesh\l::setRotation" alt="" coords="213,165,360,221"/>
+</map>
