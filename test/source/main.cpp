@@ -8,7 +8,8 @@ using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 
 static const float CAMERA_ROTATION_RADIUS = 5;
-static const float CAMERA_ROTATION_SPEED = 50;
+static const float CAMERA_ROTATION_SPEED = 25;
+static const float ANIMATION_SPEED = 100;
 
 // http://stackoverflow.com/a/20105913/3884331
 int Dummy(void) {
@@ -33,16 +34,14 @@ float GetCurrentTime(void) {
 int main(int number_of_arguments, char* arguments[]) try {
 	(void)number_of_arguments;
 
-	GraphicApi* gapi = GraphicApi::create<OpenGlGraphicApi>();
-
 	World world;
-
 	Camera camera;
-	camera.setPosition(0, 0, 2.5);
+	camera.setPosition(0, 0, 3);
 	camera.setRotation(15, 0, 0);
 	world.setCamera(&camera);
 
 	std::string base_path = GetBasePath(arguments[0]);
+	GraphicApi* gapi = GraphicApi::create<OpenGlGraphicApi>();
 	AnimateObject* ground = AnimateObject::load(
 		base_path
 			+ "data/models/ground.ao",
@@ -51,6 +50,17 @@ int main(int number_of_arguments, char* arguments[]) try {
 	);
 	ground->setScale(10, 10, 10);
 	world.addObject(ground);
+
+	AnimateObject* windmill = AnimateObject::load(
+		base_path
+			+ "data/models/windmill.ao",
+		gapi
+	);
+	windmill->setPosition(0, 0, 1);
+	windmill->setRotation(0, 0, -135);
+	windmill->setScale(0.25, 0.25, 0.25);
+	windmill->play(true);
+	world.addAnimateObject(windmill);
 
 	AnimateObject* tree = AnimateObject::load(
 		base_path
@@ -61,16 +71,6 @@ int main(int number_of_arguments, char* arguments[]) try {
 	tree->setPosition(0.0f, 5.0f, 0.0f);
 	tree->setScale(0.25f, 0.25f, 0.25f);
 	//world.addObject(tree);
-
-	AnimateObject* windmill = AnimateObject::load(
-		base_path
-			+ "data/models/windmill.ao",
-		gapi
-	);
-	windmill->setPosition(0.0f, 5.0f, 0.0f);
-	windmill->setScale(0.25f, 0.25f, 0.25f);
-	windmill->play(true);
-	//world.addAnimateObject(windmill);
 
 	Window* window = gapi->getWindow();
 	float last_time = GetCurrentTime();
@@ -89,7 +89,7 @@ int main(int number_of_arguments, char* arguments[]) try {
 			Maths::toDegrees(std::atan2(y, x)) - 90
 		);
 
-		world.update(1000 * (current_time - last_time));
+		world.update(1000 * ANIMATION_SPEED * (current_time - last_time));
 		last_time = current_time;
 
 		gapi->clear();
