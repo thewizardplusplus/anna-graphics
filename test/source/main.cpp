@@ -1,10 +1,14 @@
 #include <anna/graphics/OpenGlGraphicApi.h>
 #include <anna/graphics/CubeMesh.h>
 #include <pthread.h>
+#include <ctime>
 #include <iostream>
 
 using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
+
+static const float CAMERA_ROTATION_RADIUS = 5;
+static const float CAMERA_ROTATION_SPEED = 50;
 
 // http://stackoverflow.com/a/20105913/3884331
 int Dummy(void) {
@@ -22,6 +26,10 @@ std::string GetBasePath(const std::string& app_path) {
 	return base_path;
 }
 
+float GetCurrentTime(void) {
+	return static_cast<float>(std::clock()) / CLOCKS_PER_SEC;
+}
+
 int main(int number_of_arguments, char* arguments[]) try {
 	(void)number_of_arguments;
 
@@ -30,6 +38,7 @@ int main(int number_of_arguments, char* arguments[]) try {
 	World world;
 
 	Camera camera;
+	camera.setPosition(0, 0, 2.5);
 	camera.setRotation(15, 0, 0);
 	world.setCamera(&camera);
 
@@ -40,8 +49,7 @@ int main(int number_of_arguments, char* arguments[]) try {
 		gapi,
 		false
 	);
-	ground->setPosition(0.0f, 5.0f, -2.5f);
-	ground->setScale(2, 2, 2);
+	ground->setScale(10, 10, 10);
 	world.addObject(ground);
 
 	AnimateObject* tree = AnimateObject::load(
@@ -65,12 +73,24 @@ int main(int number_of_arguments, char* arguments[]) try {
 	//world.addAnimateObject(windmill);
 
 	Window* window = gapi->getWindow();
+	float last_time = GetCurrentTime();
 	while (!window->isPressedKey(KeyCode::KEY_ESCAPE)) {
-		ground->setRotation(
-			ground->getRotation()
-			+ Vector3D<float>(0.0f, 0.0f, 1.0f)
+		float current_time = GetCurrentTime();
+		float x =
+			CAMERA_ROTATION_RADIUS
+			* std::cos(CAMERA_ROTATION_SPEED * current_time);
+		float y =
+			CAMERA_ROTATION_RADIUS
+			* std::sin(CAMERA_ROTATION_SPEED * current_time);
+		camera.setPosition(x, y, camera.getPosition().z);
+		camera.setRotation(
+			camera.getRotation().x,
+			camera.getRotation().y,
+			Maths::toDegrees(std::atan2(y, x)) - 90
 		);
-		world.update(1000.0f / 60.0f);
+
+		world.update(1000 * (current_time - last_time));
+		last_time = current_time;
 
 		gapi->clear();
 		gapi->drawWorld(&world);
@@ -78,7 +98,6 @@ int main(int number_of_arguments, char* arguments[]) try {
 	}
 
 	delete gapi;
-	gapi = NULL;
 } catch (const std::exception& exception) {
 	std::cerr << exception.what() << std::endl;
 }
