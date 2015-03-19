@@ -8,8 +8,9 @@ using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 
 static const float CAMERA_ROTATION_RADIUS = 5;
-static const float CAMERA_ROTATION_SPEED = 25;
-static const float ANIMATION_SPEED = 100;
+static const float CAMERA_ROTATION_SPEED = 2.5;
+static const float ANIMATION_SPEED = 25;
+static const size_t NUMBER_OF_TREES = 75;
 
 // http://stackoverflow.com/a/20105913/3884331
 int Dummy(void) {
@@ -27,6 +28,12 @@ std::string GetBasePath(const std::string& app_path) {
 	return base_path;
 }
 
+float GetRandomNumber(float minimum, float maximum) {
+	return
+		static_cast<float>(std::rand()) / RAND_MAX * (maximum - minimum)
+		+ minimum;
+}
+
 float GetCurrentTime(void) {
 	return static_cast<float>(std::clock()) / CLOCKS_PER_SEC;
 }
@@ -36,7 +43,7 @@ int main(int number_of_arguments, char* arguments[]) try {
 
 	World world;
 	Camera camera;
-	camera.setPosition(0, 0, 3);
+	camera.setPosition(0, 0, 2);
 	camera.setRotation(15, 0, 0);
 	world.setCamera(&camera);
 
@@ -56,21 +63,28 @@ int main(int number_of_arguments, char* arguments[]) try {
 			+ "data/models/windmill.ao",
 		gapi
 	);
-	windmill->setPosition(0, 0, 1);
-	windmill->setRotation(0, 0, -135);
+	windmill->setPosition(0, 0, -0.2);
+	windmill->setRotation(0, 0, -120);
 	windmill->setScale(0.25, 0.25, 0.25);
 	windmill->play(true);
 	world.addAnimateObject(windmill);
 
-	AnimateObject* tree = AnimateObject::load(
-		base_path
-			+ "data/models/tree.ao",
-		gapi,
-		false
-	);
-	tree->setPosition(0.0f, 5.0f, 0.0f);
-	tree->setScale(0.25f, 0.25f, 0.25f);
-	//world.addObject(tree);
+	for (size_t i = 0; i < NUMBER_OF_TREES; i++) {
+		AnimateObject* tree = AnimateObject::load(
+			base_path
+				+ "data/models/tree.ao",
+			gapi,
+			false
+		);
+		tree->setScale(0.1, 0.1, 0.1);
+		world.addObject(tree);
+
+		float angle = GetRandomNumber(0, 360);
+		float radius = GetRandomNumber(1.25, 7.5);
+		float x = radius * std::cos(Maths::toRadians(angle));
+		float y = radius * std::sin(Maths::toRadians(angle));
+		tree->setPosition(x, y, -0.25);
+	}
 
 	Window* window = gapi->getWindow();
 	float last_time = GetCurrentTime();
