@@ -30,9 +30,20 @@ int main(int number_of_arguments, char* arguments[]) try {
 	World world;
 
 	Camera camera;
+	camera.setRotation(15, 0, 0);
 	world.setCamera(&camera);
 
 	std::string base_path = GetBasePath(arguments[0]);
+	AnimateObject* ground = AnimateObject::load(
+		base_path
+			+ "data/models/ground.ao",
+		gapi,
+		false
+	);
+	ground->setPosition(0.0f, 5.0f, -2.5f);
+	ground->setScale(2, 2, 2);
+	world.addObject(ground);
+
 	AnimateObject* tree = AnimateObject::load(
 		base_path
 			+ "data/models/tree.ao",
@@ -55,8 +66,8 @@ int main(int number_of_arguments, char* arguments[]) try {
 
 	Window* window = gapi->getWindow();
 	while (!window->isPressedKey(KeyCode::KEY_ESCAPE)) {
-		windmill->setRotation(
-			windmill->getRotation()
+		ground->setRotation(
+			ground->getRotation()
 			+ Vector3D<float>(0.0f, 0.0f, 1.0f)
 		);
 		world.update(1000.0f / 60.0f);
