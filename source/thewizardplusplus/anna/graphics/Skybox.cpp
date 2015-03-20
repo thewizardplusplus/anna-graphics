@@ -21,7 +21,7 @@ Skybox::Skybox(Texture* top, Texture* bottom, Texture* side1, Texture* side2,
 
 	PlaneMesh* side1_mesh = new PlaneMesh(this);
 	side1_mesh->setPosition(Vector3D<float>(0.0f, -1.0f, 0.0f));
-	side1_mesh->setRotation(Vector3D<float>(0.0f, -90.0f, 0.0f));
+	side1_mesh->setRotation(Vector3D<float>(90.0f, 0.0f, 0.0f));
 	side1_mesh->getMaterial().texture =             side1;
 	side1_mesh->getMaterial().allow_ambient_light = false;
 	side1_mesh->getMaterial().allow_fog =           false;
@@ -35,7 +35,7 @@ Skybox::Skybox(Texture* top, Texture* bottom, Texture* side1, Texture* side2,
 
 	PlaneMesh* side3_mesh = new PlaneMesh(this);
 	side3_mesh->setPosition(Vector3D<float>(0.0f, 1.0f, 0.0f));
-	side3_mesh->setRotation(Vector3D<float>(180.0f, -90.0f, 0.0f));
+	side3_mesh->setRotation(Vector3D<float>(270.0f, 0.0f, 0.0f));
 	side3_mesh->getMaterial().texture =             side3;
 	side3_mesh->getMaterial().allow_ambient_light = false;
 	side3_mesh->getMaterial().allow_fog =           false;

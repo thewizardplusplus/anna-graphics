@@ -1,4 +1,5 @@
 #include <anna/graphics/OpenGlGraphicApi.h>
+#include <anna/graphics/Skybox.h>
 #include <anna/graphics/CubeMesh.h>
 #include <pthread.h>
 #include <ctime>
@@ -49,6 +50,35 @@ int main(int number_of_arguments, char* arguments[]) try {
 
 	std::string base_path = GetBasePath(arguments[0]);
 	GraphicApi* gapi = GraphicApi::create<OpenGlGraphicApi>();
+	Object* skybox = new Skybox(
+		gapi->createTexture(
+			base_path
+			+ "data/textures/skybox_axis_z_positive_direction.bmp"
+		),
+		gapi->createTexture(
+			base_path
+			+ "data/textures/skybox_axis_z_negative_direction.bmp"
+		),
+		gapi->createTexture(
+			base_path
+			+ "data/textures/skybox_axis_x_positive_direction.bmp"
+		),
+		gapi->createTexture(
+			base_path
+			+ "data/textures/skybox_axis_y_positive_direction.bmp"
+		),
+		gapi->createTexture(
+			base_path
+			+ "data/textures/skybox_axis_x_negative_direction.bmp"
+		),
+		gapi->createTexture(
+			base_path
+			+ "data/textures/skybox_axis_y_negative_direction.bmp"
+		)
+	);
+	skybox->setScale(1000, 1000, 1000);
+	world.addObject(skybox);
+
 	AnimateObject* ground = AnimateObject::load(
 		base_path
 			+ "data/models/ground.ao",
