@@ -1,6 +1,6 @@
 #include <anna/graphics/OpenGlGraphicApi.h>
+#include <anna/graphics/FogParameters.h>
 #include <anna/graphics/Skybox.h>
-#include <anna/graphics/CubeMesh.h>
 #include <pthread.h>
 #include <ctime>
 #include <iostream>
@@ -9,7 +9,7 @@ using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 
 static const float CAMERA_ROTATION_RADIUS = 5;
-static const float CAMERA_ROTATION_SPEED = 2.5;
+static const float CAMERA_ROTATION_SPEED = 1;
 static const float ANIMATION_SPEED = 25;
 static const size_t NUMBER_OF_TREES = 75;
 
@@ -48,8 +48,12 @@ int main(int number_of_arguments, char* arguments[]) try {
 	camera.setRotation(15, 0, 0);
 	world.setCamera(&camera);
 
-	std::string base_path = GetBasePath(arguments[0]);
 	GraphicApi* gapi = GraphicApi::create<OpenGlGraphicApi>();
+	FogParameters fog_parameters(Vector3D<float>(0, 0, 0), 1, 1, 7.5);
+	gapi->setFogParameters(fog_parameters);
+	gapi->setFogMode(true);
+
+	std::string base_path = GetBasePath(arguments[0]);
 	Object* skybox = new Skybox(
 		gapi->createTexture(
 			base_path
