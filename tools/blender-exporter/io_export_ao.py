@@ -1,34 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2013 thewizardplusplus, http://thewizardplusplus.ru/
+# The MIT License (MIT)
 #
-# Лицензия MIT
-#
-# Данная лицензия разрешает лицам, получившим копию данного программного
-# обеспечения и сопутствующей документации (в дальнейшем именуемыми «Программное
-# Обеспечение»), безвозмездно использовать Программное Обеспечение без
-# ограничений, включая неограниченное право на использование, копирование,
-# изменение, добавление, публикацию, распространение, сублицензирование и/или
-# продажу копий Программного Обеспечения, также как и лицам, которым
-# предоставляется данное Программное Обеспечение, при соблюдении следующих
-# условий:
-#
-# Указанное выше уведомление об авторском праве и данные условия должны быть
-# включены во все копии или значимые части данного Программного Обеспечения.
-#
-# ДАННОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО
-# ГАРАНТИЙ, ЯВНО ВЫРАЖЕННЫХ ИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ
-# ГАРАНТИЯМИ ТОВАРНОЙ ПРИГОДНОСТИ, СООТВЕТСТВИЯ ПО ЕГО КОНКРЕТНОМУ НАЗНАЧЕНИЮ И
-# ОТСУТСТВИЯ НАРУШЕНИЙ ПРАВ. НИ В КАКОМ СЛУЧАЕ АВТОРЫ ИЛИ ПРАВООБЛАДАТЕЛИ НЕ
-# НЕСУТ ОТВЕТСТВЕННОСТИ ПО ИСКАМ О ВОЗМЕЩЕНИИ УЩЕРБА, УБЫТКОВ ИЛИ ДРУГИХ
-# ТРЕБОВАНИЙ ПО ДЕЙСТВУЮЩИМ КОНТРАКТАМ, ДЕЛИКТАМ ИЛИ ИНОМУ, ВОЗНИКШИМ ИЗ,
-# ИМЕЮЩИМ ПРИЧИНОЙ ИЛИ СВЯЗАННЫМ С ПРОГРАММНЫМ ОБЕСПЕЧЕНИЕМ ИЛИ ИСПОЛЬЗОВАНИЕМ
-# ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ ИЛИ ИНЫМИ ДЕЙСТВИЯМИ С ПРОГРАММНЫМ ОБЕСПЕЧЕНИЕМ.
-#
-#
-# Copyright (c) 2013 thewizardplusplus, http://thewizardplusplus.ru/
-#
-# MIT license
+# Copyright (c) 2013-2015 thewizardplusplus <thewizardplusplus@yandex.ru>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -51,10 +25,10 @@
 bl_info = {
 	"name": "Export to Anna Object (*.ao)",
 	"author": "thewizardplusplus",
-	"version": (1, 0),
+	"version": (1, 0, 0),
 	"blender": (2, 67, 0),
 	"location": "File > Export > Anna Object (*.ao)",
-	"description": "Export the active object to Anna Object (*.ao)",
+	"description": "Export mesh objects to Anna Object (*.ao)",
 	"warning": "",
 	"wiki_url": "",
 	"tracker_url": "",
@@ -102,7 +76,7 @@ class Key:
 		self.transformation = transformation
 
 class AnnaObjectExport(bpy.types.Operator, ExportHelper):
-	""" Export the active object to Anna Object (*.ao). """
+	""" Export mesh objects to Anna Object (*.ao). """
 
 	bl_idname =        "export_mesh.ao"
 	bl_label =         "Anna Object (*.ao)"
@@ -113,12 +87,12 @@ class AnnaObjectExport(bpy.types.Operator, ExportHelper):
 		"Export animation data", default = True)
 
 	def execute(self, context):
-		print("\nStart exported the active object to Anna Object (*.ao)...")
+		print("\nStart export mesh objects to Anna Object (*.ao)...")
 		start_time = time.time()
 		filepath = bpy.path.ensure_ext(self.filepath, self.filename_ext)
 		exported = self._export(context, filepath)
 		if exported:
-			print("Finished export in {0} seconds to \"{1}\".\n".format(time. \
+			print("Export finished in {0} seconds to \"{1}\".\n".format(time. \
 				time() - start_time, filepath))
 		else:
 			print("Export failed.\n")
