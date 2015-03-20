@@ -9,7 +9,7 @@ using namespace thewizardplusplus::anna::graphics;
 using namespace thewizardplusplus::anna::maths;
 
 static const float CAMERA_ROTATION_RADIUS = 5;
-static const float CAMERA_ROTATION_SPEED = 1;
+static const float CAMERA_ROTATION_SPEED = 0.5;
 static const float ANIMATION_SPEED = 25;
 static const size_t NUMBER_OF_TREES = 75;
 
@@ -30,6 +30,12 @@ std::string GetBasePath(const std::string& app_path) {
 }
 
 float GetRandomNumber(float minimum, float maximum) {
+	static bool prng_initialized = false;
+	if (!prng_initialized) {
+		std::srand(std::clock());
+		prng_initialized = true;
+	}
+
 	return
 		static_cast<float>(std::rand()) / RAND_MAX * (maximum - minimum)
 		+ minimum;
