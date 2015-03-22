@@ -11,6 +11,7 @@ using namespace thewizardplusplus::anna::maths;
 static const std::string DATA_PATH = "data/";
 static const std::string TEXTURES_PATH = DATA_PATH + "textures/";
 static const std::string MODELS_PATH = DATA_PATH + "models/";
+static const float DEFAULT_CAMERA_ANGLE = 6.23;
 static const size_t NUMBER_OF_TREES = 75;
 static const float CAMERA_ROTATION_RADIUS = 5;
 static const float CAMERA_ROTATION_SPEED = 0.5;
@@ -46,15 +47,20 @@ int main(int number_of_arguments, char* arguments[]) try {
 
 	Window* window = gapi->getWindow();
 	float last_time = GetCurrentTime();
+	float camera_angle = DEFAULT_CAMERA_ANGLE;
 	while (!window->isPressedKey(KeyCode::KEY_ESCAPE)) {
 		float current_time = GetCurrentTime();
-		RotateCamera(camera, current_time);
-
 		float elapsed_time = current_time - last_time;
-		UpdateWorld(world, elapsed_time);
-
 		last_time = current_time;
 
+		if (window->isPressedKey(KeyCode::KEY_LEFT)) {
+			camera_angle += elapsed_time;
+		} else if (window->isPressedKey(KeyCode::KEY_RIGHT)) {
+			camera_angle += -elapsed_time;
+		}
+		RotateCamera(camera, camera_angle);
+
+		UpdateWorld(world, elapsed_time);
 		DrawWorld(world, gapi, window);
 	}
 
@@ -200,13 +206,13 @@ float GetCurrentTime(void) {
 	return static_cast<float>(std::clock()) / CLOCKS_PER_SEC;
 }
 
-void RotateCamera(Camera* camera, float current_time) {
+void RotateCamera(Camera* camera, float angle) {
 	float x =
 		CAMERA_ROTATION_RADIUS
-		* std::cos(CAMERA_ROTATION_SPEED * current_time);
+		* std::cos(CAMERA_ROTATION_SPEED * angle);
 	float y =
 		CAMERA_ROTATION_RADIUS
-		* std::sin(CAMERA_ROTATION_SPEED * current_time);
+		* std::sin(CAMERA_ROTATION_SPEED * angle);
 	camera->setPosition(x, y, camera->getPosition().z);
 	camera->setRotation(
 		camera->getRotation().x,
